@@ -9,6 +9,6 @@ sortKey: 0.378
 [[Reflektion - BMC mulighed outlook er dårligt virksomheder vil væk fra USA]]
 [[Ide - fikse det langsomme bookingsystem]]
 [[Innovation - praktisk pain relieve OG hjælpe kommunens målsætninger]]
-
+[[Findings]]
 
 ---

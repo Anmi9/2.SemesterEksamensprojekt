@@ -4,8 +4,7 @@ section: inception
 exclude: false
 sortKey: 0.36703
 ---
-[[Laura interview 1]]
-[[Brians interview 1]]
+[[Bruger interviews]]
 
 ---
 For at svarer på dette lytter til vores interviews med Laura, Brian
