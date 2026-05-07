@@ -10,3 +10,4 @@ sortKey: 1.29983
 # Customer segment (VP canvas)![[Value Proposition Canvas - Customer segment.jpg]]
 ![[Pasted image 20260507142412.png]]
 ![[Pasted image 20260507142552.png]]
+![[Pasted image 20260507142909.png]]
