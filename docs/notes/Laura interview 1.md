@@ -10,5 +10,6 @@ sortKey: 0.378
 [[Ide - fikse det langsomme bookingsystem]]
 [[Innovation - praktisk pain relieve OG hjælpe kommunens målsætninger]]
 [[Findings]]
+[[Lauras interview - Annas noter]]
 
 ---
