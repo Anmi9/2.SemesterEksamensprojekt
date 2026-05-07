@@ -8,7 +8,7 @@ sortKey: 1.36258
 1. Bookingerne er lidt et ømt punkt (for nogen)
 2. Hvordan skal jeg lige navigere i det her (booking) ^fd0e16
 3. Logistikken gør at man tager sin egen bil
-4. Kamilla opfordrer til at vi skal tage tjenestebilerne men ikke at vi skal
+4. Kamilla opfordrer til at vi skal tage tjenestebilerne men ikke at vi skal ^7886a0
 5. (outlook) er langsomt til at registrere (booke)
 	- Til det svarer hun, så tror jeg bare jeg tager min egen bil
 6. Jeg tager cyklen, det er et helvede med bilen
@@ -32,7 +32,18 @@ sortKey: 1.36258
 - Egen bil skaber fleksibilitet
 - Har jeg booket korrekt 
 - Hvad er normerne for booking [[#^fd0e16]]
+- Planlægningen er svær
+- Fleksibilitet er fedt (personligt og for borgerydelsen)
+- At hun vil undgå stress
+- Hun vil ikke tage en bil fra andre
+- Tænker at outlook fungerer okay
+- Hun skal tilpasse sig og give plads til dem med mere anciennitet ^5b69aa
 # Føler
 - Det er hårdt at køre borgere i sjam-sjam-sjam (mange i træk)
+- Føler stress over outlook 
+- Bliver usikker over vage normer [[#^7886a0]]
+- Har berøringsangst  med booking [[#^5b69aa]]
 # Gør 
 - Derfor tager hun sin egen bil [[#^91c328]]
+- Få hjælp til at udføre booke [[#^5494bf]]
+- Beder om andre skal bekræfte sine bookinger [[#^91100a]]
