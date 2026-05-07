@@ -27,13 +27,12 @@ views:
       - sortKey
       - section
     sort:
-      - property: file.name
-        direction: DESC
       - property: sortKey
         direction: ASC
+      - property: file.name
+        direction: DESC
     summaries: {}
-    columnSize:
-      file.name: 107
+    columnSize: {}
   - type: table
     name: Daily Log
     filters:

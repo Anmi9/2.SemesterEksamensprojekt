@@ -61,7 +61,7 @@ Vi skriver rapporten i **Typst** via VS Code.
 
 ### 🧠 Dokumentation (Obsidian)
 Da vi har åbnet roden, kan du linke direkte fra en note til koden:
-* *"Se logikken her: [[PaymentService.cs]]"*
+* *"Se logikken her:"*
 * **Obsidian Git:** Pluginnet er sat til **Manuel Mode**.
     * Brug `Ctrl+P` -> `Git: Commit` når du vil gemme noter.
 

@@ -16,7 +16,7 @@ sections:
 
 ## Analyse
 
-![[Dummy note]]
+![[Dummy]]
 
 ![[Dummy note 3]]
 
@@ -25,5 +25,5 @@ sections:
 ---
 ## ⚠️ Usorterede / Nye Sektioner
 
-![[Dummy note 1]] *(Fundet sektion: None / Tom)*
+![[Dummy1]] *(Fundet sektion: None / Tom)*
 
