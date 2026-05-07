@@ -4,17 +4,39 @@ section: inception
 exclude: false
 sortKey: 1.51375
 ---
+[[Reflektion - løsnings specifikation]]
+[[Problemstilling vs problemformulering]]
 
-Ud fra "Customer Segment" modellen og noterne om det nuværende ineffektive bookingsystem, er her 3 forskellige problemstillinger (fokusområder/temaer):
+---
 
-### 1. Systemmæssig friktion i transport- og ressourceplanlægning
-**Fokus:** Værktøjet (Outlook) og allokering af ressourcer.
-*   **Beskrivelse:** Medarbejderne har et udtalt job med at håndtere egen logistik og booke transport, men de hæmmes af et upålideligt og ufleksibelt system (Outlook). Med begrænsede ressourcer (4 biler til 13 medarbejdere) skaber systemet flaskehalse – f.eks. fastlåses bookinger ved sygdom, og der er manglende overblik over bilernes tilstand (er de opladt?). Dette gør en basalt "simpel" opgave til en tidsslugende "pain".
+## Egen beskrivelse 
+- hemmes af et ufleksibelt bookingsystem påvirker logistik og koordinering 
+- Manglende information omkring transportmidlernes status skaber pludselige afbrydelse af arbejdsgangen
+- Med begrænsede ressourcer (transportmidler) er det svært at lykkes med det nuværende bookingsystem når der er så mange uforudsigelige opgaver.
+- Uforudsigeligheder er en nødvendighed ellers ville bostøtten gå på kompromis med borgernes individuelle/varierende behov.
+- Svært at danne overblik over tilgængeligheden af transportmidlerne 
 
-### 2. Kognitiv belastning og stress som følge af manglende retningslinjer
-**Fokus:** Medarbejdernes trivsel, usikkerhed og interne retningslinjer.
-*   **Beskrivelse:** Overgangen til nye systemer og en generel mangel på klare normer skaber mental friktion for medarbejderne. Pains som uvidenhed om vedligehold, utydelige normer og oplevelsen af, at "folk tager den forkerte bil", udfordrer medarbejdernes job med at "undgå stress, usikkerhed og konflikter". Det skaber unødig støj i en ellers travl arbejdsgang, hvor de forsøger at optimere deres tid med borgerne.
+> [!prompt]- forslag til problemstilling ud fra egen beskrivelse 
+> Her er et forslag til en samlet og velskrevet problemstilling, der binder dine fem punkter sammen og beskriver "landskabet" (inklusive vilkårene/vandet, som de opererer under):
+> 
+> ***
+> 
+> **Problemstilling**
+> 
+> Hverdagen i bostøtten er præget af dynamik og en høj grad af uforudsigelighed. Denne agilitet er ikke et symptom på dårlig planlægning, men derimod en absolut nødvendighed; hvis hverdagen var stramt skemalagt, ville bostøtten være tvunget til at gå på kompromis med borgernes individuelle og konstant varierende behov. Medarbejderne skal altså kunne rykke ud og omstille sig med kort varsel. 
+> 
+> Men denne nødvendige fleksibilitet støder sammen med en virkelighed, hvor der er stærkt begrænsede transportressourcer til rådighed. Det er i forvejen en kompleks logistisk opgave at dække mange uforudsigelige opgaver med få biler, men situationen forværres markant af, at medarbejderne hæmmes af et ufleksibelt og utilstrækkeligt bookingsystem. 
+> 
+> I det nuværende system er det svært for personalet at danne sig et hurtigt og pålideligt overblik over transportmidlernes tilgængelighed. Systemet formår ikke at understøtte den hurtige koordinering, som ad hoc-opgaverne kræver. Samtidig mangler der afgørende information om bilernes aktuelle driftsstatus – eksempelvis om bilen er opladt og klar til brug, eller om der er fejl på den. Dette skaber blinde vinkler i planlægningen, som resulterer i pludselige og frustrerende afbrydelser af arbejdsgangen, når en medarbejder står klar til afgang ved en bil, der ikke kan køre.
+> 
+> Kombinationen af en uforudsigelig opgaveportefølje, begrænsede fysiske ressourcer og et stift, uigennemskueligt digitalt værktøj skaber således en uholdbar situation. Det dræner medarbejdernes tid og energi, forstyrrer logistikken og udfordrer i sidste ende bostøttens evne til at levere den fleksible hjælp, borgerne har brug for.
+> 
+> ***
+> 
+> **Hvorfor fungerer denne formulering?**
+> *   Tragt-metoden: Den starter bredt med formålet (borgerne og uforudsigeligheden), bevæger sig ned i ressourcerne (bilerne) og lander helt skarpt på det reelle problem (systemet, manglen på overblik og status).
+> *   Den viser de bundne rammer ("vandet"): Mangel på biler og opgavernes natur kan I ikke lave om på.
+> *   Den fremhæver det, I kan løse ("landet"): Det ufleksible bookingsystem, den dårlige statusinformation og manglen på overblik.
 
-### 3. Uoverensstemmelse mellem behovet for agilitet og rammets rigiditet
-**Fokus:** Håndtering af ad hoc-opgaver i en uforudsigelig hverdag.
-*   **Beskrivelse:** Medarbejderne værdsætter og trives i en "meget fleksibel hverdag", hvor målet er at kunne tilpasse sig pludselige lægebesøg og ad hoc-opgaver. Problemet opstår, fordi virkelighedens dynamik kolliderer med en ufleksibel bil-løsning og fastlåste skemaer, der ikke tillader "lynbooking" eller "nem ændring af bookinger". Alt dét, der ikke kan planlægges på forhånd, rammer muren af et stift system.
+
+
