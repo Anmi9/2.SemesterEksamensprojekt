@@ -1,8 +1,11 @@
 ---
 created: 2026-05-05
-section: 
+section: inception
 exclude: false
 sortKey: 0.35157
+---
+[[Hvad er deres behov]]
+
 ---
 Fredag afsat til rapportskrivning ud fra hvilken fase vi befinder os i.
 - Forhåbningen er, at det bliver mere naturligt at kunne køre en ægte UP process og komme længere end elaboration(MVP) da vi ikke er nødt til at afslutte udviklingsprocessen allerede efter eks. 3 uger for derefter at gå til dedikeret rapportskrivning.
