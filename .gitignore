@@ -15,6 +15,7 @@ obj/
 # Vi inkluderer alt i .obsidian som standard, men udelukker lokal maskincache
 .obsidian/cache/
 .obsidian/backlink-cache/
+.obsidian/graph.json
 
 # --- Obsidian junk ---
 **/.trash/
