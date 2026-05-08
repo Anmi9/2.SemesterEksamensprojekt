@@ -5,6 +5,8 @@ exclude: false
 sortKey: 2.33583
 ---
 [[Brug af behov og outcome]]
+[[Krav]]
+
 # Persona A
 Navn: Christian 
 Alder: 30

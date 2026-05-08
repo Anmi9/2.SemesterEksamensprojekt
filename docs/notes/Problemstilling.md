@@ -7,7 +7,6 @@ sortKey: 1.51375
 [[Reflektion - løsnings specifikation]]
 [[Problemstilling vs problemformulering]]
 [[Personaer]]
-[[Krav]]
 
 ---
 
