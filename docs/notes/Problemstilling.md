@@ -6,6 +6,7 @@ sortKey: 1.51375
 ---
 [[Reflektion - løsnings specifikation]]
 [[Problemstilling vs problemformulering]]
+[[Personaer]]
 [[Krav]]
 
 ---
@@ -16,9 +17,10 @@ sortKey: 1.51375
 3. Med begrænsede ressourcer (transportmidler) er det svært at lykkes med det nuværende bookingsystem når der er så mange uforudsigelige opgaver.
 4. Manglende information omkring transportmidlernes status skaber pludselige afbrydelse af arbejdsgangen - Svært at danne overblik over tilgængeligheden af transportmidlerne 
 ## Problemstilling
-Arbejdsdagen ved bostøtten på Tulipanvej 100 indeholder mange varierende opgaver; nogen som kræver en detaljeret planlægning mens andre ad hoc handling. Fleksibiliteten er en nødvendighed for medarbejdere og borgere, men den udfordrer planlægningen fordi dagene bliver uforudsigelige. Det resulterer i mangelende tillid til det planlagte og en øget byrde i ofte at skulle revurdere planen.
-Det nuværende bookingsystem er for rigid, at fortage ændringer i eksisterende bookinger er svært eller helt umuligt, hvilket medfører at der tyges til uhensigtsmæssige løsninger som ikke er tænkt ind i systemet. Disse *workarounds* er ikke optimale og skaber tidsspilde og fejl, de får hverdagen til at hænge sammen, men er kompromisser på det eksisterende system. Dette bliver et kritisk problem fordi det begrænsede antal transpormidler danner nogle rammer hvor kompromisser ikke går an. Systemet, med sine begrænsninger, gør det svært for medarbejderne at løfte det ansvar der ligger i at skulle handle ad hoc i deres uforudsigelige hverdag. 
-Yderlige så begrænser systemet medarbejdernes mulighed for at danne sig et overblik over tilgængeligheden af deres transportmidler. Information på hvornår bilerne skal til service er ikke synlig og oversigten over bookinger er uoverskuelig.
+
+Arbejdsdagen ved bostøtten på Tulipanvej 100 indeholder mange varierende arbejdsopgaver. Noget arbejde kræver en detaljeret planlægning, mens andet er ad hoc-opgaver. Fleksibiliteten er en nødvendighed for både medarbejdere og borgere, men den udfordrer planlægningen, fordi dagene bliver uforudsigelige. Det resulterer i manglende tillid til det planlagte og en øget byrde i ofte at skulle revurdere planen.
+Det nuværende bookingsystem er for fastlåst. Det er svært eller helt umuligt at foretage ændringer i eksisterende bookinger, hvilket medfører, at medarbejderne tyr til uhensigtsmæssige løsninger, som ikke er tænkt ind i systemet. Disse *workarounds* er ikke optimale og skaber tidsspilde og fejl - de får hverdagen til at hænge sammen, men er kompromisser på det eksisterende system. Dette bliver et kritisk problem, fordi det begrænsede antal transportmidler danner nogle rammer, hvor kompromisserne er utilstrækkelige. Systemet, med dets begrænsninger, gør det svært for medarbejderne at løfte det ansvar, der ligger i at skulle handle ad hoc i deres uforudsigelige hverdag. 
+Yderligere begrænser systemet medarbejdernes mulighed for at danne sig et overblik over tilgængeligheden af deres transportmidler. Information om, hvornår bilerne skal til service, er ikke synlig, og oversigten over bookinger er uoverskuelig.
 
 
 > [!prompt]- forslag til problemstilling ud fra egen beskrivelse 

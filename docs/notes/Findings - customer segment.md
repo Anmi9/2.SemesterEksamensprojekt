@@ -5,6 +5,7 @@ exclude: false
 sortKey: 1.29983
 ---
 [[Empathy mapping - det skal vi huske at bruge!]]
+[[Reflektion VPC - Gains]]
 
 ---
 # Customer segment (VP canvas)
