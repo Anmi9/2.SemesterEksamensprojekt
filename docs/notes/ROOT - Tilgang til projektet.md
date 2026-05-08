@@ -4,7 +4,7 @@ section: inception
 exclude: false
 sortKey: 0.35157
 ---
-[[Hvad er deres behov]]
+[[Hvad er potentialet]]
 
 ---
 Fredag afsat til rapportskrivning ud fra hvilken fase vi befinder os i.
