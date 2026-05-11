@@ -2,7 +2,8 @@
 #let body-font = "Roboto"
 #let heading-font = "Roboto"
 #let code-font = "Fira Code"
-#let primary-color = rgb("#000000")
+#let primary-color = rgb("#262626")
+#let bg-color = rgb("#fdfcf7")
 #let font-size = 11pt
 #let target-width = 30 * font-size
 
@@ -15,11 +16,12 @@
 ) = {
   // 1. DOKUMENT OPSÆTNING
   set document(author: authors, title: title)
-  set text(font: body-font, lang: "da", size: font-size)
+  set text(font: body-font, lang: "da", size: font-size, fill: primary-color)
   set page(
     paper: "a4",
     margin: (x: 3cm, y: 3cm),
     numbering: none, // Ingen sidetal på forside/TOC
+    fill: bg-color,
   )
 
   set bibliography(style: "apa")
