@@ -1,0 +1,11 @@
+- Skrivning om fredag
+  - Rå tekst vs typst løbende
+- Iterationsstruktur og diskution her omkring
+  - 5 dages inception
+  - 2 x 4 dages elaboration
+  - 1 x 5 construction
+  - 5 dages rapport/afslutning
+- Daily standup
+- Tech stack
+- Start-slut uge møder
+- Bruge burndown til tracking af velocity af iterationer over projektet

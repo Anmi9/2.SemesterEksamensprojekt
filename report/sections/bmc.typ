@@ -1,0 +1,1 @@
+- og hurtigt de andre forretningsmodeller

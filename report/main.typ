@@ -9,6 +9,24 @@
 #metadata("start") <start-formalia>
 = Introduktion
 
+= Inception
+#{
+  set heading(offset: 1)
+  include "sections/inception.typ"
+}
+
+= Elaboration
+#{
+  set heading(offset: 1)
+  // Inkluder elaboration fil
+}
+= Construction
+#{
+  set heading(offset: 1)
+  // Inkluder construction fil
+}
+= Reflektion
+
 = Litteraturliste
 #bibliography("references.bib", title: none)
 

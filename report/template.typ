@@ -2,7 +2,7 @@
 #let body-font = "Roboto"
 #let heading-font = "Roboto"
 #let code-font = "Fira Code"
-#let primary-color = rgb("#005ba3")
+#let primary-color = rgb("#000000")
 #let font-size = 11pt
 #let target-width = 30 * font-size
 
