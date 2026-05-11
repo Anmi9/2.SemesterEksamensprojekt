@@ -6,7 +6,7 @@
 	],
 	"settings": {
 		"tinymist.exportPdf": "onSave",
-		"tinymist.outputPath": "$root/report/report.pdf",
+		"tinymist.outputPath": "$root/report/report",
 		"tinymist.fontPaths": [
 			"./report/fonts"
 		]
