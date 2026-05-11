@@ -10,3 +10,5 @@ Pestle
 Porter's 5 forces
 RATER-modellen - kundecentreret analysemodel (Katrins pp værdiskabelse) i forbindelse med udarbejdelsen af funktionelle krav
 Value proposition canvas (product-delen)
+
+
