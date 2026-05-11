@@ -10,7 +10,7 @@
   include "interview-med-flådestyring.typ"
 }
 
-= Lytter igennem og tager nedslagsnoter 
+= Lytter igennem og tager nedslagsnoter
 #{
   set heading(offset: 3)
   include "lytter-igennem-og-tager-nedslagsnoter.typ"
@@ -28,7 +28,7 @@
   include "fokus-på-identificering-af-jobs.typ"
 }
 
-= Brug af Empathy map 
+= Brug af Empathy map
 #{
   set heading(offset: 3)
   include "brug-af-empathy-map.typ"
@@ -58,7 +58,7 @@
   include "krav.typ"
 }
 
-= Feedback på behovsanalyse og krav specifikation 
+= Feedback på behovsanalyse og krav specifikation
 #{
   set heading(offset: 3)
   include "feedback-på-behovsanalyse.typ"
@@ -68,4 +68,10 @@
 #{
   set heading(offset: 3)
   include "bmc.typ"
+}
+
+= Interview runde 2
+#{
+  set heading(offset: 3)
+  include "interview2.typ"
 }
