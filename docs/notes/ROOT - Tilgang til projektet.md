@@ -13,7 +13,7 @@ Fredag afsat til rapportskrivning ud fra hvilken fase vi befinder os i.
 Fredagsmøde kl. 12 til at vurdere hvor vi er (burndown chart? Momementum)
 
 Daily standup (Måske både morgen og eftermiddag)
-cvbn
+
 Skrive løbende i Typst, (cermoni til hver del)
 
 Såfremt vi ikke bliver færdige med en fase vurderes mangler for om de er kritiske, hvis ikke ser vi på dem i slutningen af forløbet.
