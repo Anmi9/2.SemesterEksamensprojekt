@@ -5,6 +5,9 @@ exclude: false
 sortKey: 2.31707
 ---
 [[Inception rapportskelet]]
+[[2. interview runde ]]
+
+---
 ## Funktionelle
 Vise der er ledige køretøjer lige nu
 Opret booking
