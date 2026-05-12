@@ -27,11 +27,8 @@ Forlæng igangværende booking
 ## Ikke-funktionelle
 Ikke for meget information på skærmen
 Responsiv UI.
-<<<<<<< Updated upstream
-=======
 Overholde GDPR
 
 Opgavekrav:
 Gøre brug af database
 Indeholde algoritmer
->>>>>>> Stashed changes
