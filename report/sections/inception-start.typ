@@ -64,14 +64,14 @@
   include "feedback-på-behovsanalyse.typ"
 }
 
-= BMC - løbende værktøj
-#{
-  set heading(offset: 3)
-  include "bmc.typ"
-}
-
 = Interview runde 2
 #{
   set heading(offset: 3)
   include "interview2.typ"
+}
+
+= BMC - løbende værktøj
+#{
+  set heading(offset: 3)
+  include "bmc.typ"
 }

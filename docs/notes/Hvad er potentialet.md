@@ -2,7 +2,7 @@
 created: 2026-05-06
 section: inception
 exclude: false
-sortKey: 0.36703
+sortKey: -0.63297
 ---
 [[Interviewteknik]]
 

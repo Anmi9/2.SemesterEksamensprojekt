@@ -18,7 +18,7 @@ Nøglepartnere: Flådestyringen og Silkeborg Kommune.
 - Vi har her ikke fokus på økonomien og besparelser, men på, hvordan vi optimerer udnyttelsen af bilerne bedst muligt.
 
 Nøgleressourcer: 
-- Medarbejdernes viden om deres arbejdsdag 
+- Medarbejdernes viden om deres arbejdsdag via interviews 
 
 Indtægter: 
 - Fokus på social afkast.
