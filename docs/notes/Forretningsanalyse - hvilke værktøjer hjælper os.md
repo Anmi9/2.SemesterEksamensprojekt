@@ -9,7 +9,7 @@ sortKey: 5.38315
 
 ---
 BMC
-- Value proposition canvas (product-delen)
+- Value proposition canvas (product-delen) 
 
 Pestle
 Porter's 5 forces
