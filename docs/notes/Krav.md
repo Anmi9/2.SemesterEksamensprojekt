@@ -6,7 +6,6 @@ sortKey: 2.31707
 ---
 [[Inception rapportskelet]]
 [[2. interview runde ]]
-[[MoSCoW]]
 
 ---
 ## Funktionelle

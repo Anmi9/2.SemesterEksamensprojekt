@@ -4,9 +4,9 @@ section: elaboration 1
 exclude: false
 sortKey: 6.312
 ---
-[[Refleksion om MoSCoW]]
 # Must:
 Database
+Hosting
 Algoritmer
 Tråde
 Opret booking

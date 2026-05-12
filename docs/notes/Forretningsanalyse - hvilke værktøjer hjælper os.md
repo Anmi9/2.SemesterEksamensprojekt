@@ -5,6 +5,7 @@ exclude: false
 sortKey: 5.38315
 ---
 [[Brug af VPC - value propersition]]
+[[Hvordan kommer vi igang med at implementere herfra]]
 
 ---
 BMC
