@@ -6,6 +6,7 @@ sortKey: 2.31707
 ---
 [[Inception rapportskelet]]
 [[2. interview runde ]]
+[[MoSCoW]]
 
 ---
 ## Funktionelle
@@ -26,3 +27,11 @@ Forlæng igangværende booking
 ## Ikke-funktionelle
 Ikke for meget information på skærmen
 Responsiv UI.
+<<<<<<< Updated upstream
+=======
+Overholde GDPR
+
+Opgavekrav:
+Gøre brug af database
+Indeholde algoritmer
+>>>>>>> Stashed changes

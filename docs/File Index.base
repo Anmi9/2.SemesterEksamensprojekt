@@ -29,8 +29,6 @@ views:
     sort:
       - property: sortKey
         direction: ASC
-      - property: file.name
-        direction: DESC
     summaries: {}
     columnSize: {}
   - type: table

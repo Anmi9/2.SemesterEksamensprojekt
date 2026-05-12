@@ -12,7 +12,7 @@ sortKey: 2.52885
 > Regler:
 > - Formulering: man spørger ind til fortiden ikke fremtiden (fortæl om engang hvor du gjorde... fortæl om engang hvor du skulle bruge en bil)
 > - Spørg ind til minder/oplevelser ikke holdninger eller hypoteser (uformelt og autentisk)
-> - Stil åbne og vage spørgsmål
+> - Stil åbne og ikke-ledende spørgsmål
 > - Kig efter valg og friktion i interviewsvarene 
 > - Spørg først ind til noget specifikt som reaktion til noget friktion brugeren selv nævner
 > - Undgå at farve brugeren ved at bringe sit egen narrativ/hypotese på banen 
