@@ -1,15 +1,17 @@
 ---
 created: 2026-05-12
-section: elaboration 1
+section:
 exclude: false
 sortKey: 6.312
 ---
+[[Ingen domænemodel - hvorfor]]
+
 # Must:
+Opret booking
 Database
 Hosting
 Algoritmer
 Tråde
-Opret booking
 # Should:
 Vise der er ledige køretøjer lige nu
 Se ledige tider
