@@ -23,23 +23,32 @@ sortKey: 6.39802
 - Borgerliste
 - Booking tidsgrænse 
 - Påmindelser om 
-- sms til borger
+- sms til borger 
 
 ```mermaid
-classDiagram
-    class Transportmidler
-    class Cykler
-    class Biler
-    class Pædagoger
-    class Leder
-    class Flådestyring
-    class Borgere
-    class Booking
-    class Bookingsystem
-    class Bopæl
-    class Bosted
-    class Bookingstatus
-    class Borgerliste
-    class Booking_tidsgrænse
+erDiagram
+    TRANSPORTMIDDEL{
+    int id PK
+    }
+    
+    CYKEL{
+    int id PK, FK
+     
+    }
+    
+    BIL{
+    int id PK, FK
+    
+    }
+    
+    MEDARBEJDER{
+    int id PK
+    
+    }
+    
+    BOOKING{
+    int id PK
+    }
+    
 ```
 
