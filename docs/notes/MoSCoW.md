@@ -13,15 +13,18 @@ Opret booking
 # Should:
 Vise der er ledige køretøjer lige nu
 Se ledige tider
+Se din booking
 Booking-bekræftigelse
-Kalendervisning
 Slette bookinger
-Redigere booking
+Redigere booking (F)
+-Forlæng igangværende booking
 # Could:
+Nem redigering af bookinger (!F)
 Frigiv bil
-Se booking
+Se alle bookinger
+Kalendervisning
 # Would:
 Marker og book
 Gentag planlagte bookinger
 Forny eksisterende bookinger
-Forlæng igangværende booking
+Venteliste og notification ved afmelding af bil
