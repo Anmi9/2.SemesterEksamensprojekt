@@ -1,3 +1,5 @@
+
+
 Kundesegment
 - Gennemgået via Empathy Maps + Persona + Interview
 Kanal: De møder vores software gennem deres arbejde i forbindelse med booking af transportmidler
