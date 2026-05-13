@@ -13,21 +13,23 @@ erDiagram
     
     CYKEL{
     int id PK, FK
-     
+    bool status 
     }
     
     BIL{
     int id PK, FK
-    
+    bool status
     }
     
     MEDARBEJDER{
     int id PK
-    
+    string initialer 
+    bool status 
     }
     
     BOOKING{
     int id PK
+    
     }
     
 ```
