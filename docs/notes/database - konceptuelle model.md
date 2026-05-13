@@ -7,6 +7,7 @@ sortKey: 6.39802
 
 [[Forløbig plan]]
 
+
 # Entiteter
 - Transportmidler
 	- Cykler

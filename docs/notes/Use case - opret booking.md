@@ -4,7 +4,9 @@ section: elaboration 1
 exclude: false
 sortKey: 6.46719
 ---
+[[database - konceptuelle model]]
 
+---
 # Pre-condition
 Medarbejderen er logget ind
 På internettet
