@@ -2,9 +2,8 @@
 created: 2026-05-13
 section: elaboration 1
 exclude: false
-sortKey: 7.34613
+sortKey: 7.43946
 ---
-
 ```mermaid
 erDiagram
     VEHICLE{
@@ -25,5 +24,14 @@ erDiagram
     date start 
     date end
     }
+    
+    VEHICLE  
+    EMPLOYEE
+    BOOKING || --o{ EMPLOYEE :" "
+    BOOKING || --o{ VEHICLE :" "
+    
+    
+    
+    
     
 ```

@@ -4,7 +4,7 @@ section: elaboration 1
 exclude: false
 sortKey: 7.31659
 ---
-[[Logisk model - database]]
+[[Logisk model - database - version 1]]
 
 ---
  - En medarbejder skal kunne oprette en booking af et transportmiddel
