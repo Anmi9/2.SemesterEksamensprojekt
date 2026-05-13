@@ -7,29 +7,23 @@ sortKey: 7.34613
 
 ```mermaid
 erDiagram
-    TRANSPORTMIDDEL{
-    int id PK
+    VEHICLE{
+    int vehicle_id PK
+    string type 
+    string license_plate
     }
     
-    CYKEL{
-    int id PK, FK
-    bool status 
-    }
-    
-    BIL{
-    int id PK, FK
-    bool status
-    }
-    
-    MEDARBEJDER{
-    int id PK
-    string initialer 
-    bool status 
+    EMPLOYEE{
+    int employee_id PK
+    string initials  
     }
     
     BOOKING{
-    int id PK
-    
+    int booking_id PK
+    int employee_id FK
+    int vehicle_id FK
+    date start 
+    date end
     }
     
 ```
