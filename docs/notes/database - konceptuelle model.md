@@ -25,6 +25,8 @@ sortKey: 6.39802
 - Påmindelser om 
 - sms til borger 
 
+Vi er blevet enige om, at vi kan gå videre til logisk model i modelleringen af database - vi har domæneviden nok
+
 ```mermaid
 erDiagram
     TRANSPORTMIDDEL{
