@@ -30,7 +30,8 @@ views:
       - property: sortKey
         direction: ASC
     summaries: {}
-    columnSize: {}
+    columnSize:
+      file.name: 353
   - type: table
     name: Daily Log
     filters:
