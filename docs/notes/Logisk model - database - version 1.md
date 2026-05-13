@@ -4,8 +4,10 @@ section: elaboration 1
 exclude: false
 sortKey: 7.34613
 ---
+[[Refleksion om Logisk model af database]]
+[[Logisk model version 2]]
 
-
+---
 Logisk model version 1
 
 ```mermaid
