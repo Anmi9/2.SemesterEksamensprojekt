@@ -6,6 +6,7 @@ sortKey: 6.39802
 ---
 
 [[Forløbig plan]]
+[[For at kunne modellere databasen skal vi have styr på vores forretningsregler]]
 
 
 # Entiteter

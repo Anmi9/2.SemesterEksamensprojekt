@@ -1,6 +1,6 @@
 ---
 created: 2026-05-12
-section: Elaboration 1 
+section: elaboration 1
 exclude: false
 sortKey: 6.38296
 --- 

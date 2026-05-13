@@ -4,7 +4,9 @@ section: elaboration 1
 exclude: false
 sortKey: 7.31659
 ---
+[[Logisk model - database]]
 
+---
  - En medarbejder skal kunne oprette en booking af et transportmiddel
  - En medarbejder skal kunne vælge en cykel eller bil i forbindelse med en booking
  - En medarbejder skal kunne reservere et bestemt slags køretøj i en bestemt tidsperiode 
