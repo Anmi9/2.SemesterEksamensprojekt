@@ -7,13 +7,13 @@ sortKey: 6.312
 [[Ingen domænemodel - hvorfor]]
 
 # Must:
-Opret booking
+Opret booking       
 Database
 Hosting
 Algoritmer
 Tråde
-# Should:
 Vise der er ledige køretøjer lige nu
+# Should:
 Se ledige tider
 Se din booking
 Booking-bekræftigelse
