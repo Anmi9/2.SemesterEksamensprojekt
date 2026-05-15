@@ -1,1 +1,1 @@
-Ved
+Ved at benytte os af Customer Segment-delen som skabelon for vores interviewnoter skabte vi fælles overblik. Selvom VPC ofte ses og bruges som et rent forretningsartefakt, var håbet, at den for os kunne hjælpe os med at formulere konkrete behov udsprunget af kunne vi rent visuelt få et overblik over de forskellige arbejdsopgaver, når vi udfyldte jobs-delen.
