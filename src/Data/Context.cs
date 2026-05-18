@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using App.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
-namespace App
+namespace App.Data
 {
     internal class Context : DbContext
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace App
+namespace App.Models
 {
     internal class Vehicle
     {
