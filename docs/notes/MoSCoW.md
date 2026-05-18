@@ -10,7 +10,6 @@ sortKey: 6.312
 # Must:
 Opret booking       
 Database
-Hosting
 Algoritmer
 Tråde
 Vise der er ledige køretøjer lige nu
