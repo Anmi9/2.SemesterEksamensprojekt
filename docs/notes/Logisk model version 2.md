@@ -4,6 +4,9 @@ section: elaboration 1
 exclude: false
 sortKey: 7.43946
 ---
+[[Bygger DB modellen med EF og SQLite]]
+
+---
 ```mermaid
 erDiagram
     VEHICLE{
