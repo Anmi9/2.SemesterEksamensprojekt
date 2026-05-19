@@ -5,7 +5,9 @@ section: elaboration 2
 exclude: false
 sortKey: 12.41517
 ---
+[[Sekvensdiagram vs. første implementering]]
 
+---
 baseret på Use case - opret booking
 
 ```mermaid
