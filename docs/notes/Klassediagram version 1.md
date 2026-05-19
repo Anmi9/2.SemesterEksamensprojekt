@@ -81,4 +81,15 @@ Vehicle-->VehicleType
 CreateBookingViewModel-->VehicleType
 
 VehicleService-->VehicleType
+
+%% Design note:
+%% Yes, BookingService can still exist.
+%% If MainViewModel talks directly to CreateBookingViewModel and then to
+%% VehicleService, the UI starts owning booking workflow and business rules.
+%% BookingService is the right place for:
+%% - booking validation
+%% - availability checks
+%% - orchestration of booking creation
+%% - persistence coordination
+%% It keeps ViewModels thin and prevents duplicated logic.
 ```
