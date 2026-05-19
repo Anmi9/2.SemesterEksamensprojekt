@@ -14,18 +14,18 @@ actor A as user
 
 create participant B as bookingService 
 A ->> B: message found  
-A ->> B: DateTime input
 create participant C as Booking
 B ->> C: Set employee (current user)
+A ->> B: DateTime input
 B ->> C: Set start time
 A ->> B: DateTime input
 B ->> C: Set end time
 create participant D as BookingRepository
-B -> D: Get vehicles
-
+B -> D: Get AvailableVehiclesTypes
+D -> D: Get Vehicles
 D -) DB: Request available vehicles
-DB --) D: Return collection
-D --> B: Collection(vehicles)
+DB --) D: Return Available Vehicle
+D --> B: Collection(vehicles types)
 A ->> B: Vehicle input
 B ->> C: Set vehicle type
 B ->> D: Add booking
