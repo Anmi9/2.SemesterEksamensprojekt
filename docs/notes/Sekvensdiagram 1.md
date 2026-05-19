@@ -6,6 +6,7 @@ exclude: false
 sortKey: 12.41517
 ---
 [[Sekvensdiagram vs. første implementering]]
+[[refleksion over connection til DB med async_await]]
 
 ---
 baseret på Use case - opret booking
