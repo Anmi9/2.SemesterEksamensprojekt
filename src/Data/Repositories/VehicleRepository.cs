@@ -5,15 +5,15 @@ using System.Linq;
 using App.Data;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using App.Models;
 
-
-namespace App.Models
+namespace App.Data.Repositories
 {
-    internal class BookingRepository // Overvej om denne klasse skal hedde vehiclerepository?
+    internal class VehicleRepository // Overvej om denne klasse skal hedde vehiclerepository?
     {
         private readonly Context _context;
 
-        public BookingRepository(Context context)   // Dependency injection af context-objektet
+        public VehicleRepository(Context context)   // Dependency injection af context-objektet
         {
             _context = context; //gemmer objektet i en privat variabel, så det kan bruges i metoderne i klassen
         }   

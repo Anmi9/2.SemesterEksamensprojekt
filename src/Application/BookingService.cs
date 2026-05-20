@@ -1,8 +1,10 @@
-﻿using System;
+﻿using App.Data.Repositories;
+using App.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace App.Models
+namespace App.Application
 {
     internal class BookingService
     {
@@ -20,7 +22,7 @@ namespace App.Models
             booking.End = end;
             booking.EmployeeId = Employee;
 
-            BookingRepository bookingRepository = new BookingRepository();
+            VehicleRepository bookingRepository = new BookingRepository();
             bookingRepository.GetVehicles(booking);
 
 
