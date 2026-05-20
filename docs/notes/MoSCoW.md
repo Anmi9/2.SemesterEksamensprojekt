@@ -5,7 +5,6 @@ exclude: false
 sortKey: 6.312
 ---
 [[Ingen domænemodel - hvorfor]]
-[[database - konceptuelle model]]
 
 # Must:
 Opret booking       
