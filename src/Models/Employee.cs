@@ -4,7 +4,7 @@ using System.Text;
 
 namespace App.Models
 {
-    internal class Employee
+    public class Employee // Ubrugt for nu
     {
         public int EmployeeId { get; set; }
 

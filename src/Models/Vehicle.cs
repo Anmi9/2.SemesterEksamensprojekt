@@ -10,9 +10,8 @@ namespace App.Models
         Bike,
     }
 
-    internal class Vehicle
+    public class Vehicle
     {
-
         public int VehicleId { get; set; }
         public required string Type { get; set; } 
         public required string LicensePlate { get; set; } 

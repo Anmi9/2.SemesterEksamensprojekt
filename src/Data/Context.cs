@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace App.Data
 {
-    internal class Context : DbContext
+    public class Context : DbContext
     {
         public string DbPath { get; }
         public DbSet<Employee> Employees { get; set; }

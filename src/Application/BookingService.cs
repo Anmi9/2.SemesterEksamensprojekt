@@ -6,30 +6,31 @@ using System.Text;
 
 namespace App.Application
 {
-    internal class BookingService
+    public class BookingService
     {
-
-        public BookingService()
+        public void CreateBooking(int VehicleId)
         {
-            Booking booking = new Booking();
-
-            //Dummy data for testing
-            var start = new DateTime(2024, 6, 1, 8, 0, 0);
-            var end = new DateTime(2024, 6, 1, 17, 0, 0);
-            var Employee = 1;
-
-            booking.Start = start;
-            booking.End = end;
-            booking.EmployeeId = Employee;
-
-            VehicleRepository bookingRepository = new BookingRepository();
-            bookingRepository.GetVehicles(booking);
-
-
+            var repo = new BookingRepository();
+            Booking booking = new Booking
+            {
+                Start = DateTime.Now,
+                End = DateTime.Now + TimeSpan.FromHours(2),
+                VehicleId = VehicleId
+                //EmployeeID = ?
+            }; 
+            repo.DBCreate(booking);
         }
-
-
-
-
+        public void CreateBooking(DateTime start, DateTime end, int VehicleId)
+        {
+            var repo = new BookingRepository();
+            Booking booking = new Booking
+            {
+                Start = start,
+                End = end,
+                VehicleId = VehicleId
+                //EmployeeID = ?
+            };
+            repo.DBCreate(booking);
+        }
     }
 }
