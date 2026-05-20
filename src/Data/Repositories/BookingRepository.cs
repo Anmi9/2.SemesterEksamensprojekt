@@ -9,6 +9,7 @@ namespace App.Data.Repositories
     {
         public void DBCreate(Booking booking)
         {
+            throw new NotImplementedException();
             // connection til DB
             // SQL Create 
         }
