@@ -25,7 +25,7 @@ class Employee{
 class Booking{
 +BookingId: int
 +EmployeeId: int
-+VehicleId: int
+%% +VehicleId: int
 +Start: DateTime
 +End: DateTime
 }}
@@ -70,7 +70,7 @@ Booking-->Employee
 
 CreateBookingViewModel..>VehicleService
 
-BookingService..>CreateBookingViewModel
+BookingService<..CreateBookingViewModel
 
 MainViewModel..>BookingService
 
@@ -93,3 +93,4 @@ VehicleService-->VehicleType
 %% - persistence coordination
 %% It keeps ViewModels thin and prevents duplicated logic.
 ```
+
