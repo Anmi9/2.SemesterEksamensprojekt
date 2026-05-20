@@ -4,7 +4,6 @@ section:
 exclude: false
 sortKey: 14.47495
 ---
-[[Klassediagram version 2]]
 Nogle er foretaget andre er ikke endnu.
 
 BookingRepository
