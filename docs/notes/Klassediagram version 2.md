@@ -1,10 +1,13 @@
 ---
 created: 2026-05-19
-section: Elaboration
+section: elaboration 2
 exclude: false
 sortKey: 13.34727
 ---
+[[Flow over klassediagram version 2]]
+[[Snak om kvalitet af kode]]
 
+---
 ```mermaid 
 classDiagram  
 direction LR

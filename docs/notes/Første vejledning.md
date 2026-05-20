@@ -1,8 +1,11 @@
 ---
 created: 2026-05-19
-section:
+section: elaboration 2
 exclude: false
 sortKey: 13.39651
+---
+[[Klassediagram v. 1]]
+
 ---
 Efter vejledning:
 

@@ -33,7 +33,8 @@ views:
         direction: ASC
     summaries: {}
     columnSize:
-      file.name: 353
+      file.name: 205
+      note.sortKey: 75
   - type: table
     name: Daily Log
     filters:

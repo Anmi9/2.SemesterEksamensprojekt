@@ -1,8 +1,11 @@
 ---
 created: 2026-05-19
-section: Elaboration
+section: elaboration 2
 exclude: false
 sortKey: 13.34727
+---
+[[Klassediagram version 2]]
+
 ---
 
 ```mermaid 
