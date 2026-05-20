@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +18,18 @@ namespace WPF
     /// </summary>
     public partial class CreateBookingView : Window
     {
+        private readonly CreateBookingViewModel _viewModel;
         public CreateBookingView()
         {
             InitializeComponent();
+            _viewModel = new CreateBookingViewModel();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+                // _viewModel.Type = App.Models.VehicleType.Car;
         }
     }
 }

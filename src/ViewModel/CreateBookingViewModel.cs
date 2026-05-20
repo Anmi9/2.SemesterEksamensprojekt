@@ -9,7 +9,7 @@ namespace App.ViewModel
     {
         private DateTime _start;
         private DateTime _end;
-        private VehicleType _type;
+        public VehicleType Type { get; set; }
 
         private string TakeUserInput() => throw new NotImplementedException();
         private (bool, bool) AvailableTypes() => throw new NotImplementedException(); // Skal vi bruge unavngivne variabler i tuble eller er det bedre DX med navne?

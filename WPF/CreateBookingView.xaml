@@ -12,7 +12,7 @@
         <Label Content="Opret Booking&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="33" Width="127"/>
         <DatePicker HorizontalAlignment="Left" Margin="259,145,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="432,145,0,0" VerticalAlignment="Top"/>
-        <Button Content="Bil" HorizontalAlignment="Left" Margin="256,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.363,-2.646" Height="54" Width="107"/>
+        <Button Content="Bil" HorizontalAlignment="Left" Margin="256,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.363,-2.646" Height="54" Width="107" Click="Button_Click"/>
         <Label Content="Dato og Tid&#xA;" HorizontalAlignment="Center" Margin="0,85,0,0" VerticalAlignment="Top"/>
         <Label Content="Køretøj&#xA;" HorizontalAlignment="Center" Margin="0,193,0,0" VerticalAlignment="Top"/>
         <Button Content="Cykel" HorizontalAlignment="Left" Margin="429,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.363,-2.646" Height="54" Width="107"/>
