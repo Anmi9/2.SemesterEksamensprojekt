@@ -23,9 +23,9 @@ namespace App.Models
             return await _context.Vehicles
                 .Where(v => !_context.Bookings.Any(b =>
                     b.VehicleId == v.VehicleId && //Bookingens bil-id svarer til denne bils id
-                    b.Start < EndDate && 
-                    b.End > StartDate))
-                .ToListAsync(); //
+                    b.Start < EndDate && // En booking starter før den ønskede slutdato
+                    b.End > StartDate)) // En booking slutter efter den ønskede startdato
+                .ToListAsync(); 
 
 
 
