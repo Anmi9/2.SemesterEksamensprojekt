@@ -4,6 +4,12 @@ using System.Text;
 
 namespace App.Models
 {
+    public enum VehicleType
+    {
+        Car,
+        Bike,
+    }
+
     internal class Vehicle
     {
 
