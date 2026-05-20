@@ -6,25 +6,26 @@ using App.Data;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace App.Models
 {
     internal class BookingRepository // Overvej om denne klasse skal hedde vehiclerepository?
     {
         private readonly Context _context;
 
-        public BookingRepository(Context context) 
+        public BookingRepository(Context context)   // Dependency injection af context-objektet
         {
-            _context = context;
+            _context = context; //gemmer objektet i en privat variabel, så det kan bruges i metoderne i klassen
         }   
 
-        public async Task<List<Vehicle>> GetVehicles(DateTime StartDate, DateTime EndDate)
+        public async Task<List<Vehicle>> GetVehicles(DateTime StartDate, DateTime EndDate) // Metode returnerer liste af ledige køretøjer i et bestemt tidsrum
         {
             return await _context.Vehicles
                 .Where(v => !_context.Bookings.Any(b =>
-                    b.VehicleId == v.VehicleId &&
-                    b.Start < EndDate &&
-                    b.End > StartDate)) 
-                .ToListAsync();
+                    b.VehicleId == v.VehicleId && //Bookingens bil-id svarer til denne bils id
+                    b.Start < EndDate && 
+                    b.End > StartDate))
+                .ToListAsync(); //
 
 
 
