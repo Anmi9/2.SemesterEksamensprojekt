@@ -15,7 +15,7 @@
         <Label Content="Køretøj&#xA;" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BookBikeButton" Content="Cykel" HorizontalAlignment="Left" Margin="430,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.363,-2.646" Height="54" Width="107" Click="BookBikeClick"/>
         <Label Content="Tidspunkt&#xA;" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="StartTimeComboBox" HorizontalAlignment="Left" Margin="386,179,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="StartTimeComboBox" HorizontalAlignment="Left" Margin="386,179,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="StartTimeComboBox_SelectionChanged"/>
         <Label Content="Slut" HorizontalAlignment="Left" Margin="330,208,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="EndTimeComboBox" HorizontalAlignment="Left" Margin="386,210,0,0" VerticalAlignment="Top" Width="120"/>
 

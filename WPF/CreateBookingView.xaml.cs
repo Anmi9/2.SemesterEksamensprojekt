@@ -100,5 +100,18 @@ namespace WPF
         {
             _viewModel.Type = VehicleType.Bike;
         }
+
+        private void StartTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (StartTimeComboBox.SelectedItem != null)
+            {
+                string selectedTime = StartTimeComboBox.SelectedItem.ToString();
+
+                if (BookingDatePicker.SelectedDate.HasValue && TimeSpan.TryParse(selectedTime, out TimeSpan time))
+                {
+                    _viewModel.Start = BookingDatePicker.SelectedDate.Value.Add(time);
+                }
+            }
+        }
     }
 }
