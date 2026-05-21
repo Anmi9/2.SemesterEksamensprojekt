@@ -10,7 +10,7 @@ sortKey: 13.34727
 ---
 ```mermaid 
 classDiagram  
-direction LR
+direction BT
 namespace Model{
 class VehicleType{
 <<enumeration>>
