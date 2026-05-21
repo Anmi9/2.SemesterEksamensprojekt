@@ -8,21 +8,24 @@ namespace App.Application
 {
     public class BookingService
     {
+        private readonly BookingRepository _repository;
+        public BookingService(BookingRepository repo)
+        {
+            _repository = repo;
+        }
         public void CreateBooking(int VehicleId)
         {
-            var repo = new BookingRepository();
             Booking booking = new Booking
             {
                 Start = DateTime.Now,
                 End = DateTime.Now + TimeSpan.FromHours(2),
                 VehicleId = VehicleId
                 //EmployeeID = ?
-            }; 
-            repo.DBCreate(booking);
+            };
+            _repository.DBCreate(booking);
         }
         public void CreateBooking(DateTime start, DateTime end, int VehicleId)
         {
-            var repo = new BookingRepository();
             Booking booking = new Booking
             {
                 Start = start,
@@ -30,7 +33,7 @@ namespace App.Application
                 VehicleId = VehicleId
                 //EmployeeID = ?
             };
-            repo.DBCreate(booking);
+            _repository.DBCreate(booking);
         }
     }
 }
