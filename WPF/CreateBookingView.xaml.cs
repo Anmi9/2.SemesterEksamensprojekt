@@ -46,8 +46,7 @@ namespace WPF
             var currentTime = startTime;
             while (currentTime <= endTime)
             {
-                // Brug @"HH\:mm" (eller string format med InvariantCulture) for at tvinge kolon (:) som separator (Da-DK kultur tvinger ellers punktum)
-                times.Add(new DateTime().Add(currentTime).ToString(@"HH\:mm"));
+                times.Add(currentTime.ToString(@"hh\:mm"));
                 currentTime = currentTime.Add(interval);
             }
 
@@ -60,6 +59,7 @@ namespace WPF
         private void BookingDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateTimeSelection();
+            // opdatere start (og slut)
         }
 
         private void UpdateTimeSelection()
@@ -77,6 +77,8 @@ namespace WPF
                 // Prøv at finde tidspunktet i comboboxen
                 var index = StartTimeComboBox.Items.IndexOf(timeString);
                 StartTimeComboBox.SelectedIndex = index;
+
+                _viewModel.Start = roundedTime;
             }
             else
             {
@@ -84,6 +86,13 @@ namespace WPF
                 string defaultTime = "07:00";
                 var index = StartTimeComboBox.Items.IndexOf(defaultTime);
                 StartTimeComboBox.SelectedIndex = index;
+
+                if (BookingDatePicker == null)
+                {
+                  //  DateTime chosenDate = BookingDatePicker.SelectedDate;
+                }
+
+
             }
         }
 
