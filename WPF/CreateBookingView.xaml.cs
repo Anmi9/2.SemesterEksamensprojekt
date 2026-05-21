@@ -59,7 +59,6 @@ namespace WPF
         private void BookingDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateTimeSelection();
-            // opdatere start (og slut)
         }
 
         private void UpdateTimeSelection()
@@ -87,12 +86,7 @@ namespace WPF
                 var index = StartTimeComboBox.Items.IndexOf(defaultTime);
                 StartTimeComboBox.SelectedIndex = index;
 
-                if (BookingDatePicker == null)
-                {
-                  //  DateTime chosenDate = BookingDatePicker.SelectedDate;
-                }
-
-
+                _viewModel.Start = BookingDatePicker.SelectedDate?.Add(TimeSpan.Parse(defaultTime)); // Hvis der er en valgt dato, så sæt tiden til 07:00 og gem i View Model
             }
         }
 
