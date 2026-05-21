@@ -4,6 +4,9 @@ section:
 exclude: false
 sortKey: 14.47495
 ---
+[[Arkitketur - DbContext med Composition eller DI - en kombi]]
+
+---
 Nogle er foretaget andre er ikke endnu.
 
 BookingRepository
