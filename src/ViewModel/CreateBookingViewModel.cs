@@ -7,8 +7,8 @@ namespace App.ViewModel
 {
     public class CreateBookingViewModel
     {
-        private DateTime _start;
-        private DateTime _end;
+        public DateTime Start {  get; set; }
+        public DateTime End { get; set; }
         public VehicleType Type { get; set; }
 
         private string TakeUserInput() => throw new NotImplementedException();
