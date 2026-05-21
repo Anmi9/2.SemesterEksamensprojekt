@@ -9,10 +9,10 @@ namespace App.Data.Repositories
     public class BookingRepository
     {
         private readonly Context _context;
-       // public BookingRepository(Context context) //Constructor der tager context med, så vi kan sikre at vi har adgang til databasen når BookingRepository oprettes.
-       // {
-       //    _context = context;
-       // }
+        public BookingRepository(Context context) //Constructor der tager context med, så vi kan sikre at vi har adgang til databasen når BookingRepository oprettes.
+        {
+            _context = context;
+        }
 
         public void DBCreate(Booking booking)
         {
