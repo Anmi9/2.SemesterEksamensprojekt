@@ -9,23 +9,23 @@
 #metadata("start") <start-formalia>
 = Introduktion
 
-= Inception
+= Inception (dato-dato)
 #{
   set heading(offset: 1)
   include "sections/inception.typ"
 }
 
-= Elaboration 1
+= Elaboration 1 (dato-dato)
 #{
   set heading(offset: 1)
   include "sections/elaboration 1.typ"
 }
-= Elaboration 2
+= Elaboration 2 (dato-dato)
 #{
   set heading(offset: 1)
   include "sections/elaboration 2.typ"
 }
-= Construction
+= Construction (dato-dato)
 #{
   set heading(offset: 1)
   // Inkluder construction fil

@@ -112,8 +112,8 @@
       radius: 4pt,
       align(left)[
         *Formalia* \
-        Antal anslag: [SKRIV HER] \
-        Antal normalsider: [SKRIV HER]
+        Antal anslag: 20150 \
+        Antal normalsider: 8,39583
       ],
     )
   ]
