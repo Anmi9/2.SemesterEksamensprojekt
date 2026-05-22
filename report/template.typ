@@ -12,6 +12,8 @@
   title: "",
   authors: (),
   date: none,
+  toc-target: none,
+  anslag: 21548,
   body,
 ) = {
   // 1. DOKUMENT OPSÆTNING
@@ -104,7 +106,6 @@
     #v(2em)
 
     // --- MANUELT FORMALIA FELT ---
-    // Her skriver I bare tallene ind manuelt til sidst
     #block(
       fill: luma(250),
       stroke: luma(200),
@@ -112,8 +113,8 @@
       radius: 4pt,
       align(left)[
         *Formalia* \
-        Antal anslag: 20150 \
-        Antal normalsider: 8,39583
+        Antal anslag: #anslag \
+        Antal normalsider: #(calc.round(anslag / 2400, digits: 2))
       ],
     )
   ]
@@ -121,7 +122,11 @@
   pagebreak()
 
   // 6. INDHOLDSFORTEGNELSE
-  outline(depth: 2, indent: auto)
+  if toc-target != none {
+    outline(target: toc-target, indent: auto)
+  } else {
+    outline(depth: 2, indent: auto)
+  }
   pagebreak()
 
   // 7. HOVEDINDHOLD
