@@ -25,7 +25,9 @@
     ".vs": true,
     "src": true,
     "tests": true,
+    "WPF": true,
     "Solution.slnx": true,
+    "Directory.Build.props": true,
     
     // Scripts, Git og Info filer (Nu inklusiv Build og Readme)
     "build.ps1": true,

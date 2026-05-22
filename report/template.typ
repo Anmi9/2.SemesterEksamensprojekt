@@ -12,8 +12,8 @@
   title: "",
   authors: (),
   date: none,
-  toc-target: none,
-  anslag: 21548,
+  toc-target: heading.where(level: 1).or(heading.where(level: 2)), // Default to showing level 1 and 2
+  anslag: 0,
   body,
 ) = {
   // 1. DOKUMENT OPSÆTNING
@@ -50,14 +50,12 @@
 
   // 3. OVERSKRIFTER
 
-  set heading(numbering: "1.1")
+  set heading(numbering: "1.1", supplement: none)
   show heading: it => {
-    // Sørg for pagebreak ved level 1
     if it.level == 1 {
       pagebreak(weak: true)
     }
 
-    // Style selve overskriften
     let styled = {
       set text(font: heading-font, weight: "bold", fill: primary-color)
       v(0.5em)
@@ -73,8 +71,11 @@
   }
 
   // 4. KODE BLOKKE
+  show raw.where(block: true): set raw(theme: "assets/themes/vs-dark.tmTheme")
+  show raw.where(block: true): set text(fill: rgb("#d4d4d4"))
   show raw.where(block: true): block.with(
-    fill: luma(240),
+    fill: rgb("#1e1e1e"),
+    stroke: rgb("#3c3c3c"),
     inset: 10pt,
     radius: 4pt,
     width: 100%,
@@ -98,10 +99,29 @@
     )
     #v(2fr)
 
+    // Build date explicitly in Danish to avoid locale differences.
+    #let today = datetime.today()
+    #let da-months = (
+      "januar",
+      "februar",
+      "marts",
+      "april",
+      "maj",
+      "juni",
+      "juli",
+      "august",
+      "september",
+      "oktober",
+      "november",
+      "december",
+    )
+    #let today-da = str(today.day()) + ". " + da-months.at(today.month() - 1) + " " + str(today.year())
+
     // Semester info
     Teknisk Rapport \
     Datamatiker uddannelsen \
-    #datetime.today().display("[day]. [month repr:long] [year]")
+    #today-da \
+    #link("https://github.com/Anmi9/2.SemesterEksamensprojekt", underline[*GitHub*])
 
     #v(2em)
 
@@ -114,7 +134,7 @@
       align(left)[
         *Formalia* \
         Antal anslag: #anslag \
-        Antal normalsider: #(calc.round(anslag / 2400, digits: 2))
+        Antal normalsider: #calc.round(anslag / 2400, digits: 1)
       ],
     )
   ]
@@ -122,15 +142,69 @@
   pagebreak()
 
   // 6. INDHOLDSFORTEGNELSE
-  if toc-target != none {
-    outline(target: toc-target, indent: auto)
-  } else {
-    outline(depth: 2, indent: auto)
-  }
+  limit-width(block(width: 100%, [
+    #align(left, text(font: heading-font, weight: "bold", size: 1.2em, fill: primary-color)[Indhold])
+    #v(0.5em)
+    #outline(
+      title: none,
+      depth: 2,
+      indent: auto,
+      target: toc-target,
+    )
+  ]))
   pagebreak()
 
   // 7. HOVEDINDHOLD
-  set page(numbering: "1 / 1") // Sidetal starter her
-  counter(page).update(1)
+  // Sidetal: Brødtekst vises som x/y, bilag vises som romertal fra appendix-pages-start.
+
+  set page(
+    numbering: (..nums) => {
+      let n = nums.pos().first()
+      let body_start = query(<body-start>)
+      let appendix_pages_start = query(<appendix-pages-start>)
+
+      if body_start.len() == 0 {
+        str(n)
+      } else {
+        let body_start_page = body_start.first().location().page()
+
+        if appendix_pages_start.len() == 0 or n < appendix_pages_start.first().location().page() {
+          let body_page = n - body_start_page + 1
+          str(body_page)
+        } else {
+          let app_start_page = appendix_pages_start.first().location().page()
+          let app_page = n - app_start_page + 1
+          numbering("I", app_page)
+        }
+      }
+    },
+    footer: context {
+      let n = counter(page).get().first()
+      let body_start = query(<body-start>)
+      let body_end = query(<body-end>)
+      let appendix_pages_start = query(<appendix-pages-start>)
+
+      if body_start.len() == 0 or body_end.len() == 0 {
+        align(center, str(n))
+      } else {
+        let body_start_page = body_start.first().location().page()
+        let body_end_page = body_end.first().location().page()
+        let total_body_pages = body_end_page - body_start_page + 1
+
+        if appendix_pages_start.len() == 0 or n < appendix_pages_start.first().location().page() {
+          let body_page = n - body_start_page + 1
+          align(center, str(body_page) + "/" + str(total_body_pages))
+        } else {
+          let app_start_page = appendix_pages_start.first().location().page()
+          let app_page = n - app_start_page + 1
+          align(center, numbering("I", app_page))
+        }
+      }
+    },
+  )
+
+  // Markør for start af brødtekst (til beregning af sideantal)
+  [#metadata("Body Start") <body-start>]
+
   body
 }

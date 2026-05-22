@@ -1,10 +1,15 @@
 #import "template.typ": project
 
+// --- KONFIGURATION AF FORMALIA ---
+#let anslag = 0 // Ændres manuelt når rapporten er færdig
+
 // Anvender templaten på hele dokumentet
 #show: project.with(
-  title: "Vores Semesterprojekt",
-  authors: ("Fornavn Efternavn", "Fornavn Efternavn", "Fornavn Efternavn"),
-  date: "Maj 2026",
+  title: "Systemudvikling og\nsoftwarearkitektur",
+  authors: ("Lasse Agerskov", "Anna Vognstoft", "Matias Heiberg"),
+  date: "Juni 2026",
+  toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<body-end>)),
+  anslag: anslag,
 )
 #metadata("start") <start-formalia>
 = Introduktion
@@ -34,4 +39,7 @@
 
 = Litteraturliste
 #bibliography("references.bib", title: none)
+
+= Bilag <body-end>
+// Indsæt bilag her
 
