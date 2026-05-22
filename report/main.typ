@@ -15,10 +15,15 @@
   include "sections/inception.typ"
 }
 
-= Elaboration
+= Elaboration 1
 #{
   set heading(offset: 1)
-  // Inkluder elaboration fil
+  include "sections/elaboration 1.typ"
+}
+= Elaboration 2
+#{
+  set heading(offset: 1)
+  include "sections/elaboration 2.typ"
 }
 = Construction
 #{
