@@ -1,10 +1,12 @@
 ---
 created: 2026-05-21
-section:
+section: elaboration 2
 exclude: false
 sortKey: 15.33036
 ---
+[[Tanker omkring bookingfunktionen]]
 
+---
 > [!Question] Prompt
 > Er det ikke mindre komplekst at have et objekt per process og bruge DI frem for at bruge komposition til at oprette en masse kortlivede instanser?
 

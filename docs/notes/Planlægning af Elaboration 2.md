@@ -13,7 +13,7 @@ Vi har brug for statig kunne definere opgaver og uddelegere dem uden at vores im
 
 Vi vælger en iteration på 3,5 dage ikke fordi vi kan kvalificere længden men fordi det giver en psykologisk motivation til at holde koncentrationen oppe. (måske også af formelle årsager)
 
-iterations deadline har også den funktion at være et naturligt reflektion stop, hvor vi er tvunget til at tage det brede perspektiv på os og overveje hvor vi er på vej hen og om retningen stadig holder.
+iterations deadline har også den funktion at være et naturligt reflektion stop, hvor vi er tvunget til at tage det brede perspektiv på os og overveje hvor vi er på vej hen og om retningen stadig holder. ^e752fd
 
 Vi vælger et formål med iterationen, kan også kaldes for sprint backlog, for at vi kan arbejde målrettet. Formålet er at implementere Must: Opret booking (som er uddybet i vores forretningsregler og UC 1).
 
