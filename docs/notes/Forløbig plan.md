@@ -4,7 +4,7 @@ section: elaboration 1
 exclude: false
 sortKey: 6.44835
 ---
-[[Use case - opret booking]]
+[[Use case - opret booking - version 2]]
 
 ---
 Vi stoppede med at modellere domænet og entiteter (ER) fordi vi føler vi har mistet synet for vores retning. Vi mangler en plan. 

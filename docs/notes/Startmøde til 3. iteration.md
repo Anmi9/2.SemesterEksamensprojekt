@@ -15,7 +15,7 @@ tråde: Bookingen skal fungere, selvom de sidder og booker på samme tid. Vi lav
 
 Vi mangler at lave vores walking skeleton, som vi ikke nåede at blive færdig med i sidste iteration - det tænker vi er første prioritet. - Mangler at kunne oprette en booking, der persistere (DI-root)
 
-Vi skriver usecases til algortimer og tråde for at strømligne på holdet - vi kompenserer også for det manglende arbejde med usecasediagram
+Vi skriver usecases til algortimer og tråde for at strømligne på holdet - Med det kompenserer vi også for det manglende arbejde med usecasediagram
 Vi opdaterer Klassediagrammet i starten af iterationen
 Vi laver sekvensdiagram over vores nuværende "Opret booking" til dokumentation og udgangspunkt til det videre arbejde 
 

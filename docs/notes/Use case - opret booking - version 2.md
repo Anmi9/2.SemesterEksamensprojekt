@@ -11,6 +11,7 @@ sortKey: 6.46719
 Medarbejderen er logget ind
 På internettet
 
+
 # Primær aktør
 Pædagog fra autismeteamet
 
@@ -21,12 +22,8 @@ Medarbejder har registreret en tidsbestemt booking af et ledigt køretøj af en 
 - Ser oversigt
 - Vælger start tid
 - Vælger slut tid
-- Vælger køretøj
-- Systemet validere at bookingen er konfliktfri 
-- Booking bliver persisteret 
-- starter UC: bekræftigelse 
+- Vælger køretøjstype
+- Systemet skal vælge det optimale transportmiddel [[Usecase til algoritme]] 
+- Booking bliver persisteret [[Usecase til tråde]]
+- Bekræfter om bookingen er gået igennem 
 
-Tabel med køretøjer, medarbejdere, 
-Køretøjerne skal have en status kolonne
-Behov for at transportmidlerne har en unik primær key
-Medarbejderne har en unik PK
