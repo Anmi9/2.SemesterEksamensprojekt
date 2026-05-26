@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1779793222146,
+      "title": "Process graph",
+      "options": {
+        "collapse-filter": false,
+        "search": "[\"sortkey\":]",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": true,
+        "colorGroups": [],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -3,
+        "nodeSizeMultiplier": 5,
+        "lineSizeMultiplier": 5,
+        "collapse-forces": false,
+        "centerStrength": 0,
+        "repelStrength": 20,
+        "linkStrength": 1,
+        "linkDistance": 500,
+        "scale": 0.0822550880483691,
+        "close": true
+      }
+    }
+  ]
+}

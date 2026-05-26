@@ -23,7 +23,7 @@ Medarbejder har registreret en tidsbestemt booking af et ledigt køretøj af en 
 - Vælger start tid
 - Vælger slut tid
 - Vælger køretøjstype
-- Systemet skal vælge det optimale transportmiddel [[Usecase til algoritme]] 
-- Booking bliver persisteret [[Usecase til tråde]]
+- Systemet skal vælge det optimale transportmiddel **[Usecase til algoritme]**
+- Booking bliver persisteret **[Usecase til tråde]**
 - Bekræfter om bookingen er gået igennem 
 

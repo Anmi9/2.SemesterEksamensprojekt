@@ -1,10 +1,12 @@
 ---
 created: 2026-05-26
-section:
+section: elaboration 3
 exclude: false
 sortKey: 20.34516
 ---
+[[Usecase til algoritme]]
 
+---
 # Pre-condition
 	Medarbejderen har valgt et tidsinterval
 	Medarbejderen har valgt en ledig køretøjstype

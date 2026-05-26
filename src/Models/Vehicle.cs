@@ -13,7 +13,7 @@ namespace App.Models
     public class Vehicle
     {
         public int VehicleId { get; set; }
-        public required string Type { get; set; } 
+        public required VehicleType Type { get; set; } 
         public required string LicensePlate { get; set; } 
 
     }

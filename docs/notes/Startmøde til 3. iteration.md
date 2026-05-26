@@ -1,10 +1,12 @@
 ---
 created: 2026-05-26
-section:
+section: elaboration 3
 exclude: false
 sortKey: 20.31309
 ---
+[[Usecase til tråde]]
 
+---
 Vi snakker om, at det kunne være godt med et planlægningsværktøj til at skabe overblik 
 
 Vi diskuterer, hvad denne iteration skal indeholde og vi starter med at læse problemformuleringen igen og være sikker på, vi opfylder kravene til eksamen
