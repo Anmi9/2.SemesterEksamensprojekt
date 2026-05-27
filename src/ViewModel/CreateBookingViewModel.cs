@@ -19,6 +19,8 @@ namespace App.ViewModel
         public DateTime? End { get; set; }
         public VehicleType Type { get; set; }
 
+        public List<Vehicle> AvailableVehicles { get; set; } // Liste over ledige valgte typer, der sendes med som parameter til algoritme.
+
         public void Book()
         {
             if (Start == null || End == null) return;
