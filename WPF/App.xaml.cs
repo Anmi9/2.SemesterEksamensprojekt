@@ -17,9 +17,10 @@ namespace WPF
         {
             base.OnStartup(e);
             var context = new Context();
-            var bookingrepo = new BookingRepository(context);
-            var vehiclerepo = new VehicleRepository(context);
-            var mainWindow = new MainWindow();
+            var bookingRepo = new BookingRepository(context);
+            var vehicleRepo = new VehicleRepository(context);
+            var bookingService = new BookingService(bookingRepo, vehicleRepo);
+            var mainWindow = new MainWindow(bookingService);
             mainWindow.Show();
         }
     }

@@ -7,7 +7,7 @@ namespace App.Models
     public class Booking
     {
         public int BookingId { get; set; }
-        // public int EmployeeId { get; set; }
+        public int EmployeeId { get; set; }
         public int VehicleId { get; set; }
 
         public DateTime Start { get; set; }
