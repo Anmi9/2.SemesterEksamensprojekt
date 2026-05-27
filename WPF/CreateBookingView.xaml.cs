@@ -21,6 +21,8 @@ namespace WPF
     public partial class CreateBookingView : Window
     {
         private readonly CreateBookingViewModel _viewModel;
+        private readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1); 
+
         public CreateBookingView(BookingService bookingService)
         {
             InitializeComponent();
@@ -72,26 +74,43 @@ namespace WPF
                 var adjustment = 15 - (minutes % 15);
                 var roundedTime = now.AddMinutes(adjustment);
 
-                string timeString = roundedTime.ToString(@"HH\:mm");
+                TimeSpan defaultTimeStart = roundedTime.TimeOfDay;
+                TimeSpan defaultTimeEnd = defaultTimeStart.Add(_defaultDuration);
+
+                string startString = defaultTimeStart.ToString(@"hh\:mm");
+                string endString = defaultTimeEnd.ToString(@"hh\:mm");
 
                 // Prøv at finde tidspunktet i comboboxen
-                var index = StartTimeComboBox.Items.IndexOf(timeString);
+                var index = StartTimeComboBox.Items.IndexOf(startString);
                 StartTimeComboBox.SelectedIndex = index;
 
+                index = EndTimeComboBox.Items.IndexOf(endString);
+                EndTimeComboBox.SelectedIndex = index;
+
                 _viewModel.Start = roundedTime;
+                _viewModel.End = BookingDatePicker.SelectedDate?.Add(defaultTimeEnd);
             }
             else
             {
-                // Hvis ikke det er i dag, sæt til 07:00
-                string defaultTime = "07:00";
-                var index = StartTimeComboBox.Items.IndexOf(defaultTime);
+                // Hvis ikke det er i dag, sæt til 08:00
+                TimeSpan defaultTimeStart = TimeSpan.FromHours(8); // 08:00
+                TimeSpan defaultTimeEnd = defaultTimeStart.Add(_defaultDuration);
+
+                string startString = defaultTimeStart.ToString(@"hh\:mm");
+                string endString = defaultTimeEnd.ToString(@"hh\:mm");
+
+                var index = StartTimeComboBox.Items.IndexOf(startString);
                 StartTimeComboBox.SelectedIndex = index;
 
-                _viewModel.Start = BookingDatePicker.SelectedDate?.Add(TimeSpan.Parse(defaultTime)); // Hvis der er en valgt dato, så sæt tiden til 07:00 og gem i View Model
+                index = EndTimeComboBox.Items.IndexOf(endString);
+                EndTimeComboBox.SelectedIndex = index;
+
+                _viewModel.Start = BookingDatePicker.SelectedDate?.Add(defaultTimeStart); 
+                _viewModel.End = BookingDatePicker.SelectedDate?.Add(defaultTimeEnd);
             }
         }
 
-        // Time picker logik: DisplayTime er now hvis DateStar er Today(), ellers start på 07:00
+        // Time picker logik: DisplayTime er now hvis DateStart er Today(), ellers start på 07:00
         private void BookCarClick(object sender, RoutedEventArgs e)
         {
             _viewModel.Type = VehicleType.Car;
@@ -106,25 +125,62 @@ namespace WPF
 
         private void StartTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (StartTimeComboBox.SelectedItem != null)
+            if (StartTimeComboBox.SelectedItem != null && BookingDatePicker.SelectedDate.HasValue)
             {
-                string selectedTime = StartTimeComboBox.SelectedItem.ToString();
+                string? selectedTimeStart = StartTimeComboBox.SelectedItem.ToString();
+                string? selectedTimeEnd = EndTimeComboBox.SelectedItem?.ToString();
 
-                if (BookingDatePicker.SelectedDate.HasValue && TimeSpan.TryParse(selectedTime, out TimeSpan time))
+                if (TimeSpan.TryParse(selectedTimeStart, out TimeSpan timeStart))
                 {
-                    _viewModel.Start = BookingDatePicker.SelectedDate.Value.Add(time);
+                    _viewModel.Start = BookingDatePicker.SelectedDate.Value.Add(timeStart);
+
+                    if (!TimeSpan.TryParse(selectedTimeEnd, out TimeSpan timeEnd))
+                    {
+                        timeEnd = TimeSpan.Zero;
+                    }
+
+                    if (timeEnd - timeStart < TimeSpan.FromMinutes(15))
+                    {
+                        TimeSpan defaultTimeEnd = timeStart.Add(_defaultDuration);
+                        string endString = defaultTimeEnd.ToString(@"hh\:mm");
+
+                        var index = EndTimeComboBox.Items.IndexOf(endString);
+                        if (index != -1)
+                        {
+                            EndTimeComboBox.SelectedIndex = index;
+                        }
+                    }
                 }
             }
         }
-        private void EndTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) //kopiret 1:1 med Starttime handleren
+        private void EndTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) 
         {
-            if (EndTimeComboBox.SelectedItem != null)
+            if (EndTimeComboBox.SelectedItem != null && BookingDatePicker.SelectedDate.HasValue)
             {
-                string selectedTime = EndTimeComboBox.SelectedItem.ToString();
+                string? selectedTimeEnd = EndTimeComboBox.SelectedItem.ToString();
+                string? selectedTimeStart = StartTimeComboBox.SelectedItem?.ToString();
 
-                if (BookingDatePicker.SelectedDate.HasValue && TimeSpan.TryParse(selectedTime, out TimeSpan time))
+                if (TimeSpan.TryParse(selectedTimeEnd, out TimeSpan timeEnd))
                 {
-                    _viewModel.End = BookingDatePicker.SelectedDate.Value.Add(time);
+                    _viewModel.End = BookingDatePicker.SelectedDate.Value.Add(timeEnd);
+
+                    if (!TimeSpan.TryParse(selectedTimeStart, out TimeSpan timeStart))
+                    {
+                        // Sættes til MaxValue for at sikre, at betingelsen fejler hvis der ikke er nogen starttid valgt
+                        timeStart = TimeSpan.MaxValue; 
+                    }
+
+                    if (timeEnd - timeStart < TimeSpan.FromMinutes(15))
+                    {
+                        TimeSpan defaultTimeStart = timeEnd.Subtract(_defaultDuration);
+                        string startString = defaultTimeStart.ToString(@"hh\:mm");
+
+                        var index = StartTimeComboBox.Items.IndexOf(startString);
+                        if (index != -1)
+                        {
+                            StartTimeComboBox.SelectedIndex = index;
+                        }
+                    }
                 }
             }
         }
