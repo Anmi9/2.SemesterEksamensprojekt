@@ -4,6 +4,9 @@ section: elaboration 3
 exclude: false
 sortKey: 20.40013
 ---
+[[Klassediagram v3 - use case til algoritme]]
+
+---
 ```mermaid 
 classDiagram  
 direction BT

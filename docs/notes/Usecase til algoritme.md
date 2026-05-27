@@ -4,7 +4,7 @@ section: elaboration 3
 exclude: false
 sortKey: 20.37328
 ---
-[[Klassediagram verison 3]]
+[[Klassediagram version 3]]
 
 ---
 # Pre-condition
