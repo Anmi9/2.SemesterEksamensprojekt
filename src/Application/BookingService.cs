@@ -8,10 +8,13 @@ namespace App.Application
 {
     public class BookingService
     {
-        private readonly BookingRepository _repository;
-        public BookingService(BookingRepository repo)
+        private readonly BookingRepository _bookingRepo;
+        private readonly VehicleRepository _vehicleRepo;
+
+        public BookingService(BookingRepository bookingRepo, VehicleRepository vehicleRepo)
         {
-            _repository = repo;
+            _bookingRepo = bookingRepo;
+            _vehicleRepo = vehicleRepo;
         }
         public void CreateBooking(int VehicleId)
         {
@@ -19,10 +22,10 @@ namespace App.Application
             {
                 Start = DateTime.Now,
                 End = DateTime.Now + TimeSpan.FromHours(2),
-                VehicleId = VehicleId
-                //EmployeeID = ?
+                VehicleId = VehicleId,
+                EmployeeId = 1
             };
-            _repository.DBCreate(booking);
+            _bookingRepo.DBCreate(booking);
         }
         public void CreateBooking(DateTime start, DateTime end, int VehicleId)
         {
@@ -30,10 +33,10 @@ namespace App.Application
             {
                 Start = start,
                 End = end,
-                VehicleId = VehicleId
-                //EmployeeID = ?
+                VehicleId = VehicleId,
+                EmployeeId = 1
             };
-            _repository.DBCreate(booking);
+            _bookingRepo.DBCreate(booking);
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using App.Models;
+using App.Application;
 
 namespace WPF
 {
@@ -20,10 +21,10 @@ namespace WPF
     public partial class CreateBookingView : Window
     {
         private readonly CreateBookingViewModel _viewModel;
-        public CreateBookingView()
+        public CreateBookingView(BookingService bookingService)
         {
             InitializeComponent();
-            _viewModel = new CreateBookingViewModel();
+            _viewModel = new CreateBookingViewModel(bookingService);
 
             // Begræns DatePicker til at vise i dag og op til 4 uger (28 dage) frem
             BookingDatePicker.DisplayDateStart = DateTime.Today;
@@ -94,11 +95,13 @@ namespace WPF
         private void BookCarClick(object sender, RoutedEventArgs e)
         {
             _viewModel.Type = VehicleType.Car;
+            _viewModel.Book();
         }
 
         private void BookBikeClick(object sender, RoutedEventArgs e)
         {
             _viewModel.Type = VehicleType.Bike;
+            _viewModel.Book();
         }
 
         private void StartTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -110,6 +113,18 @@ namespace WPF
                 if (BookingDatePicker.SelectedDate.HasValue && TimeSpan.TryParse(selectedTime, out TimeSpan time))
                 {
                     _viewModel.Start = BookingDatePicker.SelectedDate.Value.Add(time);
+                }
+            }
+        }
+        private void EndTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) //kopiret 1:1 med Starttime handleren
+        {
+            if (EndTimeComboBox.SelectedItem != null)
+            {
+                string selectedTime = EndTimeComboBox.SelectedItem.ToString();
+
+                if (BookingDatePicker.SelectedDate.HasValue && TimeSpan.TryParse(selectedTime, out TimeSpan time))
+                {
+                    _viewModel.End = BookingDatePicker.SelectedDate.Value.Add(time);
                 }
             }
         }

@@ -1,9 +1,10 @@
 ﻿using App.Application;
+using App.Data;
 using App.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using System.Data;
 using System.Windows;
-using App.Data;
 
 namespace WPF
 {
@@ -15,13 +16,18 @@ namespace WPF
         //Composition root, Constructor injection, Dependency injection, Dependency Inversion Principle, SOLID
         protected override void OnStartup(StartupEventArgs e)
         {
+            using (var setupContext = new Context())
+            {
+                setupContext.Database.Migrate();
+            }
+
             base.OnStartup(e);
             var context = new Context();
-            var bookingrepo = new BookingRepository(context);
-            var vehiclerepo = new VehicleRepository(context);
-            var mainWindow = new MainWindow();
+            var bookingRepo = new BookingRepository(context);
+            var vehicleRepo = new VehicleRepository(context);
+            var bookingService = new BookingService(bookingRepo, vehicleRepo);
+            var mainWindow = new MainWindow(bookingService);
             mainWindow.Show();
         }
     }
-
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using App.Application;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,15 +17,16 @@ namespace WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly BookingService _bookingService;
+        public MainWindow(BookingService bookingservice)
         {
             InitializeComponent();
-
+            _bookingService = bookingservice;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var createBookingView = new CreateBookingView();
+            var createBookingView = new CreateBookingView(_bookingService);
             createBookingView.Show();
         }
     }
