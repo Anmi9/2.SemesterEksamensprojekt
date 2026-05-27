@@ -22,7 +22,7 @@ namespace App.ViewModel
         public void Book()
         {
             if (Start == null || End == null) return;
-            _bookingService.CreateBooking(Start.Value, End.Value, 1);
+            _bookingService.CreateBooking(Start.Value, End.Value, 1); // er et magisk tal for VehicleId
         }
         private string TakeUserInput() => throw new NotImplementedException();
         private (bool, bool) AvailableTypes() => throw new NotImplementedException(); // Skal vi bruge unavngivne variabler i tuble eller er det bedre DX med navne?
