@@ -26,10 +26,7 @@ namespace App.ViewModel
             if (Start == null || End == null) return;
             _bookingService.CreateBooking(Start.Value, End.Value, 1); // er et magisk tal for VehicleId
         }
-        private string TakeUserInput() => throw new NotImplementedException();
-        private (bool, bool) AvailableTypes() => throw new NotImplementedException(); // Skal vi bruge unavngivne variabler i tuble eller er det bedre DX med navne?
-        private int SelectVehicle() => throw new NotImplementedException(); // Algoritmisk vælger den optimale vehicle blandt de ledige. Skal navnet udpensle at det er den optimale fartøj der vælges?
-        // handler metode  til click events fra view
 
+        private (bool, bool) AvailableTypes() => throw new NotImplementedException(); // Skal vi bruge unavngivne variabler i tuble eller er det bedre DX med navne?
     }
 }
