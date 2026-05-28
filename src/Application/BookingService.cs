@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace App.Application
 {
@@ -12,6 +14,8 @@ namespace App.Application
     {
         private readonly BookingRepository _bookingRepo;
         private readonly VehicleRepository _vehicleRepo;
+
+        private static readonly SemaphoreSlim _bookingSemaphore = new SemaphoreSlim(1, 1);
 
         public BookingService(BookingRepository bookingRepo, VehicleRepository vehicleRepo)
         {
@@ -42,6 +46,35 @@ namespace App.Application
             _bookingRepo.DBCreate(booking);
         }
 
+        //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt og eksisterende bookinger. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
+        public async Task<bool> TryBookOptimalVehicle(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
+        {
+            Vehicle optimalVehicle = FindBestOptimalVehicle(viewModel, allActiveBookings); // Algoritmemetoden finder optimalt køretøj og gemmer det i optimalVehicle-variablen.
+
+            await _bookingSemaphore.WaitAsync(); // SemaphoreSlim sikrer at kun en booking oprettes af gangen. 
+
+            try
+            {
+                bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTime(optimalVehicle.VehicleId, viewModel.Start.Value, viewModel.End.Value);
+                if (stillAvailable)
+                {
+                    CreateBooking(viewModel.Start.Value, viewModel.End.Value, optimalVehicle.VehicleId);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                _bookingSemaphore.Release();
+            }
+
+
+        }
+
+
 
         //Algoritmemetode, der finder det mest optimale køretøj baseret på eksisterende bookinger og den nye booking's start- og sluttidspunkt.
         public Vehicle FindBestOptimalVehicle(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
@@ -52,9 +85,9 @@ namespace App.Application
                 Vehicle optimalVehicle = null;
                 TimeSpan smallestGap = TimeSpan.MaxValue;    //Vi starte med at sætte den mindste gap til max value, så vi kan sammenligne med de faktiske gaps mellem bookingerne.
 
-            foreach (var vehicle in viewModel.AvailableVehicles) //Iterer gennem alle køretøjerne i AvailableVehicles-listen.
+            foreach (Vehicle vehicle in viewModel.AvailableVehicles) //Iterer gennem alle køretøjerne i AvailableVehicles-listen.
                 {
-                    var vehicleBookings = allActiveBookings                                            
+                    List<Booking> vehicleBookings = allActiveBookings                                            
                         .Where(b => b.VehicleId == vehicle.VehicleId) // Behold bookinger, hvis VehicleId matcher det aktuelle køretøjs VehicleId.
                         .ToList(); 
 
