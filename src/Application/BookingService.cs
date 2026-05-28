@@ -22,7 +22,7 @@ namespace App.Application
             _bookingRepo = bookingRepo;
             _vehicleRepo = vehicleRepo;
         }
-        public void CreateBooking(int VehicleId)
+        public async Task CreateBooking(int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -31,9 +31,9 @@ namespace App.Application
                 VehicleId = VehicleId,
                 EmployeeId = 1
             };
-            _bookingRepo.DBCreate(booking);
+            await _bookingRepo.DBCreate(booking);
         }
-        public void CreateBooking(DateTime start, DateTime end, int VehicleId)
+        public async Task CreateBooking(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -43,7 +43,7 @@ namespace App.Application
                 EmployeeId = 1
             };
 
-            _bookingRepo.DBCreate(booking);
+            await _bookingRepo.DBCreate(booking); 
         }
 
         //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt og eksisterende bookinger. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
@@ -58,7 +58,7 @@ namespace App.Application
                 bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTime(optimalVehicle.VehicleId, viewModel.Start.Value, viewModel.End.Value);
                 if (stillAvailable)
                 {
-                    CreateBooking(viewModel.Start.Value, viewModel.End.Value, optimalVehicle.VehicleId);
+                    await CreateBooking(viewModel.Start.Value, viewModel.End.Value, optimalVehicle.VehicleId);
                     return true;
                 }
                 else
