@@ -22,7 +22,7 @@ namespace App.Application
             _bookingRepo = bookingRepo;
             _vehicleRepo = vehicleRepo;
         }
-        public async Task CreateBooking(int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
+        public async Task CreateBookingAsync(int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -31,9 +31,9 @@ namespace App.Application
                 VehicleId = VehicleId,
                 EmployeeId = 1
             };
-            await _bookingRepo.DBCreate(booking);
+            await _bookingRepo.DBCreateAsync(booking);
         }
-        public async Task CreateBooking(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
+        public async Task CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -43,11 +43,11 @@ namespace App.Application
                 EmployeeId = 1
             };
 
-            await _bookingRepo.DBCreate(booking); 
+            await _bookingRepo.DBCreateAsync(booking); 
         }
 
         //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt og eksisterende bookinger. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
-        public async Task<bool> TryBookOptimalVehicle(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
+        public async Task<bool> TryBookOptimalVehicleAsync(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
         {
             Vehicle optimalVehicle = FindBestOptimalVehicle(viewModel, allActiveBookings); // Algoritmemetoden finder optimalt køretøj og gemmer det i optimalVehicle-variablen.
 
@@ -55,10 +55,10 @@ namespace App.Application
 
             try
             {
-                bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTime(optimalVehicle.VehicleId, viewModel.Start.Value, viewModel.End.Value);
+                bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTimeAsync(optimalVehicle.VehicleId, viewModel.Start.Value, viewModel.End.Value);
                 if (stillAvailable)
                 {
-                    await CreateBooking(viewModel.Start.Value, viewModel.End.Value, optimalVehicle.VehicleId);
+                    await CreateBookingAsync(viewModel.Start.Value, viewModel.End.Value, optimalVehicle.VehicleId);
                     return true;
                 }
                 else
