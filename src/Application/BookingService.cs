@@ -75,7 +75,6 @@ namespace App.Application
         }
 
 
-
         //Algoritmemetode, der finder det mest optimale køretøj baseret på eksisterende bookinger og den nye booking's start- og sluttidspunkt.
         public Vehicle FindBestOptimalVehicle(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
             {
