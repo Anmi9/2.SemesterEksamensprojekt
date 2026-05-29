@@ -21,125 +21,21 @@ namespace WPF
     public partial class CreateBookingView : Window
     {
         private readonly CreateBookingViewModel _viewModel;
-        private readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1); 
-
-        public CreateBookingView(BookingService bookingService)
+        public CreateBookingView(BookingService service)
         {
             InitializeComponent();
-            _viewModel = new CreateBookingViewModel(bookingService);
-
-            // Begræns DatePicker til at vise i dag og op til 4 uger (28 dage) frem
-            BookingDatePicker.DisplayDateStart = DateTime.Today;
-            BookingDatePicker.DisplayDate = DateTime.Today;
-            BookingDatePicker.DisplayDateEnd = DateTime.Today.AddDays(28);
-
-            // Sæt default valg til at være i dag
-            BookingDatePicker.SelectedDate = DateTime.Today;
-
-            InitializeTimeComboBoxes();
+            _viewModel = new CreateBookingViewModel(service);
+            this.DataContext = _viewModel;
         }
-
-        private void InitializeTimeComboBoxes()
-        {
-            var times = new List<string>();
-            var startTime = new TimeSpan(0, 0, 0);
-            var endTime = new TimeSpan(23, 45, 0);
-            var interval = new TimeSpan(0, 15, 0);
-
-            var currentTime = startTime;
-            while (currentTime <= endTime)
-            {
-                times.Add(currentTime.ToString(@"hh\:mm"));
-                currentTime = currentTime.Add(interval);
-            }
-
-            StartTimeComboBox.ItemsSource = times;
-            EndTimeComboBox.ItemsSource = times;
-
-            UpdateTimeSelection();
-        }
-
-        private void BookingDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            UpdateTimeSelection();
-        }
-
-        private void UpdateTimeSelection()
-        {
-            TimeSpan defaultTimeStart;
-            if (BookingDatePicker.SelectedDate == DateTime.Today)
-            {
-                // Find nærmeste kvarter fremad (f.eks. hvis kl. er 14:10, vælg 14:15)
-                var now = DateTime.Now;
-                defaultTimeStart = now.AddMinutes(15 - (now.Minute % 15)).TimeOfDay;
-            }
-            else
-            {
-                // Hvis ikke det er i dag, sæt til 08:00
-                defaultTimeStart = TimeSpan.FromHours(8); // 08:00
-            }
-
-            TimeSpan defaultTimeEnd = defaultTimeStart.Add(_defaultDuration);
-
-            StartTimeComboBox.SelectedIndex = StartTimeComboBox.Items.IndexOf(defaultTimeStart.ToString(@"hh\:mm"));
-            EndTimeComboBox.SelectedIndex = EndTimeComboBox.Items.IndexOf(defaultTimeEnd.ToString(@"hh\:mm"));
-
-            _viewModel.Start = BookingDatePicker.SelectedDate?.Add(defaultTimeStart);
-            _viewModel.End = BookingDatePicker.SelectedDate?.Add(defaultTimeEnd);
-        }
-
-        // Time picker logik: DisplayTime er now hvis DateStart er Today(), ellers start på 07:00
         private void BookCarClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Type = VehicleType.Car;
+            _viewModel.Type = VehicleTypes.Car;
             _viewModel.Book();
         }
-
         private void BookBikeClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Type = VehicleType.Bike;
+            _viewModel.Type = VehicleTypes.Bike;
             _viewModel.Book();
-        }
-
-        private void StartTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (StartTimeComboBox.SelectedItem != null && BookingDatePicker.SelectedDate.HasValue)
-            {
-                if (TimeSpan.TryParse(StartTimeComboBox.SelectedItem.ToString(), out TimeSpan timeStart))
-                {
-                    _viewModel.Start = BookingDatePicker.SelectedDate.Value.Add(timeStart);
-
-                    TimeSpan.TryParse(EndTimeComboBox.SelectedItem?.ToString(), out TimeSpan timeEnd);
-
-                    if (timeEnd - timeStart < TimeSpan.FromMinutes(15))
-                    {
-                        TimeSpan defaultTimeEnd = timeStart.Add(_defaultDuration);
-                        EndTimeComboBox.SelectedIndex = EndTimeComboBox.Items.IndexOf(defaultTimeEnd.ToString(@"hh\:mm"));
-                    }
-                }
-            }
-        }
-        private void EndTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) 
-        {
-            if (EndTimeComboBox.SelectedItem != null && BookingDatePicker.SelectedDate.HasValue)
-            {
-                if (TimeSpan.TryParse(EndTimeComboBox.SelectedItem.ToString(), out TimeSpan timeEnd))
-                {
-                    _viewModel.End = BookingDatePicker.SelectedDate.Value.Add(timeEnd);
-
-                    if (!TimeSpan.TryParse(StartTimeComboBox.SelectedItem?.ToString(), out TimeSpan timeStart))
-                    {
-                        // Sættes til MaxValue for at sikre, at betingelsen fejler hvis der ikke er nogen starttid valgt
-                        timeStart = TimeSpan.MaxValue; 
-                    }
-
-                    if (timeEnd - timeStart < TimeSpan.FromMinutes(15))
-                    {
-                        TimeSpan defaultTimeStart = timeEnd.Subtract(_defaultDuration);
-                        StartTimeComboBox.SelectedIndex = StartTimeComboBox.Items.IndexOf(defaultTimeStart.ToString(@"hh\:mm"));
-                    }
-                }
-            }
         }
     }
 }

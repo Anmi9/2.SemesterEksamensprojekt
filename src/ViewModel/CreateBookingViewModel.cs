@@ -1,32 +1,196 @@
-﻿using App.Models;
+﻿using App.Application;
+using App.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using App.Application;
+using System.Collections.ObjectModel;
 
 namespace App.ViewModel
 {
-    public class CreateBookingViewModel
+    public class CreateBookingViewModel : ViewModelBase
     {
         private readonly BookingService _bookingService;
+        private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
+        private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(15);
 
-        public CreateBookingViewModel(BookingService bookingService)
+        // Guard mod forretningslogik-loops
+        private bool _isSynchronizing;
+
+        static CreateBookingViewModel()
         {
-            _bookingService = bookingService;
+            if (_defaultDuration <= _minDuration)
+            {
+                throw new TypeInitializationException(
+                    nameof(CreateBookingViewModel),
+                    new ArgumentException($"Kritisk invariant brudt: {_defaultDuration} skal være større end {_minDuration}."));
+            }
         }
 
-        public DateTime? Start {  get; set; }
-        public DateTime? End { get; set; }
-        public VehicleType Type { get; set; }
+        public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
+        public DateTime MinSelectableDate { get; } = DateTime.Today;
+        public DateTime MaxSelectableDate { get; } = DateTime.Today.AddDays(28);
 
-        public List<Vehicle> AvailableVehicles { get; set; } // Liste over ledige valgte typer, der sendes med som parameter til algoritme.
+        public CreateBookingViewModel(BookingService service)
+        {
+            _bookingService = service;
+            PopulateTimeSlots();
+
+            var now = DateTime.Now;
+            int remainder = now.Minute % 15;
+            int minutesToAdd = remainder == 0 ? 0 : 15 - remainder;
+            TimeSpan defaultStart = new TimeSpan(now.Hour, now.Minute, 0).Add(TimeSpan.FromMinutes(minutesToAdd));
+            TimeSpan defaultEnd = defaultStart.Add(_defaultDuration);
+
+            _isSynchronizing = true;
+            try
+            {
+                SelectedDate = DateTime.Today;
+                SelectedStartTime = defaultStart;
+                SelectedEndTime = defaultEnd;
+                SyncCoreBookingTimes();
+            }
+            finally
+            {
+                _isSynchronizing = false;
+            }
+        }
+
+        // ---------------------------------------------------------
+        // INDEPENDENT UI STATE PROPERTIES (Klassiske Backing Felter)
+        // ---------------------------------------------------------
+
+        private DateTime? _selectedDate;
+        public DateTime? SelectedDate
+        {
+            get => _selectedDate;
+            set
+            {
+                if (_selectedDate == value) return;
+                _selectedDate = value;
+                OnPropertyChanged();
+                ApplyDateContextRules();
+            }
+        }
+
+        private TimeSpan _selectedStartTime;
+        public TimeSpan SelectedStartTime
+        {
+            get => _selectedStartTime;
+            set
+            {
+                if (_selectedStartTime == value) return;
+                _selectedStartTime = value;
+                OnPropertyChanged();
+                EnforceContract(startChanged: true);
+            }
+        }
+
+        private TimeSpan _selectedEndTime;
+        public TimeSpan SelectedEndTime
+        {
+            get => _selectedEndTime;
+            set
+            {
+                if (_selectedEndTime == value) return;
+                _selectedEndTime = value;
+                OnPropertyChanged();
+                EnforceContract(startChanged: false);
+            }
+        }
+
+        // ---------------------------------------------------------
+        // CORE DOMAIN FIELDS
+        // ---------------------------------------------------------
+
+        // Standard Auto-Properties er 100% sikre for WPF
+        public DateTime Start { get; private set; }
+        public DateTime End { get; private set; }
+
+        public IEnumerable<Vehicle> AvailableVehicles { get; internal set; }
+        public VehicleTypes Type { get; set; }
+
+        // ---------------------------------------------------------
+        // PRIVATE MECHANISMS
+        // ---------------------------------------------------------
+
+        private void EnforceContract(bool startChanged)
+        {
+            if (_isSynchronizing) return;
+
+            try
+            {
+                _isSynchronizing = true;
+
+                if (SelectedEndTime - SelectedStartTime < _minDuration)
+                {
+                    if (startChanged)
+                    {
+                        SelectedEndTime = SelectedStartTime.Add(_defaultDuration);
+                    }
+                    else
+                    {
+                        SelectedStartTime = SelectedEndTime.Subtract(_defaultDuration);
+                    }
+                }
+
+                SyncCoreBookingTimes();
+            }
+            finally
+            {
+                _isSynchronizing = false;
+            }
+        }
+
+        private void ApplyDateContextRules()
+        {
+            if (_isSynchronizing) return;
+
+            try
+            {
+                _isSynchronizing = true;
+
+                if (SelectedDate == DateTime.Today)
+                {
+                    var now = DateTime.Now;
+                    int remainder = now.Minute % 15;
+                    int minutesToAdd = remainder == 0 ? 0 : 15 - remainder;
+                    SelectedStartTime = new TimeSpan(now.Hour, now.Minute, 0).Add(TimeSpan.FromMinutes(minutesToAdd));
+                }
+                else
+                {
+                    SelectedStartTime = TimeSpan.FromHours(8);
+                }
+
+                SelectedEndTime = SelectedStartTime.Add(_defaultDuration);
+                SyncCoreBookingTimes();
+            }
+            finally
+            {
+                _isSynchronizing = false;
+            }
+        }
+
+        private void SyncCoreBookingTimes()
+        {
+            if (SelectedDate.HasValue)
+            {
+                Start = SelectedDate.Value.Date + SelectedStartTime;
+                End = SelectedDate.Value.Date + SelectedEndTime;
+            }
+        }
+
+        private void PopulateTimeSlots()
+        {
+            TimeSlots.Clear();
+            TimeSpan endOfDay = TimeSpan.FromDays(1);
+            for (TimeSpan i = TimeSpan.Zero; i < endOfDay; i = i.Add(TimeSpan.FromMinutes(15)))
+            {
+                TimeSlots.Add(i);
+            }
+        }
 
         public void Book()
         {
-            if (Start == null || End == null) return;
-            _bookingService.CreateBooking(Start.Value, End.Value, 1); // er et magisk tal for VehicleId
+            _bookingService.CreateBookingAsync(Start, End, 1);
         }
-
-        private (bool, bool) AvailableTypes() => throw new NotImplementedException(); // Skal vi bruge unavngivne variabler i tuble eller er det bedre DX med navne?
     }
 }

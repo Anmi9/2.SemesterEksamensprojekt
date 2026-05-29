@@ -8,9 +8,9 @@ namespace App.Models
     [Flags]
     public enum VehicleTypes
     {
-        None    = 0,
-        Car     = 1,
-        Bike    = 2
+        None    = 0, // Alle bit indekser er tomme
+        Car     = 1, // Bit index 0
+        Bike    = 2 // Bit index 1
     }
 
     public class Vehicle
@@ -20,7 +20,7 @@ namespace App.Models
         public required VehicleTypes Type
         {
             get;
-            init // Hvis køretøjet får tildelt mere end en type (aktive bits) fejler den
+            init // Hvis køretøjet får tildelt mere end en type (én aktiv bit) fejler den
             {
                 int activeBits = BitOperations.PopCount((uint)value); 
                 if (activeBits != 1)

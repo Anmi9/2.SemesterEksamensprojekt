@@ -7,17 +7,29 @@
         mc:Ignorable="d"
         Title="CreateBookingView" Height="450" Width="800">
     <Grid>
-        <Label Content="Start" HorizontalAlignment="Left" Margin="330,177,0,0" VerticalAlignment="Top"/>
         <Label Content="Opret Booking&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="33" Width="127"/>
-        <DatePicker x:Name="BookingDatePicker" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" SelectedDateChanged="BookingDatePicker_SelectedDateChanged"/>
-        <Button x:Name="BookCarButton" Content="Bil" HorizontalAlignment="Left" Margin="257,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.363,-2.646" Height="54" Width="107" Click="BookCarClick"/>
-        <Label Content="Dato&#xA;" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
-        <Label Content="Køretøj&#xA;" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="BookBikeButton" Content="Cykel" HorizontalAlignment="Left" Margin="430,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.363,-2.646" Height="54" Width="107" Click="BookBikeClick"/>
-        <Label Content="Tidspunkt&#xA;" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="StartTimeComboBox" HorizontalAlignment="Left" Margin="386,179,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="StartTimeComboBox_SelectionChanged"/>
-        <Label Content="Slut" HorizontalAlignment="Left" Margin="330,208,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="EndTimeComboBox" HorizontalAlignment="Left" Margin="386,210,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="EndTimeComboBox_SelectionChanged"/>
 
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top">
+
+            <DatePicker DisplayDateStart="{Binding MinSelectableDate, Mode=OneTime}" 
+            DisplayDateEnd="{Binding MaxSelectableDate, Mode=OneTime}" 
+            SelectedDate="{Binding SelectedDate, UpdateSourceTrigger=PropertyChanged}" 
+            Margin="0,0,15,0"/>
+
+            <ComboBox ItemsSource="{Binding TimeSlots}" 
+                      SelectedItem="{Binding SelectedStartTime}" 
+                      ItemStringFormat="hh\:mm" 
+                      Margin="0,0,15,0" Width="100"/>
+
+            <ComboBox ItemsSource="{Binding TimeSlots}" 
+                      SelectedItem="{Binding SelectedEndTime}" 
+                      ItemStringFormat="hh\:mm" 
+                      Width="100"/>
+        </StackPanel>
+
+        <Label Content="Køretøj&#xA;" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="BookCarButton" Content="Bil" HorizontalAlignment="Left" Margin="257,339,0,0" VerticalAlignment="Top" Height="54" Width="107" Click="BookCarClick"/>
+        <Button x:Name="BookBikeButton" Content="Cykel" HorizontalAlignment="Left" Margin="430,339,0,0" VerticalAlignment="Top" Height="54" Width="107" Click="BookBikeClick"/>
     </Grid>
 </Window>

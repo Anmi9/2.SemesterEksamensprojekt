@@ -55,10 +55,10 @@ namespace App.Application
 
             try
             {
-                bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTimeAsync(optimalVehicle.VehicleId, viewModel.Start.Value, viewModel.End.Value);
+                bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTimeAsync(optimalVehicle.VehicleId, viewModel.Start, viewModel.End);
                 if (stillAvailable)
                 {
-                    await CreateBookingAsync(viewModel.Start.Value, viewModel.End.Value, optimalVehicle.VehicleId);
+                    await CreateBookingAsync(viewModel.Start, viewModel.End, optimalVehicle.VehicleId);
                     return true;
                 }
                 else
@@ -78,8 +78,8 @@ namespace App.Application
         //Algoritmemetode, der finder det mest optimale køretøj baseret på eksisterende bookinger og den nye booking's start- og sluttidspunkt.
         public Vehicle FindBestOptimalVehicle(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
             {
-                DateTime newBookingStart = viewModel.Start.Value;  
-                DateTime newBookingEnd = viewModel.End.Value;
+                DateTime newBookingStart = viewModel.Start;  
+                DateTime newBookingEnd = viewModel.End;
 
                 Vehicle optimalVehicle = null;
                 TimeSpan smallestGap = TimeSpan.MaxValue;    //Vi starte med at sætte den mindste gap til max value, så vi kan sammenligne med de faktiske gaps mellem bookingerne.
