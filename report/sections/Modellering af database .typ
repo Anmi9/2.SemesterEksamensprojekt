@@ -1,3 +1,4 @@
+
 Ingen domænemodel
 - hvorfor
 Konceptuelmodel
