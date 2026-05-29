@@ -34,6 +34,12 @@
   include "ForretningsGenbesøg.typ"
 }
 
+= kode valg
+#{
+  set heading(offset: 2)
+  include "e2 kode.typ"
+}
+
 = Delkonklusion
 #{
   set heading(offset: 2)

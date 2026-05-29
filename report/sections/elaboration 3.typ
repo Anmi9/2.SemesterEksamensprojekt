@@ -1,0 +1,40 @@
+= Forretning
+#{
+  set heading(offset: 2)
+  include "E3 forretning.typ"
+}
+= Planlægning og sprint målsætning
+#{
+  set heading(offset: 2)
+  include "E3 planlægning.typ"
+}
+= krav
+#{
+  set heading(offset: 2)
+  include "E3 krav.typ"
+}
+= OO analyse og -design
+#{
+  set heading(offset: 2)
+  include "E3 OOA-D.typ"
+}
+= arbejdsprocess
+#{
+  set heading(offset: 2)
+  include "E3 process.typ"
+}
+= kode valg
+#{
+  set heading(offset: 2)
+  include "E3 kode.typ"
+}
+= Delkonklusion
+#{
+  set heading(offset: 2)
+  include "e3 konklusion.typ"
+}
+= Delrefleksion
+#{
+  set heading(offset: 2)
+  include "e3 reflektion.typ"
+}

@@ -1,0 +1,1 @@
+vi har valgt at strukturere vores tid mere hårdt. Vi har aftalt ikke at vende spørgsmål og udfordringer med hinanden ad hoc (ved mindre det er vigtigt) for at beskytte vores koncentration. Tilgængel har vi taget en pause hver time hvor vi giver hovedet en pause og plads til at snakke og sparer med hinanden.
