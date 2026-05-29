@@ -58,40 +58,37 @@ namespace App.ViewModel
         // INDEPENDENT UI STATE PROPERTIES (Klassiske Backing Felter)
         // ---------------------------------------------------------
 
-        private DateTime? _selectedDate;
         public DateTime? SelectedDate
         {
-            get => _selectedDate;
+            get;
             set
             {
-                if (_selectedDate == value) return;
-                _selectedDate = value;
+                if (field == value) return;
+                field = value;
                 OnPropertyChanged();
                 ApplyDateContextRules();
             }
         }
 
-        private TimeSpan _selectedStartTime;
         public TimeSpan SelectedStartTime
         {
-            get => _selectedStartTime;
+            get;
             set
             {
-                if (_selectedStartTime == value) return;
-                _selectedStartTime = value;
+                if (field == value) return;
+                field = value;
                 OnPropertyChanged();
                 EnforceContract(startChanged: true);
             }
         }
 
-        private TimeSpan _selectedEndTime;
         public TimeSpan SelectedEndTime
         {
-            get => _selectedEndTime;
+            get;
             set
             {
-                if (_selectedEndTime == value) return;
-                _selectedEndTime = value;
+                if (field == value) return;
+                field = value;
                 OnPropertyChanged();
                 EnforceContract(startChanged: false);
             }
