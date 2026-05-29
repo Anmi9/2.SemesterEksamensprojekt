@@ -10,13 +10,14 @@ namespace App.ViewModel
     {
         private readonly BookingService _bookingService;
 
-        // Konstanter til configuration
+        // Konstanter til konfiguration
         private const int _timeSlotIntervalMinutes = 15;
         private const int _maxBookingDaysInFuture = 28;
         private const int _defaultWorkDayStartHour = 8;
 
         private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
         private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(_timeSlotIntervalMinutes);
+        private static readonly TimeSpan _endOfDay = TimeSpan.FromHours(24).Subtract(TimeSpan.FromMinutes(_timeSlotIntervalMinutes));
 
         static CreateBookingViewModel() // Objektet oprettes kun hvis kontrakten overholdes
         {
@@ -36,15 +37,7 @@ namespace App.ViewModel
         {
             _bookingService = service;
             PopulateTimeSlots();
-
-            var now = DateTime.Now;
-            var defaultStart = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / _timeSlotIntervalMinutes) * _timeSlotIntervalMinutes);
-            var defaultEnd = defaultStart.Add(_defaultDuration);
-
-            Date = DateTime.Today;
-            StartTime = defaultStart;
-            EndTime = defaultEnd;
-            SyncCoreBookingTimes();
+            Date = DateTime.Today; 
         }
 
         // ---------------------------------------------------------
@@ -88,7 +81,7 @@ namespace App.ViewModel
         }
 
         // ---------------------------------------------------------
-        // DOMAIN FIELDS
+        // DOMAIN PROPERTIES
         // ---------------------------------------------------------
 
         public DateTime Start { get; private set; }
@@ -98,7 +91,7 @@ namespace App.ViewModel
         public VehicleTypes Type { get; set; }
 
         // ---------------------------------------------------------
-        // PRIVATE MECHANISMS
+        // Private Functions
         // ---------------------------------------------------------
 
         private void EnforceMinDuration(bool startChanged)
@@ -107,34 +100,34 @@ namespace App.ViewModel
             {
                 if (startChanged)
                 {
-                    EndTime = StartTime.Add(_defaultDuration);
+                    EndTime = GetValidEndTime(StartTime);
                 }
                 else
                 {
-                    StartTime = EndTime.Subtract(_defaultDuration);
+                    StartTime = GetValidStartTime(EndTime);
                 }
             }
 
-            SyncCoreBookingTimes();
+            UpdateBookingPeriod();
         }
 
         private void ApplyDefaultTime()
         {
             if (Date == DateTime.Today)
             {
-                var now = DateTime.Now;
-                StartTime = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / _timeSlotIntervalMinutes) * _timeSlotIntervalMinutes);
+                StartTime = RoundUpToNearestTimeSlot(DateTime.Now.TimeOfDay);
             }
             else
             {
                 StartTime = TimeSpan.FromHours(_defaultWorkDayStartHour);
             }
 
-            EndTime = StartTime.Add(_defaultDuration);
-            SyncCoreBookingTimes();
+            EndTime = GetValidEndTime(StartTime);
+
+            UpdateBookingPeriod();
         }
 
-        private void SyncCoreBookingTimes()
+        private void UpdateBookingPeriod()
         {
             if (Date.HasValue)
             {
@@ -146,11 +139,33 @@ namespace App.ViewModel
         private void PopulateTimeSlots()
         {
             TimeSlots.Clear();
-            TimeSpan endOfDay = TimeSpan.FromDays(1);
-            for (TimeSpan i = TimeSpan.Zero; i < endOfDay; i = i.Add(TimeSpan.FromMinutes(_timeSlotIntervalMinutes)))
+            TimeSpan maxTime = TimeSpan.FromHours(24);
+            for (TimeSpan i = TimeSpan.Zero; i < maxTime; i = i.Add(TimeSpan.FromMinutes(_timeSlotIntervalMinutes)))
             {
                 TimeSlots.Add(i);
             }
+        }
+
+        private TimeSpan RoundUpToNearestTimeSlot(TimeSpan time)
+        {
+            double totalMinutes = time.TotalMinutes;
+            double intervalsPassed = totalMinutes / _timeSlotIntervalMinutes;
+            double roundedIntervals = Math.Ceiling(intervalsPassed);
+            double totalRoundedMinutes = roundedIntervals * _timeSlotIntervalMinutes;
+
+            return TimeSpan.FromMinutes(totalRoundedMinutes);
+        }
+
+        private TimeSpan GetValidEndTime(TimeSpan start)
+        {
+            var proposed = start.Add(_defaultDuration);
+            return proposed > _endOfDay ? _endOfDay : proposed;
+        }
+
+        private TimeSpan GetValidStartTime(TimeSpan end)
+        {
+            var proposed = end.Subtract(_defaultDuration);
+            return proposed < TimeSpan.Zero ? TimeSpan.Zero : proposed;
         }
 
         public void Book()
