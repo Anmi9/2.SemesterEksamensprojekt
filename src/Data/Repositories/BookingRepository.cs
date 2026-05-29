@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using App.Models;
 using SQLitePCL;
+using Microsoft.EntityFrameworkCore;
 
 namespace App.Data.Repositories
 {
@@ -14,11 +15,28 @@ namespace App.Data.Repositories
             _context = context;
         }
 
-        public void DBCreate(Booking booking)
+        public async Task DBCreateAsync(Booking booking)
         {
             _context.Bookings.Add(booking); //Tilføjer den til databasen, men EFcore holder det kun i "hukommelsen"
-            _context.SaveChanges(); //Objektet oversættes til SQL (INSERT INTO Bookings (VehiID, start, end) VALUES (.., ..., ..,) og EFcore lukker selv adgangen
+            await _context.SaveChangesAsync(); //Objektet oversættes til SQL (INSERT INTO Bookings (VehiID, start, end) VALUES (.., ..., ..,) og EFcore lukker selv adgangen
             // TODO: opret context i root og send dem til repos. (App.xaml.spørgsmålstegn
         }
+
+        public async Task<List<Booking>> DBGetAllBookingsAsync()
+        {
+            return await _context.Bookings.ToListAsync(); //Henter alle bookinger fra databasen og returnerer dem som en liste.
+        }
+
+        public async Task<bool> DBIsVehicleAvailableAtTimeAsync(int vehicleId, DateTime start, DateTime end)
+        {
+            bool isOverlapping = await _context.Bookings
+                .AnyAsync(b => b.VehicleId == vehicleId &&
+                b.Start < end && 
+                b.End > start);
+
+            return !isOverlapping;
+        }
+
+
     }
 }
