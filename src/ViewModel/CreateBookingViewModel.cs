@@ -9,22 +9,28 @@ namespace App.ViewModel
     public class CreateBookingViewModel : ViewModelBase
     {
         private readonly BookingService _bookingService;
-        private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
-        private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(15);
 
-        static CreateBookingViewModel()
+        // Konstanter til configuration
+        private const int _timeSlotIntervalMinutes = 15;
+        private const int _maxBookingDaysInFuture = 28;
+        private const int _defaultWorkDayStartHour = 8;
+
+        private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
+        private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(_timeSlotIntervalMinutes);
+
+        static CreateBookingViewModel() // Objektet oprettes kun hvis kontrakten overholdes
         {
-            if (_defaultDuration <= _minDuration)
+            if (_defaultDuration <= _minDuration) // Kontrakten
             {
                 throw new TypeInitializationException(
                     nameof(CreateBookingViewModel),
-                    new ArgumentException($"Kritisk invariant brudt: {_defaultDuration} skal være større end {_minDuration}."));
+                    new ArgumentException($"Kritisk invariant brudt: {nameof(_defaultDuration)} skal være større end {nameof(_minDuration)}."));
             }
         }
 
         public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
         public DateTime MinDate { get; } = DateTime.Today;
-        public DateTime MaxDate { get; } = DateTime.Today.AddDays(28);
+        public DateTime MaxDate { get; } = DateTime.Today.AddDays(_maxBookingDaysInFuture);
 
         public CreateBookingViewModel(BookingService service)
         {
@@ -32,7 +38,7 @@ namespace App.ViewModel
             PopulateTimeSlots();
 
             var now = DateTime.Now;
-            var defaultStart = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / 15.0) * 15.0);
+            var defaultStart = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / _timeSlotIntervalMinutes) * _timeSlotIntervalMinutes);
             var defaultEnd = defaultStart.Add(_defaultDuration);
 
             Date = DateTime.Today;
@@ -117,11 +123,11 @@ namespace App.ViewModel
             if (Date == DateTime.Today)
             {
                 var now = DateTime.Now;
-                StartTime = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / 15.0) * 15.0);
+                StartTime = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / _timeSlotIntervalMinutes) * _timeSlotIntervalMinutes);
             }
             else
             {
-                StartTime = TimeSpan.FromHours(8);
+                StartTime = TimeSpan.FromHours(_defaultWorkDayStartHour);
             }
 
             EndTime = StartTime.Add(_defaultDuration);
@@ -141,7 +147,7 @@ namespace App.ViewModel
         {
             TimeSlots.Clear();
             TimeSpan endOfDay = TimeSpan.FromDays(1);
-            for (TimeSpan i = TimeSpan.Zero; i < endOfDay; i = i.Add(TimeSpan.FromMinutes(15)))
+            for (TimeSpan i = TimeSpan.Zero; i < endOfDay; i = i.Add(TimeSpan.FromMinutes(_timeSlotIntervalMinutes)))
             {
                 TimeSlots.Add(i);
             }
