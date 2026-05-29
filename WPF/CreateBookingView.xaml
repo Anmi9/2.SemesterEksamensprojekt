@@ -11,18 +11,18 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top">
 
-            <DatePicker DisplayDateStart="{Binding MinSelectableDate, Mode=OneTime}" 
-            DisplayDateEnd="{Binding MaxSelectableDate, Mode=OneTime}" 
-            SelectedDate="{Binding SelectedDate, UpdateSourceTrigger=PropertyChanged}" 
+            <DatePicker DisplayDateStart="{Binding MinDate, Mode=OneTime}" 
+            DisplayDateEnd="{Binding MaxDate, Mode=OneTime}" 
+            SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" 
             Margin="0,0,15,0"/>
 
             <ComboBox ItemsSource="{Binding TimeSlots}" 
-                      SelectedItem="{Binding SelectedStartTime}" 
+                      SelectedItem="{Binding StartTime}" 
                       ItemStringFormat="hh\:mm" 
                       Margin="0,0,15,0" Width="100"/>
 
             <ComboBox ItemsSource="{Binding TimeSlots}" 
-                      SelectedItem="{Binding SelectedEndTime}" 
+                      SelectedItem="{Binding EndTime}" 
                       ItemStringFormat="hh\:mm" 
                       Width="100"/>
         </StackPanel>

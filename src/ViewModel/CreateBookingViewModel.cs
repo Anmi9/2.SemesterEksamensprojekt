@@ -12,9 +12,6 @@ namespace App.ViewModel
         private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
         private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(15);
 
-        // Guard mod forretningslogik-loops
-        private bool _isSynchronizing;
-
         static CreateBookingViewModel()
         {
             if (_defaultDuration <= _minDuration)
@@ -26,8 +23,8 @@ namespace App.ViewModel
         }
 
         public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
-        public DateTime MinSelectableDate { get; } = DateTime.Today;
-        public DateTime MaxSelectableDate { get; } = DateTime.Today.AddDays(28);
+        public DateTime MinDate { get; } = DateTime.Today;
+        public DateTime MaxDate { get; } = DateTime.Today.AddDays(28);
 
         public CreateBookingViewModel(BookingService service)
         {
@@ -35,30 +32,20 @@ namespace App.ViewModel
             PopulateTimeSlots();
 
             var now = DateTime.Now;
-            int remainder = now.Minute % 15;
-            int minutesToAdd = remainder == 0 ? 0 : 15 - remainder;
-            TimeSpan defaultStart = new TimeSpan(now.Hour, now.Minute, 0).Add(TimeSpan.FromMinutes(minutesToAdd));
-            TimeSpan defaultEnd = defaultStart.Add(_defaultDuration);
+            var defaultStart = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / 15.0) * 15.0);
+            var defaultEnd = defaultStart.Add(_defaultDuration);
 
-            _isSynchronizing = true;
-            try
-            {
-                SelectedDate = DateTime.Today;
-                SelectedStartTime = defaultStart;
-                SelectedEndTime = defaultEnd;
-                SyncCoreBookingTimes();
-            }
-            finally
-            {
-                _isSynchronizing = false;
-            }
+            Date = DateTime.Today;
+            StartTime = defaultStart;
+            EndTime = defaultEnd;
+            SyncCoreBookingTimes();
         }
 
         // ---------------------------------------------------------
-        // INDEPENDENT UI STATE PROPERTIES (Klassiske Backing Felter)
+        // UI STATE PROPERTIES
         // ---------------------------------------------------------
 
-        public DateTime? SelectedDate
+        public DateTime? Date
         {
             get;
             set
@@ -66,11 +53,11 @@ namespace App.ViewModel
                 if (field == value) return;
                 field = value;
                 OnPropertyChanged();
-                ApplyDateContextRules();
+                ApplyDefaultTime();
             }
         }
 
-        public TimeSpan SelectedStartTime
+        public TimeSpan StartTime
         {
             get;
             set
@@ -78,11 +65,11 @@ namespace App.ViewModel
                 if (field == value) return;
                 field = value;
                 OnPropertyChanged();
-                EnforceContract(startChanged: true);
+                EnforceMinDuration(startChanged: true);
             }
         }
 
-        public TimeSpan SelectedEndTime
+        public TimeSpan EndTime
         {
             get;
             set
@@ -90,15 +77,14 @@ namespace App.ViewModel
                 if (field == value) return;
                 field = value;
                 OnPropertyChanged();
-                EnforceContract(startChanged: false);
+                EnforceMinDuration(startChanged: false);
             }
         }
 
         // ---------------------------------------------------------
-        // CORE DOMAIN FIELDS
+        // DOMAIN FIELDS
         // ---------------------------------------------------------
 
-        // Standard Auto-Properties er 100% sikre for WPF
         public DateTime Start { get; private set; }
         public DateTime End { get; private set; }
 
@@ -109,69 +95,45 @@ namespace App.ViewModel
         // PRIVATE MECHANISMS
         // ---------------------------------------------------------
 
-        private void EnforceContract(bool startChanged)
+        private void EnforceMinDuration(bool startChanged)
         {
-            if (_isSynchronizing) return;
-
-            try
+            if (EndTime - StartTime < _minDuration)
             {
-                _isSynchronizing = true;
-
-                if (SelectedEndTime - SelectedStartTime < _minDuration)
+                if (startChanged)
                 {
-                    if (startChanged)
-                    {
-                        SelectedEndTime = SelectedStartTime.Add(_defaultDuration);
-                    }
-                    else
-                    {
-                        SelectedStartTime = SelectedEndTime.Subtract(_defaultDuration);
-                    }
-                }
-
-                SyncCoreBookingTimes();
-            }
-            finally
-            {
-                _isSynchronizing = false;
-            }
-        }
-
-        private void ApplyDateContextRules()
-        {
-            if (_isSynchronizing) return;
-
-            try
-            {
-                _isSynchronizing = true;
-
-                if (SelectedDate == DateTime.Today)
-                {
-                    var now = DateTime.Now;
-                    int remainder = now.Minute % 15;
-                    int minutesToAdd = remainder == 0 ? 0 : 15 - remainder;
-                    SelectedStartTime = new TimeSpan(now.Hour, now.Minute, 0).Add(TimeSpan.FromMinutes(minutesToAdd));
+                    EndTime = StartTime.Add(_defaultDuration);
                 }
                 else
                 {
-                    SelectedStartTime = TimeSpan.FromHours(8);
+                    StartTime = EndTime.Subtract(_defaultDuration);
                 }
+            }
 
-                SelectedEndTime = SelectedStartTime.Add(_defaultDuration);
-                SyncCoreBookingTimes();
-            }
-            finally
+            SyncCoreBookingTimes();
+        }
+
+        private void ApplyDefaultTime()
+        {
+            if (Date == DateTime.Today)
             {
-                _isSynchronizing = false;
+                var now = DateTime.Now;
+                StartTime = TimeSpan.FromMinutes(Math.Ceiling(now.TimeOfDay.TotalMinutes / 15.0) * 15.0);
             }
+            else
+            {
+                StartTime = TimeSpan.FromHours(8);
+            }
+
+            EndTime = StartTime.Add(_defaultDuration);
+            SyncCoreBookingTimes();
         }
 
         private void SyncCoreBookingTimes()
         {
-            if (SelectedDate.HasValue)
+            if (Date.HasValue)
             {
-                Start = SelectedDate.Value.Date + SelectedStartTime;
-                End = SelectedDate.Value.Date + SelectedEndTime;
+                Start = Date.Value.Date + StartTime;
+                End = Date.Value.Date + EndTime;
             }
         }
 
