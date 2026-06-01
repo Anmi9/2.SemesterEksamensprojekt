@@ -19,14 +19,20 @@ namespace App.Data.Repositories
             _context = context; //gemmer objektet i en privat variabel, så det kan bruges i metoderne i klassen
         }   
 
-        public async Task<IEnumerable<Vehicle>> GetAvailableVehiclesAsync(DateTime StartDate, DateTime EndDate) // Metode returnerer liste af ledige køretøjer i et bestemt tidsrum
+        public async Task<IEnumerable<Vehicle>> GetAvailableVehiclesAsync(DateTime StartDate, DateTime EndDate, VehicleTypes? Type) // Metode returnerer liste af ledige køretøjer i et bestemt tidsrum
         {
-            return await _context.Vehicles
+            var query = _context.Vehicles
                 .Where(v => !_context.Bookings.Any(b =>
                     b.VehicleId == v.VehicleId && //Bookingens bil-id svarer til denne bils id
                     b.Start < EndDate && // En booking starter før den ønskede slutdato
-                    b.End > StartDate)) // En booking slutter efter den ønskede startdato
-                .ToListAsync();
+                    b.End > StartDate)); // En booking slutter efter den ønskede startdato
+                
+                if (Type.HasValue)
+                {
+                    query = query.Where(v => v.Type == Type.Value);
+                }
+
+                return await query.ToListAsync();
         }
     }
 }
