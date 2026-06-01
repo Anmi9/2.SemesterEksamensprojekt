@@ -177,6 +177,7 @@ namespace App.ViewModel
             return proposed > _endOfDay ? _endOfDay : proposed;
         }
 
+
         private TimeSpan GetValidStartTime(TimeSpan end)
         {
             var proposed = end.Subtract(_defaultDuration);
@@ -193,7 +194,7 @@ namespace App.ViewModel
 
         public async Task Book()
         {
-            await _bookingService.TryBookOptimalVehicleAsync(Start, End, AvailableVehicles);
+            await _bookingService.TryBookOptimalVehicleAsync(Start, End, Type);
         }
         private bool CanPlaceBooking(object? param)
         {
