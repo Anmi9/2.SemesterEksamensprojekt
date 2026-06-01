@@ -4,7 +4,9 @@ section:
 exclude: false
 sortKey: 26.30865
 ---
+[[[Reflektion over]]]
 
+---
 Mål: at få et fungerende produkt hvor det fulde flow i use case - opret booking kan gennemføres
 Tilstands: programmet kan allerede oprette en booking i databasen, men dette bekræftes ikke i UI'en, ingen bekræftigelse. UI'et kommunikere ikke om den indtastede information producere en gyldig booking eller ej hvilket strider imod kravet om at reducere antal kliks/tid for at udføre en booking.
 Opgaver: 

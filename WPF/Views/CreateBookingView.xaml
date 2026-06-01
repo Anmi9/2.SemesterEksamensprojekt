@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
+        xmlns:models="clr-namespace:App.Models;assembly=App"
         mc:Ignorable="d"
         Title="CreateBookingView" Height="450" Width="800">
     <Grid>
@@ -25,11 +26,19 @@
                       SelectedItem="{Binding EndTime}" 
                       ItemStringFormat="hh\:mm" 
                       Width="100"/>
+
+            <Button Content="Book Bil" 
+            Command="{Binding RegisterBookingCommand}"
+            CommandParameter="{x:Static models:VehicleTypes.Car}"
+            Margin="0,0,0,10" 
+            Height="40"/>
+
+            <Button Content="Book Cykel" 
+            Command="{Binding RegisterBookingCommand}"
+            CommandParameter="{x:Static models:VehicleTypes.Bike}"
+            Height="40"/>
         </StackPanel>
 
         <Label Content="Køretøj&#xA;" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top"/>
-
-        <Button x:Name="BookCarButton" Content="Bil" HorizontalAlignment="Left" Margin="257,339,0,0" VerticalAlignment="Top" Height="54" Width="107" Click="BookCarClick"/>
-        <Button x:Name="BookBikeButton" Content="Cykel" HorizontalAlignment="Left" Margin="430,339,0,0" VerticalAlignment="Top" Height="54" Width="107" Click="BookBikeClick"/>
     </Grid>
 </Window>

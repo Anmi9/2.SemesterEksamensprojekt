@@ -1,7 +1,5 @@
 ﻿using App.Application;
 using App.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using WPF.Commands;
 
@@ -15,7 +13,6 @@ namespace App.ViewModel
         private const int _timeSlotIntervalMinutes = 15;
         private const int _maxBookingDaysInFuture = 28;
         private const int _defaultWorkDayStartHour = 8;
-
         private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
         private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(_timeSlotIntervalMinutes);
         private static readonly TimeSpan _endOfDay = TimeSpan.FromHours(24).Subtract(TimeSpan.FromMinutes(_timeSlotIntervalMinutes));
@@ -40,15 +37,10 @@ namespace App.ViewModel
             PopulateTimeSlots();
             Date = DateTime.Today;
 
-            RegisterBikeBooking = new DelegateCommand(
-                execute: param => BookBike(),       // tildeler metode der eksekveres ved et bruger klik
-                canExecute: param => CanBookBike()  // tildeler metode der opdatere controllerens/knappens interaktivitet
+            RegisterBookingCommand = new RelayCommand(
+                execute: async param => await ExecuteBookingAsync(param),
+                canExecute: param => CanPlaceBooking(param)
             );
-
-            RegisterCarBooking = new DelegateCommand(
-                execute: param => BookCar(),
-                canExecute: param => CanBookCar()
-);
         }
 
         // ---------------------------------------------------------
@@ -91,9 +83,7 @@ namespace App.ViewModel
             }
         }
 
-        public DelegateCommand RegisterCarBooking { get; } 
-
-        public DelegateCommand RegisterBikeBooking { get; }
+        public RelayCommand RegisterBookingCommand { get; } 
 
         // ---------------------------------------------------------
         // DOMAIN PROPERTIES
@@ -101,9 +91,17 @@ namespace App.ViewModel
 
         public DateTime Start { get; private set; }
         public DateTime End { get; private set; }
-
-        public IEnumerable<Vehicle> AvailableVehicles { get; internal set; }
-        public VehicleTypes Type { get; set; }
+        public IEnumerable<Vehicle> AvailableVehicles 
+        { 
+            get; 
+            private set
+            {
+                if (field == value) return;
+                field = value;
+                OnPropertyChanged();
+                RegisterBookingCommand.RaiseCanExecuteChanged(); // Sender event til WPF - som kalder CanPlaceBooking() i respons (via DelayCommand.cs)
+            }
+        }
 
         // ---------------------------------------------------------
         // Private Functions
@@ -148,6 +146,8 @@ namespace App.ViewModel
             {
                 Start = Date.Value.Date + StartTime;
                 End = Date.Value.Date + EndTime;
+
+                _ = LoadAvailableVehiclesAsync();
             }
         }
 
@@ -183,15 +183,40 @@ namespace App.ViewModel
             return proposed < TimeSpan.Zero ? TimeSpan.Zero : proposed;
         }
 
+        public async Task LoadAvailableVehiclesAsync()
+        {
+            if (Start != default && End != default && Start < End)
+            {
+                AvailableVehicles = await _bookingService.GetAvailableVehicles(Start, End);
+            }
+        }
+
         public async Task Book()
         {
             await _bookingService.TryBookOptimalVehicleAsync(Start, End, AvailableVehicles);
         }
+        private bool CanPlaceBooking(object? param)
+        {
+            if (param is not VehicleTypes requestedType)            return false;   // Guard: gemmer param i variabel og tjekker typen
+            if (Start == default || End == default || Start >= End) return false;   // Guard: tjekker at properties er udfyldt og i en gyldig tilstand 
+            if (AvailableVehicles == null)                          return false;   // Guard: er samlingen blevet instantieret af baggrundstråden
 
-        private bool CanBookCar() => throw new NotImplementedException();
-        private void BookCar() => throw new NotImplementedException();
-        private bool CanBookBike() => throw new NotImplementedException();
-        private void BookBike() => throw new NotImplementedException();
+            return AvailableVehicles.Any(v => v.Type == requestedType);
+        }
+        private async Task ExecuteBookingAsync(object? param)
+        {
+            if (param is not VehicleTypes requestedType) return;
+            if (!CanPlaceBooking(requestedType)) return;
+
+            try
+            {
+                await _bookingService.TryBookOptimalVehicleAsync(Start, End, requestedType);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Booking fejlede: {ex.Message}");
+            }
+        }
 
     }
 }

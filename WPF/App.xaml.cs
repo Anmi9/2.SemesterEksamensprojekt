@@ -1,9 +1,8 @@
 ﻿using App.Application;
 using App.Data;
 using App.Data.Repositories;
+using App.ViewModel;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-using System.Data;
 using System.Windows;
 
 namespace WPF
@@ -26,7 +25,8 @@ namespace WPF
             var bookingRepo = new BookingRepository(context);
             var vehicleRepo = new VehicleRepository(context);
             var bookingService = new BookingService(bookingRepo, vehicleRepo);
-            var mainWindow = new MainWindow(bookingService);
+            var createBookingViewModel = new CreateBookingViewModel(bookingService);
+            var mainWindow = new MainWindow(createBookingViewModel);
             mainWindow.Show();
         }
     }
