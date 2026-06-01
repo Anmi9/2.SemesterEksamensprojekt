@@ -3,6 +3,7 @@ using App.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using WPF.Commands;
 
 namespace App.ViewModel
 {
@@ -19,6 +20,10 @@ namespace App.ViewModel
         private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(_timeSlotIntervalMinutes);
         private static readonly TimeSpan _endOfDay = TimeSpan.FromHours(24).Subtract(TimeSpan.FromMinutes(_timeSlotIntervalMinutes));
 
+        public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
+        public DateTime MinDate { get; } = DateTime.Today;
+        public DateTime MaxDate { get; } = DateTime.Today.AddDays(_maxBookingDaysInFuture);
+
         static CreateBookingViewModel() // Objektet oprettes kun hvis kontrakten overholdes
         {
             if (_defaultDuration <= _minDuration) // Kontrakten
@@ -29,15 +34,21 @@ namespace App.ViewModel
             }
         }
 
-        public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
-        public DateTime MinDate { get; } = DateTime.Today;
-        public DateTime MaxDate { get; } = DateTime.Today.AddDays(_maxBookingDaysInFuture);
-
         public CreateBookingViewModel(BookingService service)
         {
             _bookingService = service;
             PopulateTimeSlots();
-            Date = DateTime.Today; 
+            Date = DateTime.Today;
+
+            RegisterBikeBooking = new DelegateCommand(
+                execute: param => BookBike(),       // tildeler metode der eksekveres ved et bruger klik
+                canExecute: param => CanBookBike()  // tildeler metode der opdatere controllerens/knappens interaktivitet
+            );
+
+            RegisterCarBooking = new DelegateCommand(
+                execute: param => BookCar(),
+                canExecute: param => CanBookCar()
+);
         }
 
         // ---------------------------------------------------------
@@ -79,6 +90,10 @@ namespace App.ViewModel
                 EnforceMinDuration(startChanged: false);
             }
         }
+
+        public DelegateCommand RegisterCarBooking { get; } 
+
+        public DelegateCommand RegisterBikeBooking { get; }
 
         // ---------------------------------------------------------
         // DOMAIN PROPERTIES
@@ -168,9 +183,15 @@ namespace App.ViewModel
             return proposed < TimeSpan.Zero ? TimeSpan.Zero : proposed;
         }
 
-        public void Book()
+        public void Book() // Skal denne metode være privat?
         {
             _bookingService.CreateBookingAsync(Start, End, 1);
         }
+
+        private bool CanBookCar() => throw new NotImplementedException();
+        private void BookCar() => throw new NotImplementedException();
+        private bool CanBookBike() => throw new NotImplementedException();
+        private void BookBike() => throw new NotImplementedException();
+
     }
 }

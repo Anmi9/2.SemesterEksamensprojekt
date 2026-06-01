@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace WPF.Commands
 {
-    internal class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
         private readonly Action<object?> _execute;
         private readonly Predicate<object?>? _canExecute;
