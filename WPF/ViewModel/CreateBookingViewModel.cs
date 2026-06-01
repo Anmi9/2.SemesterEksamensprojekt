@@ -168,9 +168,10 @@ namespace App.ViewModel
             return proposed < TimeSpan.Zero ? TimeSpan.Zero : proposed;
         }
 
-        public void Book()
+        public async Task Book()
         {
-            _bookingService.CreateBookingAsync(Start, End, 1);
+            var vehiclesToSearch = AvailableVehicles ?? Array.Empty<Vehicle>();
+            await _bookingService.TryBookOptimalVehicleAsync(Start, End, vehiclesToSearch);
         }
     }
 }
