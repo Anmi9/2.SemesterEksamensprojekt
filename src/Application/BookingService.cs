@@ -43,9 +43,9 @@ namespace App.Application
         public async Task<bool> TryBookOptimalVehicleAsync(DateTime Start, DateTime End, VehicleTypes Type)
         {
             List<Booking> allActiveBookings = await _bookingRepo.DBGetAllBookingsAsync(); // Henter alle aktive bookinger fra databasen
-            List<Vehicle> availableVehicles = (await _vehicleRepo.GetAvailableVehiclesAsync(Start, End, Type)).ToList(); // Henter alle tilgængelige køretøjer for det givne tidsrum.>
+            List<Vehicle> availableVehicleTypes = (await _vehicleRepo.GetAvailableVehiclesAsync(Start, End, Type)).ToList(); // Henter alle tilgængelige køretøjer for det givne tidsrum.>
 
-            Vehicle optimalVehicle = FindBestOptimalVehicle(Start, End, availableVehicles, allActiveBookings); // Algoritmemetoden finder optimalt køretøj og gemmer det i optimalVehicle-variablen.
+            Vehicle optimalVehicle = FindBestOptimalVehicle(Start, End, availableVehicleTypes, allActiveBookings); // Algoritmemetoden finder optimalt køretøj og gemmer det i optimalVehicle-variablen.
 
             await _bookingSemaphore.WaitAsync(); // SemaphoreSlim sikrer at kun en booking oprettes af gangen. 
 
@@ -72,7 +72,7 @@ namespace App.Application
 
 
         //Algoritmemetode, der finder det mest optimale køretøj baseret på eksisterende bookinger og den nye booking's start- og sluttidspunkt.
-        public Vehicle FindBestOptimalVehicle(DateTime Start, DateTime End, List<Vehicle> availableVehicles, List<Booking> allActiveBookings)
+        public Vehicle FindBestOptimalVehicle(DateTime Start, DateTime End, List<Vehicle> availableVehicleTypes, List<Booking> allActiveBookings)
             {
                 DateTime newBookingStart = Start;  
                 DateTime newBookingEnd = End;
@@ -80,7 +80,7 @@ namespace App.Application
                 Vehicle optimalVehicle = null;
                 TimeSpan smallestGap = TimeSpan.MaxValue;    //Vi starte med at sætte den mindste gap til max value, så vi kan sammenligne med de faktiske gaps mellem bookingerne.
 
-            foreach (Vehicle vehicle in availableVehicles) //Iterer gennem alle køretøjerne i AvailableVehicles-listen.
+            foreach (Vehicle vehicle in availableVehicleTypes) //Iterer gennem alle køretøjerne i AvailableVehicles-listen.
                 {
                     List<Booking> vehicleBookings = allActiveBookings                                            
                         .Where(b => b.VehicleId == vehicle.VehicleId) // Behold bookinger, hvis VehicleId matcher det aktuelle køretøjs VehicleId.

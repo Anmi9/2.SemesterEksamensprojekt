@@ -27,12 +27,12 @@ namespace App.Data.Repositories
                     b.Start < EndDate && // En booking starter før den ønskede slutdato
                     b.End > StartDate)); // En booking slutter efter den ønskede startdato
                 
-                if (Type.HasValue)
+                if (Type.HasValue) // HasValue er en property til nullabletyper - den er enten true eller false
                 {
-                    query = query.Where(v => v.Type == Type.Value);
+                    query = query.Where(v => v.Type == Type.Value); // For hvert køretøj der er ledigt, tjekkes det om det er den ønskede værdi (Value)
                 }
 
-                return await query.ToListAsync();
+                return await query.ToListAsync(); 
         }
     }
 }
