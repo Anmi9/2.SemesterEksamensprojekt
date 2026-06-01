@@ -19,7 +19,7 @@ namespace App.Data.Repositories
             _context = context; //gemmer objektet i en privat variabel, så det kan bruges i metoderne i klassen
         }   
 
-        public async Task<List<Vehicle>> GetAvailableVehiclesAsync(DateTime StartDate, DateTime EndDate) // Metode returnerer liste af ledige køretøjer i et bestemt tidsrum
+        public async Task<IEnumerable<Vehicle>> GetAvailableVehiclesAsync(DateTime StartDate, DateTime EndDate) // Metode returnerer liste af ledige køretøjer i et bestemt tidsrum
         {
             return await _context.Vehicles
                 .Where(v => !_context.Bookings.Any(b =>
