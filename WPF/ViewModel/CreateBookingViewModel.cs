@@ -192,10 +192,10 @@ namespace App.ViewModel
             }
         }
 
-        public async Task Book()
-        {
-            await _bookingService.TryBookOptimalVehicleAsync(Start, End, Type);
-        }
+        //public async Task Book()
+        //{
+        //    await _bookingService.TryBookOptimalVehicleAsync(Start, End);
+        //}
         private bool CanPlaceBooking(object? param)
         {
             if (param is not VehicleTypes requestedType)            return false;   // Guard: gemmer param i variabel og tjekker typen
