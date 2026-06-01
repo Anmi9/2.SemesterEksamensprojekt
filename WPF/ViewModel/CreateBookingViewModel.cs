@@ -183,9 +183,9 @@ namespace App.ViewModel
             return proposed < TimeSpan.Zero ? TimeSpan.Zero : proposed;
         }
 
-        public void Book() // Skal denne metode være privat?
+        public async Task Book()
         {
-            _bookingService.CreateBookingAsync(Start, End, 1);
+            await _bookingService.TryBookOptimalVehicleAsync(Start, End, AvailableVehicles);
         }
 
         private bool CanBookCar() => throw new NotImplementedException();
