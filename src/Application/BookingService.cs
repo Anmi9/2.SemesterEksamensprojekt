@@ -46,9 +46,11 @@ namespace App.Application
             await _bookingRepo.DBCreateAsync(booking); 
         }
 
-        //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt og eksisterende bookinger. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
-        public async Task<bool> TryBookOptimalVehicleAsync(CreateBookingViewModel viewModel, List<Booking> allActiveBookings)
+        //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
+        public async Task<bool> TryBookOptimalVehicleAsync(CreateBookingViewModel viewModel)
         {
+            List<Booking> allActiveBookings = await _bookingRepo.DBGetAllBookingsAsync(); // Henter alle aktive bookinger fra databasen
+
             Vehicle optimalVehicle = FindBestOptimalVehicle(viewModel, allActiveBookings); // Algoritmemetoden finder optimalt køretøj og gemmer det i optimalVehicle-variablen.
 
             await _bookingSemaphore.WaitAsync(); // SemaphoreSlim sikrer at kun en booking oprettes af gangen. 
