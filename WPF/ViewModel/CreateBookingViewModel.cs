@@ -170,8 +170,7 @@ namespace App.ViewModel
 
         public async Task Book()
         {
-            var vehiclesToSearch = AvailableVehicles ?? Array.Empty<Vehicle>();
-            await _bookingService.TryBookOptimalVehicleAsync(Start, End, vehiclesToSearch);
+            await _bookingService.TryBookOptimalVehicleAsync(Start, End, AvailableVehicles);
         }
     }
 }
