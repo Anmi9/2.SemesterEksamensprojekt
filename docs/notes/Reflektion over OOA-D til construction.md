@@ -13,3 +13,5 @@ Vi ville have haft stor gavn af en process der ville have set ud noget som dette
 4. Lave klassediagram der modellere hvilke klasser (API'er) hvert lag har der er ansvarlig for kommunikationen af denne data til de andre lag
 5. Uddelegere ansvar for construction af et helt lag per person, med hjemmel til at tage alle beslutninger egenrådigt så længe API'erne overholdes.
 6. Bytte ansvaret rundt i holdet fra iteration til iteration 
+
+Denne lagdelt tilgang kan bruges indtil en MVP (eller walking skeleton) er opnået og de vigtigste arkitektoniske beslutninger er taget. Derefter vil det være fordelagtigt at skifte til et vertikalt arbejdsflow hvor hver person får ansvaret for en ny feature (på tværs af lag). 
