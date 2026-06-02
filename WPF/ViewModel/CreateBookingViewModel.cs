@@ -91,6 +91,18 @@ namespace App.ViewModel
 
         public DateTime Start { get; private set; }
         public DateTime End { get; private set; }
+
+        public VehicleTypes SelectedVehicleType 
+        { 
+            get; 
+            set 
+            { 
+                field = value; 
+                OnPropertyChanged(); 
+                _ = LoadAvailableVehiclesAsync(); 
+            } 
+        }
+
         public IEnumerable<Vehicle> AvailableVehicles 
         { 
             get; 
@@ -188,13 +200,13 @@ namespace App.ViewModel
         {
             if (Start != default && End != default && Start < End)
             {
-                AvailableVehicles = await _bookingService.GetAvailableVehicles(Start, End);
+                AvailableVehicles = await _bookingService.GetAvailableVehicles(Start, End, SelectedVehicleType);
             }
         }
 
         public async Task Book()
         {
-            await _bookingService.TryBookOptimalVehicleAsync(Start, End, Type);
+            await _bookingService.TryBookOptimalVehicleAsync(Start, End, SelectedVehicleType);
         }
         private bool CanPlaceBooking(object? param)
         {

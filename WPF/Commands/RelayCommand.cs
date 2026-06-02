@@ -35,4 +35,3 @@ namespace WPF.Commands
         }
     }
 }
-}

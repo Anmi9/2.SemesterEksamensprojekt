@@ -25,8 +25,15 @@ namespace WPF
             var bookingRepo = new BookingRepository(context);
             var vehicleRepo = new VehicleRepository(context);
             var bookingService = new BookingService(bookingRepo, vehicleRepo);
-            var createBookingViewModel = new CreateBookingViewModel(bookingService);
-            var mainWindow = new MainWindow(createBookingViewModel);
+
+            // Opretter en Factory-delegate som MainWindow kan bruge til at generere nye vinduer
+            Func<CreateBookingView> createBookingViewFactory = () => 
+            {
+                var viewModel = new CreateBookingViewModel(bookingService);
+                return new CreateBookingView(viewModel);
+            };
+
+            var mainWindow = new MainWindow(createBookingViewFactory);
             mainWindow.Show();
         }
     }

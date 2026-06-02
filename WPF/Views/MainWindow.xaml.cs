@@ -1,4 +1,5 @@
 ﻿using App.Application;
+using App.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,7 +27,7 @@ namespace WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var createBookingView = new CreateBookingView(_bookingService);
+            var createBookingView = new CreateBookingView(new CreateBookingViewModel(_bookingService));
             createBookingView.Show();
         }
     }
