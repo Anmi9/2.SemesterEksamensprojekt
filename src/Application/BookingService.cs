@@ -110,7 +110,7 @@ namespace App.Application
 
             return optimalVehicle;
         }
-        public Task<IEnumerable<Vehicle>> GetAvailableVehicles(DateTime start, DateTime end, VehicleTypes? type) => _vehicleRepo.GetAvailableVehiclesAsync(start, end, type);
+        public Task<IEnumerable<Vehicle>> GetAvailableVehicles(DateTime start, DateTime end, VehicleTypes type) => _vehicleRepo.GetAvailableVehiclesAsync(start, end, type);
     }
 }
     
