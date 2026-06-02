@@ -8,5 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="CreateBookingFlow" Margin="40,39,468,253" Click="Button_Click"/>
+        <Button x:Name="LynBookingCar" Content="Bil (2 timer)" Command="{Binding BookCarCommand}" HorizontalAlignment="Left" Margin="542,39,0,0" VerticalAlignment="Top" Height="54" Width="175" Background="#FF2AFD00"/>
+        <Button x:Name="LynBookingCykel" Content="Cykel (2 timer)" Command="{Binding BookBikeCommand}" HorizontalAlignment="Left" Margin="542,127,0,0" VerticalAlignment="Top" Height="54" Width="175" Background="#FF2AFD00"/>
+        <Label Content="Lynbooking" HorizontalAlignment="Left" Margin="570,-7,0,0" VerticalAlignment="Top" Width="128" FontSize="22" Height="41"/>
     </Grid>
 </Window>

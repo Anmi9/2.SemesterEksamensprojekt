@@ -1,14 +1,78 @@
-﻿using System;
+﻿using App.Application;
+using App.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using WPF.Commands;
 
 namespace App.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : ViewModelBase
     {
-        private string TakeUserInput() => throw new NotImplementedException();
-        private (bool, bool) AvailableTypes() => throw new NotImplementedException(); // Skal vi bruge unavngivne variabler i tuble eller er det bedre DX med navne?
-        private int SelectVehicle() => throw new NotImplementedException(); // Algoritmisk vælger den optimale vehicle blandt de ledige. Skal navnet udpensle at det er den optimale fartøj der vælges?
-        // handler metode  til click events fra view
+        //Fields
+        private readonly BookingService _bookingService; //Kommunikation med databsen
+        private bool _isCarAvailable; //Fortæller om der er bil/cykel ledig lige nu, opdateres når LoadSync kører
+        private bool _isBikeAvailable;
+
+        //Properties
+        public RelayCommand BookCarCommand { get; } //Objekter som xaml kan bindes til - wpf kalder execute på commanden og canExecute for om den er tilgængelig
+        public RelayCommand BookBikeCommand { get; }
+
+        //Constructors
+        public MainViewModel(BookingService bookingservice)
+        {
+            _bookingService = bookingservice;
+            BookCarCommand = new RelayCommand(ExecuteBookCar, CanBookCar); //Commands oprettes og metoder sendes som argumenter
+            BookBikeCommand = new RelayCommand(ExecuteBookBike, CanBookBike);
+            _ = LoadAsync(); //ignorer task objektet og fortsæt
+        }
+
+        //Methods
+        private bool CanBookCar(object? parameter) //kaldes automatisk af wpf, true = grøn knap og muligt at klikke, false = grå ikke muligt at klikke, parameter bruges ikke
+        {
+            return _isCarAvailable;
+        }
+
+        private bool CanBookBike(object? parameter)
+        {
+            return _isBikeAvailable;
+        }
+
+        private async void ExecuteBookCar(object? parameter) //når der klikkes på knappen, relaycommand forventer void
+        {
+            await ExecuteBookAsync(VehicleTypes.Car);
+        }
+        private async void ExecuteBookBike(object? parameter)
+        {
+            await ExecuteBookAsync(VehicleTypes.Bike);
+        }
+
+        private async Task ExecuteBookAsync(VehicleTypes type) //fælles metode til begge knapper, loadAsync bruges til at opdatere tilgængelighed
+        {
+            DateTime start = DateTime.Now;
+            DateTime end = start.AddHours(2);
+
+            await _bookingService.TryBookOptimalVehicleAsync(start, end, type);
+            await LoadAsync();
+        }
+
+        private async Task LoadAsync() //bruges for at kunne vise om der er ledige køretøjer i de næste 2 timer
+        {
+            DateTime start = DateTime.Now;
+            DateTime end = start.AddHours(2);
+
+            IEnumerable<Vehicle> carResult = await _bookingService.GetAvailableVehicles(start, end, VehicleTypes.Car); // alle køretøjer 
+            List<Vehicle> cars = carResult.ToList(); //laves til liste så den kan bruges Count på den
+
+            IEnumerable<Vehicle> bikeResult = await _bookingService.GetAvailableVehicles(start, end, VehicleTypes.Bike);
+            List<Vehicle> bikes = bikeResult.ToList();
+
+            _isCarAvailable = cars.Count > 0; //tilgængeligheden er true hvis over 0 på listen
+            _isBikeAvailable = bikes.Count > 0;
+
+            BookCarCommand.RaiseCanExecuteChanged(); //fortæller wpf at den skal kalde CanBook igen, for at se om den har ændret sig
+            BookBikeCommand.RaiseCanExecuteChanged();
+
+        }
     }
 }

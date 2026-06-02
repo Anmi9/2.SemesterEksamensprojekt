@@ -23,6 +23,8 @@ namespace WPF
         {
             InitializeComponent();
             _bookingService = bookingservice;
+
+            DataContext = new MainViewModel(bookingservice); //datacontext sættes så Bindings ved hvor de skal hente data
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
