@@ -7,9 +7,12 @@ namespace App.ViewModel
 {
     public class CreateBookingViewModel : ViewModelBase
     {
+        // ---------------------------------------------------------
+        // FIELDS
+        // ---------------------------------------------------------
+
         private readonly BookingService _bookingService;
 
-        // Konstanter til konfiguration
         private const int _timeSlotIntervalMinutes = 15;
         private const int _maxBookingDaysInFuture = 28;
         private const int _defaultWorkDayStartHour = 8;
@@ -17,13 +20,13 @@ namespace App.ViewModel
         private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(_timeSlotIntervalMinutes);
         private static readonly TimeSpan _endOfDay = TimeSpan.FromHours(24).Subtract(TimeSpan.FromMinutes(_timeSlotIntervalMinutes));
 
-        public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
-        public DateTime MinDate { get; } = DateTime.Today;
-        public DateTime MaxDate { get; } = DateTime.Today.AddDays(_maxBookingDaysInFuture);
+        // ---------------------------------------------------------
+        // CONSTRUCTORS
+        // ---------------------------------------------------------
 
-        static CreateBookingViewModel() // Objektet oprettes kun hvis kontrakten overholdes
+        static CreateBookingViewModel()
         {
-            if (_defaultDuration <= _minDuration) // Kontrakten
+            if (_defaultDuration <= _minDuration)
             {
                 throw new TypeInitializationException(
                     nameof(CreateBookingViewModel),
@@ -44,7 +47,16 @@ namespace App.ViewModel
         }
 
         // ---------------------------------------------------------
-        // UI STATE PROPERTIES
+        // UI PROPERTIES (Read-Only)
+        // ---------------------------------------------------------
+
+        public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
+        public DateTime MinDate { get; } = DateTime.Today;
+        public DateTime MaxDate { get; } = DateTime.Today.AddDays(_maxBookingDaysInFuture);
+        public RelayCommand RegisterBookingCommand { get; }
+
+        // ---------------------------------------------------------
+        // UI STATE PROPERTIES (Read-Write)
         // ---------------------------------------------------------
 
         public DateTime? Date
@@ -83,8 +95,6 @@ namespace App.ViewModel
             }
         }
 
-        public RelayCommand RegisterBookingCommand { get; } 
-
         // ---------------------------------------------------------
         // DOMAIN PROPERTIES
         // ---------------------------------------------------------
@@ -92,31 +102,48 @@ namespace App.ViewModel
         public DateTime Start { get; private set; }
         public DateTime End { get; private set; }
 
-        public VehicleTypes SelectedVehicleType 
-        { 
-            get; 
-            set 
-            { 
-                field = value; 
-                OnPropertyChanged(); 
-                _ = LoadAvailableVehiclesAsync(); 
-            } 
-        }
-
-        public IEnumerable<Vehicle> AvailableVehicles 
-        { 
-            get; 
+        public IEnumerable<Vehicle> AvailableVehicles
+        {
+            get;
             private set
             {
                 if (field == value) return;
                 field = value;
                 OnPropertyChanged();
-                RegisterBookingCommand.RaiseCanExecuteChanged(); // Sender event til WPF - som kalder CanPlaceBooking() i respons (via DelayCommand.cs)
+                RegisterBookingCommand.RaiseCanExecuteChanged(); 
             }
         }
 
         // ---------------------------------------------------------
-        // Private Functions
+        // PRIVATE METHODS (Commands & Execution)
+        // ---------------------------------------------------------
+
+        private bool CanPlaceBooking(object? param)
+        {
+            if (param is not VehicleTypes requestedType)            return false;
+            if (Start == default || End == default || Start >= End) return false;
+            if (AvailableVehicles == null)                          return false;
+
+            return AvailableVehicles.Any(v => v.Type == requestedType);
+        }
+
+        private async Task ExecuteBookingAsync(object? param)
+        {
+            if (param is not VehicleTypes requestedType) return;
+            if (!CanPlaceBooking(requestedType)) return;
+
+            try
+            {
+                await _bookingService.TryBookOptimalVehicleAsync(Start, End, requestedType);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Booking fejlede: {ex.Message}");
+            }
+        }
+
+        // ---------------------------------------------------------
+        // PRIVATE METHODS (Helper/Logic)
         // ---------------------------------------------------------
 
         private void EnforceMinDuration(bool startChanged)
@@ -132,7 +159,6 @@ namespace App.ViewModel
                     StartTime = GetValidStartTime(EndTime);
                 }
             }
-
             UpdateBookingPeriod();
         }
 
@@ -148,7 +174,6 @@ namespace App.ViewModel
             }
 
             EndTime = GetValidEndTime(StartTime);
-
             UpdateBookingPeriod();
         }
 
@@ -160,6 +185,14 @@ namespace App.ViewModel
                 End = Date.Value.Date + EndTime;
 
                 _ = LoadAvailableVehiclesAsync();
+            }
+        }
+
+        private async Task LoadAvailableVehiclesAsync()
+        {
+            if (Start != default && End != default && Start < End)
+            {
+                AvailableVehicles = await _bookingService.GetAvailableVehicles(Start, End);
             }
         }
 
@@ -189,48 +222,10 @@ namespace App.ViewModel
             return proposed > _endOfDay ? _endOfDay : proposed;
         }
 
-
         private TimeSpan GetValidStartTime(TimeSpan end)
         {
             var proposed = end.Subtract(_defaultDuration);
             return proposed < TimeSpan.Zero ? TimeSpan.Zero : proposed;
         }
-
-        public async Task LoadAvailableVehiclesAsync()
-        {
-            if (Start != default && End != default && Start < End)
-            {
-                AvailableVehicles = await _bookingService.GetAvailableVehicles(Start, End, SelectedVehicleType);
-            }
-        }
-
-
-        //public async Task Book()
-        //{
-        //    await _bookingService.TryBookOptimalVehicleAsync(Start, End);
-        //}
-        private bool CanPlaceBooking(object? param)
-        {
-            if (param is not VehicleTypes requestedType)            return false;   // Guard: gemmer param i variabel og tjekker typen
-            if (Start == default || End == default || Start >= End) return false;   // Guard: tjekker at properties er udfyldt og i en gyldig tilstand 
-            if (AvailableVehicles == null)                          return false;   // Guard: er samlingen blevet instantieret af baggrundstråden
-
-            return AvailableVehicles.Any(v => v.Type == requestedType);
-        }
-        private async Task ExecuteBookingAsync(object? param)
-        {
-            if (param is not VehicleTypes requestedType) return;
-            if (!CanPlaceBooking(requestedType)) return;
-
-            try
-            {
-                await _bookingService.TryBookOptimalVehicleAsync(Start, End, requestedType);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Booking fejlede: {ex.Message}");
-            }
-        }
-
     }
 }
