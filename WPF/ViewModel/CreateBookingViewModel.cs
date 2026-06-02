@@ -141,6 +141,10 @@ namespace App.ViewModel
             {
                 System.Diagnostics.Debug.WriteLine($"Booking fejlede: {ex.Message}");
             }
+            finally
+            {
+                _ = LoadAvailableVehiclesAsync();
+            }
         }
 
         // ---------------------------------------------------------
