@@ -74,10 +74,16 @@ namespace App.Application
         //Algoritmemetode, der finder det mest optimale køretøj baseret på eksisterende bookinger og den nye booking's start- og sluttidspunkt.
         public Vehicle FindBestOptimalVehicle(DateTime Start, DateTime End, List<Vehicle> availableVehicleTypes, List<Booking> allActiveBookings)
             {
+                if (availableVehicleTypes == null || availableVehicleTypes.Count == 0)
+                {
+                throw new InvalidOperationException("Kan ikke finde optimal bil, da der ikke er nogen ledige biler på listen.");
+                }
+
                 DateTime newBookingStart = Start;  
                 DateTime newBookingEnd = End;
 
-                Vehicle optimalVehicle = null;
+                Vehicle optimalVehicle = availableVehicleTypes[0];
+
                 TimeSpan smallestGap = TimeSpan.MaxValue;    //Vi starte med at sætte den mindste gap til max value, så vi kan sammenligne med de faktiske gaps mellem bookingerne.
 
             foreach (Vehicle vehicle in availableVehicleTypes) //Iterer gennem alle køretøjerne i AvailableVehicles-listen.
@@ -110,7 +116,7 @@ namespace App.Application
 
             return optimalVehicle;
         }
-        public Task<IEnumerable<Vehicle>> GetAvailableVehicles(DateTime start, DateTime end, VehicleTypes type) => _vehicleRepo.GetAvailableVehiclesAsync(start, end, type);
+        public Task<IEnumerable<Vehicle>> GetAvailableVehicles(DateTime start, DateTime end, VehicleTypes? type = null) => _vehicleRepo.GetAvailableVehiclesAsync(start, end, type);
     }
 }
     
