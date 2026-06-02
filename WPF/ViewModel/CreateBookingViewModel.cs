@@ -38,12 +38,13 @@ namespace App.ViewModel
         {
             _bookingService = service;
             PopulateTimeSlots();
-            Date = DateTime.Today;
 
             RegisterBookingCommand = new RelayCommand(
                 execute: async param => await ExecuteBookingAsync(param),
                 canExecute: param => CanPlaceBooking(param)
             );
+            Date = DateTime.Today;
+
         }
 
         // ---------------------------------------------------------
