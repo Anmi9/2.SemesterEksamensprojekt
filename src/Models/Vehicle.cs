@@ -15,7 +15,7 @@ namespace App.Models
 
     public class Vehicle
     {
-        public required int VehicleId { get; init; }
+        public int VehicleId { get; init; }
         public required string LicensePlate { get; init; }
         public required VehicleTypes Type
         {
