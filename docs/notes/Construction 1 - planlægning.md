@@ -1,10 +1,10 @@
 ---
 created: 2026-06-01
-section:
+section: construction 1
 exclude: false
 sortKey: 26.30865
 ---
-[[[Reflektion over]]]
+[[Reflektion over OOA-D til construction]]
 
 ---
 Mål: at få et fungerende produkt hvor det fulde flow i use case - opret booking kan gennemføres
