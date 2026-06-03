@@ -1,6 +1,5 @@
 ﻿using App.ViewModel;
 using System.Windows;
-using App.Application;
 
 namespace WPF
 {
@@ -9,7 +8,7 @@ namespace WPF
         public CreateBookingView(CreateBookingViewModel viewModel)
         {
             InitializeComponent();
-            this.DataContext = viewModel;
+            DataContext = viewModel;
         }
     }
 }

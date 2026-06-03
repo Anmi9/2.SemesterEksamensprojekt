@@ -1,8 +1,5 @@
 ﻿using App.Application;
 using App.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using WPF.Commands;
 
 namespace App.ViewModel
@@ -17,6 +14,7 @@ namespace App.ViewModel
         //Properties
         public RelayCommand BookCarCommand { get; } //Objekter som xaml kan bindes til - wpf kalder execute på commanden og canExecute for om den er tilgængelig
         public RelayCommand BookBikeCommand { get; }
+        public RelayCommand OpenCreateBookingCommand { get; }
 
         //Constructors
         public MainViewModel(BookingService bookingservice)
@@ -24,6 +22,7 @@ namespace App.ViewModel
             _bookingService = bookingservice;
             BookCarCommand = new RelayCommand(ExecuteBookCar, CanBookCar); //Commands oprettes og metoder sendes som argumenter
             BookBikeCommand = new RelayCommand(ExecuteBookBike, CanBookBike);
+            OpenCreateBookingCommand = new RelayCommand(ExecuteOpenCreateBooking);
             _ = LoadAsync(); //ignorer task objektet og fortsæt
         }
 
@@ -54,6 +53,12 @@ namespace App.ViewModel
 
             await _bookingService.TryBookOptimalVehicleAsync(start, end, type);
             await LoadAsync();
+        }
+
+        private void ExecuteOpenCreateBooking(object? parameter)
+        {
+            var createBookingView = new WPF.CreateBookingView(new CreateBookingViewModel(_bookingService));
+            createBookingView.Show();
         }
 
         private async Task LoadAsync() //bruges for at kunne vise om der er ledige køretøjer i de næste 2 timer
