@@ -20,16 +20,16 @@ public class RaceConditionTest
     {
       //Arrange:
 
-        _start = DateTime.Now.AddHours(25);
+        _start = DateTime.Now.AddDays(25); // Sørger for at være så langt ude i fremtiden, så ingen eksisterende bookinger kommer i vejen.
         _end = _start.AddHours(2);
 
         //Act: 
 
-        Task<Booking> thread1 = Task.Run(SimulateClick1Async);
+        Task<Booking> thread1 = Task.Run(SimulateClick1Async); // Første klik
 
-        await Task.Delay(10);
+        await Task.Delay(10); // Simulerer dobbeltklik eller to samtidige bookingforsøg.
 
-        Task<Booking> thread2 = Task.Run(SimulateClick2Async);
+        Task<Booking> thread2 = Task.Run(SimulateClick2Async); // Andet klik
 
         Booking?[] results = await Task.WhenAll(thread1, thread2); 
 
@@ -51,19 +51,19 @@ public class RaceConditionTest
 
     private async Task<Booking> SimulateClick1Async()
     {
-        using Context context1 = new Context();
+        using Context context1 = new Context(); 
         {
             BookingRepository repo1 = new BookingRepository(context1);
             VehicleRepository vehicleRepo1 = new VehicleRepository(context1);
             BookingService service1 = new BookingService(repo1, vehicleRepo1);
 
-            return await service1.TryBookOptimalVehicleAsync(_start, _end, _carType);
+            return await service1.TryBookOptimalVehicleAsync(_start, _end, _carType); 
         }
     }
 
     private async Task<Booking> SimulateClick2Async()
     {
-        using Context context2 = new Context();
+        using Context context2 = new Context(); // Vi opretter en ny context for at simulere forsøg på dobbeltbooking eller dobbeltklik.
         {
             BookingRepository repo2 = new BookingRepository(context2);
             VehicleRepository vehicleRepo2 = new VehicleRepository(context2);
