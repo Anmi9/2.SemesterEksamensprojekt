@@ -27,6 +27,9 @@
                       ItemStringFormat="hh\:mm" 
                       Width="100"/>
 
+        </StackPanel>
+        <StackPanel>
+
             <Button Content="Book Bil" 
             Command="{Binding RegisterBookingCommand}"
             CommandParameter="{x:Static models:VehicleTypes.Car}"
@@ -37,6 +40,7 @@
             Command="{Binding RegisterBookingCommand}"
             CommandParameter="{x:Static models:VehicleTypes.Bike}"
             Height="40"/>
+
         </StackPanel>
 
         <Label Content="Køretøj&#xA;" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top"/>
