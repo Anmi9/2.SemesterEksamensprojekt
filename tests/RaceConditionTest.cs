@@ -1,3 +1,11 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using App.Application;
+using App.Data.Repositories;
+
+
+
+
+
 namespace AppTests;
 
 [TestClass]
