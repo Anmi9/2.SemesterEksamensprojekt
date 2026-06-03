@@ -4,6 +4,9 @@ section: construction 1
 exclude: false
 sortKey: 27.27942
 ---
+[[Sekvensdiagram over booking bekræftigelse]]
+
+---
 Construction har været unødig energikrævende og uoverskuelig. Vores vertikale tilgang, har gjort det svært og uoverskueligt at modellere programmet på forhånd, og grundet vores manglende kendskab til opgavernes kompleksitet har vi ikke kunne vurdere hvornår det havde været gavnligt at bruge tid på at modellere frem for at arbejde direkte med materialet/koden (som en maler der opdager maleriet når det males). 
 
 Vi ville have haft stor gavn af en process der ville have set ud noget som dette:
