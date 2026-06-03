@@ -26,7 +26,7 @@ namespace App.Application
             };
             await _bookingRepo.DBCreateAsync(booking);
         }
-        public async void CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
+        public async Task<Booking> CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -36,12 +36,12 @@ namespace App.Application
                 EmployeeId = 1
             };
 
-            await _bookingRepo.DBCreateAsync(booking); 
+            await _bookingRepo.DBCreateAsync(booking);
             return booking;
         }
 
         //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
-        public async Task<Booking?> TryBookOptimalVehicleAsync(DateTime Start, DateTime End, VehicleTypes Type) 
+        public async Task<Booking?> TryBookOptimalVehicleAsync(DateTime Start, DateTime End, VehicleTypes Type)
         {
             List<Booking> allActiveBookings = await _bookingRepo.DBGetAllBookingsAsync(); // Henter alle aktive bookinger fra databasen
             List<Vehicle> availableVehicleTypes = (await _vehicleRepo.GetAvailableVehiclesAsync(Start, End, Type)).ToList(); // Henter alle tilgængelige køretøjer for det givne tidsrum.>
@@ -75,20 +75,20 @@ namespace App.Application
 
         //Algoritmemetode, der finder det mest optimale køretøj baseret på eksisterende bookinger og den nye booking's start- og sluttidspunkt.
         public Vehicle FindBestOptimalVehicle(DateTime Start, DateTime End, List<Vehicle> availableVehicleTypes, List<Booking> allActiveBookings)
+        {
+            if (availableVehicleTypes == null || availableVehicleTypes.Count == 0)
+
             {
-                if (availableVehicleTypes == null || availableVehicleTypes.Count == 0)
+                throw new InvalidOperationException("Kan ikke finde optimal bil, da der ikke er nogen ledige biler på listen.");
+            }
 
-                {
-                throw new InvalidOperationException ("Kan ikke finde optimal bil, da der ikke er nogen ledige biler på listen.");
-                }
-
-                DateTime newBookingStart = Start;  
-                DateTime newBookingEnd = End;
-                TimeSpan smallestGap = TimeSpan.MaxValue; // Vi starter med at sætte smallestGap til den største mulige værdi, så enhver faktisk gap vil være mindre.
+            DateTime newBookingStart = Start;
+            DateTime newBookingEnd = End;
+            TimeSpan smallestGap = TimeSpan.MaxValue; // Vi starter med at sætte smallestGap til den største mulige værdi, så enhver faktisk gap vil være mindre.
 
             Vehicle optimalVehicle = availableVehicleTypes[0];
 
-                List<Booking> relevantBookings = new List<Booking>(); // Vi opretter en liste, der kun indeholder bookinger, der kommer efter i går
+            List<Booking> relevantBookings = new List<Booking>(); // Vi opretter en liste, der kun indeholder bookinger, der kommer efter i går
 
             foreach (Booking b in allActiveBookings) // Itererer gennem alle aktive bookinger
             {
@@ -100,7 +100,7 @@ namespace App.Application
             }
 
             foreach (Vehicle vehicle in availableVehicleTypes) //Iterer gennem alle køretøjerne i AvailableVehicles-listen.
-                {
+            {
 
 
 
@@ -123,10 +123,10 @@ namespace App.Application
                 Booking previousBooking = null!; // Null-operatoren ! bruges for at sige, at vi bevidst tillader de to booking-variabler at være null
                 Booking nextBooking = null!;
 
-         
+
 
                 foreach (Booking b in relevantBookings) // Itererer gennem relevante bookinger
-                    { 
+                {
 
                     if (b.VehicleId == vehicle.VehicleId) // Vi tjekker kun bookinger for det aktuelle køretøj
                     {
@@ -138,13 +138,13 @@ namespace App.Application
 
 
                         if (newBookingEnd <= b.Start && (nextBooking == null || b.Start < nextBooking.Start)) // Tjekker om den nye booking slutter før den aktuelle booking starter. Det bliver også tjekket, om den aktuelle booking er tidligere end den næste booking, vi har fundet (hvis der er en)
-                        { 
-                            nextBooking = b; 
+                        {
+                            nextBooking = b;
                         }
-                        
+
                     }
                 }
-    
+
 
                 //DateTime gapStart = previousBooking != null ? previousBooking.End : DateTime.MinValue; //Ternary operator (:) i stedet for en if/else-blok
                 //DateTime gapEnd = nextBooking != null ? nextBooking.Start : DateTime.MaxValue;
@@ -176,15 +176,15 @@ namespace App.Application
                 if (gap < smallestGap) // Hvis det beregnede gap er mindre end det mindste gap, vi har fundet indtil nu, opdaterer vi smallestGap og optimalVehicle.
                 {
                     smallestGap = gap;
-                    optimalVehicle = vehicle; 
+                    optimalVehicle = vehicle;
                 }
             }
 
             return optimalVehicle;
         }
-        public Task<IEnumerable<Vehicle>> GetAvailableVehicles(DateTime start, DateTime end, VehicleTypes? type = null) 
+        public Task<IEnumerable<Vehicle>> GetAvailableVehicles(DateTime start, DateTime end, VehicleTypes? type = null)
             => _vehicleRepo.GetAvailableVehiclesAsync(start, end, type);
     }
 }
-    
+
 
