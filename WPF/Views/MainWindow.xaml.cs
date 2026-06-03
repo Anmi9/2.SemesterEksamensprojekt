@@ -6,11 +6,12 @@ namespace WPF
 {
     public partial class MainWindow : Window
     {
-        private readonly BookingService _bookingService;
         public MainWindow(BookingService bookingservice)
         {
             InitializeComponent();
-            DataContext = new MainViewModel(bookingservice);
+            DataContext = new MainWindowViewModel(bookingservice);
+
+            NotificationBox.DataContext = DataContext;
         }
     }
 }

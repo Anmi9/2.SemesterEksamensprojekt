@@ -26,7 +26,7 @@ namespace App.Application
             };
             await _bookingRepo.DBCreateAsync(booking);
         }
-        public async Task<Booking> CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
+        private async Task<Booking> CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
