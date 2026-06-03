@@ -135,7 +135,15 @@ namespace App.ViewModel
 
             try
             {
-                await _bookingService.TryBookOptimalVehicleAsync(Start, End, requestedType);
+                var booking = await _bookingService.TryBookOptimalVehicleAsync(Start, End, requestedType);
+                if (booking is null)
+                {
+                    StatusMessage = "Ingen ledige køretøjer i den valgte periode.";
+                }
+                else
+                {
+                    StatusMessage = $"Booking oprettet: {booking.Vehicle!.LicensePlate} - { booking.Start:HH:mm}–{ booking.End:HH:mm}";
+                }
             }
             catch (Exception ex)
             {
