@@ -12,6 +12,7 @@ namespace App.Models
 
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
+        public Vehicle? Vehicle { get; set; } //navigations property til at kunne vise nummerplade i bekræftigelsen
 
     }
 }

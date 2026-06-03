@@ -51,7 +51,15 @@ namespace App.ViewModel
             DateTime start = DateTime.Now;
             DateTime end = start.AddHours(2);
 
-            await _bookingService.TryBookOptimalVehicleAsync(start, end, type);
+            var booking = await _bookingService.TryBookOptimalVehicleAsync(start, end, type);
+            if (booking == null)
+            {
+                StatusMessage = "Ingen ledige køretøjer i den valgte periode.";
+            }
+            else
+            {
+                StatusMessage = $"Booking oprettet: {booking.Vehicle!.LicensePlate} - {booking.Start:HH:mm}–{booking.End:HH:mm}";
+            }
             await LoadAsync();
         }
 
