@@ -15,7 +15,7 @@ namespace App.Application
             _bookingRepo = bookingRepo;
             _vehicleRepo = vehicleRepo;
         }
-        public async void CreateBookingAsync(int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
+        public async Task CreateBookingAsync(int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -26,7 +26,7 @@ namespace App.Application
             };
             await _bookingRepo.DBCreateAsync(booking);
         }
-        public async void CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
+        public async Task<Booking> CreateBookingAsync(DateTime start, DateTime end, int VehicleId) //Metoden er gjort asynkron for at kunne håndtere databaseoperationer.
         {
             Booking booking = new Booking
             {
@@ -37,11 +37,11 @@ namespace App.Application
             };
 
             await _bookingRepo.DBCreateAsync(booking); 
-
+            return booking;
         }
 
         //Metode, der forsøger at booke det mest optimale køretøj baseret på den nye booking's start- og sluttidspunkt. Den bruger en SemaphoreSlim for at sikre, at kun én booking kan oprettes ad gangen, hvilket hjælper med at forhindre race conditions.
-        public async Task<bool> TryBookOptimalVehicleAsync(DateTime Start, DateTime End, VehicleTypes Type) // TODO - Metoden der kalder skal modtage en bool, der indikerer om der kunne bookes.
+        public async Task<Booking?> TryBookOptimalVehicleAsync(DateTime Start, DateTime End, VehicleTypes Type) 
         {
             List<Booking> allActiveBookings = await _bookingRepo.DBGetAllBookingsAsync(); // Henter alle aktive bookinger fra databasen
             List<Vehicle> availableVehicleTypes = (await _vehicleRepo.GetAvailableVehiclesAsync(Start, End, Type)).ToList(); // Henter alle tilgængelige køretøjer for det givne tidsrum.>
@@ -55,12 +55,13 @@ namespace App.Application
                 bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTimeAsync(optimalVehicle.VehicleId, Start, End);
                 if (stillAvailable)
                 {
-                    await CreateBookingAsync(Start, End, optimalVehicle.VehicleId);
-                    return true;
+                    var booking = await CreateBookingAsync(Start, End, optimalVehicle.VehicleId);
+                    booking.Vehicle = optimalVehicle;
+                    return booking;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             finally
