@@ -7,7 +7,7 @@
         xmlns:models="clr-namespace:App.Models;assembly=App"
         mc:Ignorable="d"
         Title="Opret Tilpasset Booking" Height="480" Width="700" Background="#F8FAFC">
-
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,16 +22,14 @@
         <Grid Grid.Row="1" Margin="40,0,40,40">
             <Border Background="White" CornerRadius="12" BorderBrush="#E2E8F0" BorderThickness="1" Padding="30,25">
                 <StackPanel VerticalAlignment="Center">
-
+                    
                     <TextBlock Text="1. Vælg dato og tidsrum" FontSize="16" FontWeight="SemiBold" Foreground="#1E293B" Margin="0,0,0,12"/>
-
+                    
                     <Grid Margin="0,0,0,30">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/> <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/> <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0">
@@ -62,7 +60,7 @@
                     <Separator Background="#F1F5F9" Margin="0,0,0,25"/>
 
                     <TextBlock Text="2. Vælg køretøj for at gennemføre" FontSize="16" FontWeight="SemiBold" Foreground="#1E293B" Margin="0,0,0,12"/>
-
+                    
                     <UniformGrid Columns="2" Rows="1" Height="50">
                         <Button Content="Bekræft &amp; Book Bil" 
                                 Command="{Binding RegisterBookingCommand}"
@@ -82,5 +80,24 @@
                 </StackPanel>
             </Border>
         </Grid>
+        <Popup x:Name="NotificationBox" 
+               IsOpen="True" 
+               AllowsTransparency="True" 
+               StaysOpen="True" 
+               Placement="Center" 
+               PopupAnimation="Fade">
+
+            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Margin="20">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
+                </Border.Effect>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{Binding StatusMessage}" Foreground="#94A3B8" FontSize="13" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
     </Grid>
 </Window>

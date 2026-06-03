@@ -68,5 +68,24 @@
                 </Grid>
             </Border>
         </Grid>
+        <Popup x:Name="NotificationBox" 
+               IsOpen="True" 
+               AllowsTransparency="True" 
+               StaysOpen="True" 
+               Placement="Center" 
+               PopupAnimation="Fade">
+
+            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Margin="20">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
+                </Border.Effect>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{Binding StatusMessage}" Foreground="#94A3B8" FontSize="13" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
     </Grid>
 </Window>

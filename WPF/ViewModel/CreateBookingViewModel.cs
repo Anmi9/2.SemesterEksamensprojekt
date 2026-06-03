@@ -7,22 +7,12 @@ namespace App.ViewModel
 {
     public class CreateBookingViewModel : ViewModelBase
     {
-        // ---------------------------------------------------------
-        // FIELDS
-        // ---------------------------------------------------------
-
         private readonly BookingService _bookingService;
-
-        private const int _timeSlotIntervalMinutes = 15;
         private const int _maxBookingDaysInFuture = 28;
         private const int _defaultWorkDayStartHour = 8;
         private static readonly TimeSpan _defaultDuration = TimeSpan.FromHours(1);
-        private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(_timeSlotIntervalMinutes);
-        private static readonly TimeSpan _endOfDay = TimeSpan.FromHours(24).Subtract(TimeSpan.FromMinutes(_timeSlotIntervalMinutes));
-
-        // ---------------------------------------------------------
-        // CONSTRUCTORS
-        // ---------------------------------------------------------
+        private static readonly TimeSpan _minDuration = TimeSpan.FromMinutes(TimeSlotIntervalMinutes);
+        private static readonly TimeSpan _endOfDay = TimeSpan.FromHours(24).Subtract(TimeSpan.FromMinutes(TimeSlotIntervalMinutes));
 
         static CreateBookingViewModel()
         {
@@ -44,21 +34,12 @@ namespace App.ViewModel
                 canExecute: param => CanPlaceBooking(param)
             );
             Date = DateTime.Today;
-
         }
-
-        // ---------------------------------------------------------
-        // UI PROPERTIES (Read-Only)
-        // ---------------------------------------------------------
 
         public ObservableCollection<TimeSpan> TimeSlots { get; } = new();
         public DateTime MinDate { get; } = DateTime.Today;
         public DateTime MaxDate { get; } = DateTime.Today.AddDays(_maxBookingDaysInFuture);
         public RelayCommand RegisterBookingCommand { get; }
-
-        // ---------------------------------------------------------
-        // UI STATE PROPERTIES (Read-Write)
-        // ---------------------------------------------------------
 
         public DateTime? Date
         {
@@ -142,7 +123,7 @@ namespace App.ViewModel
                 }
                 else
                 {
-                    StatusMessage = $"Booking oprettet: {booking.Vehicle!.LicensePlate} - { booking.Start:HH:mm}–{ booking.End:HH:mm}";
+                    StatusMessage = $"{booking.Vehicle!.Type} bekræftet: {booking.Vehicle.LicensePlate}\nDato: {booking.Start:dd/MM} kl. {booking.Start:HH:mm}–{booking.End:HH:mm}";
                 }
             }
             catch (Exception ex)
@@ -213,20 +194,10 @@ namespace App.ViewModel
         {
             TimeSlots.Clear();
             TimeSpan maxTime = TimeSpan.FromHours(24);
-            for (TimeSpan i = TimeSpan.Zero; i < maxTime; i = i.Add(TimeSpan.FromMinutes(_timeSlotIntervalMinutes)))
+            for (TimeSpan i = TimeSpan.Zero; i < maxTime; i = i.Add(TimeSpan.FromMinutes(TimeSlotIntervalMinutes)))
             {
                 TimeSlots.Add(i);
             }
-        }
-
-        private TimeSpan RoundUpToNearestTimeSlot(TimeSpan time)
-        {
-            double totalMinutes = time.TotalMinutes;
-            double intervalsPassed = totalMinutes / _timeSlotIntervalMinutes;
-            double roundedIntervals = Math.Ceiling(intervalsPassed);
-            double totalRoundedMinutes = roundedIntervals * _timeSlotIntervalMinutes;
-
-            return TimeSpan.FromMinutes(totalRoundedMinutes);
         }
 
         private TimeSpan GetValidEndTime(TimeSpan start)

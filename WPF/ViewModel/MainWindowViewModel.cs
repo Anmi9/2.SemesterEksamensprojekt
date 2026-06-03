@@ -4,7 +4,7 @@ using WPF.Commands;
 
 namespace App.ViewModel
 {
-    public class MainViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase
     {
         //Fields
         private readonly BookingService _bookingService; //Kommunikation med databsen
@@ -17,7 +17,7 @@ namespace App.ViewModel
         public RelayCommand OpenCreateBookingCommand { get; }
 
         //Constructors
-        public MainViewModel(BookingService bookingservice)
+        public MainWindowViewModel(BookingService bookingservice)
         {
             _bookingService = bookingservice;
             BookCarCommand = new RelayCommand(ExecuteBookCar, CanBookCar); //Commands oprettes og metoder sendes som argumenter
@@ -48,8 +48,7 @@ namespace App.ViewModel
 
         private async Task ExecuteBookAsync(VehicleTypes type) //fælles metode til begge knapper, loadAsync bruges til at opdatere tilgængelighed
         {
-            DateTime start = DateTime.Now;
-            DateTime end = start.AddHours(2);
+            var (start, end) = GetQuickBookingPeriod();
 
             var booking = await _bookingService.TryBookOptimalVehicleAsync(start, end, type);
             if (booking == null)
@@ -58,7 +57,7 @@ namespace App.ViewModel
             }
             else
             {
-                StatusMessage = $"Booking oprettet: {booking.Vehicle!.LicensePlate} - {booking.Start:HH:mm}–{booking.End:HH:mm}";
+                StatusMessage = $"{booking.Vehicle!.Type} bekræftet: {booking.Vehicle.LicensePlate}\nPeriode: {booking.Start:HH:mm} – {booking.End:HH:mm}";
             }
             await LoadAsync();
         }
@@ -71,8 +70,7 @@ namespace App.ViewModel
 
         private async Task LoadAsync() //bruges for at kunne vise om der er ledige køretøjer i de næste 2 timer
         {
-            DateTime start = DateTime.Now;
-            DateTime end = start.AddHours(2);
+            var (start, end) = GetQuickBookingPeriod();
 
             IEnumerable<Vehicle> carResult = await _bookingService.GetAvailableVehicles(start, end, VehicleTypes.Car); // alle køretøjer 
             List<Vehicle> cars = carResult.ToList(); //laves til liste så den kan bruges Count på den
