@@ -12,6 +12,7 @@ Mål:
 - samt se ledige køretøjer (typer) lige nu/hurtig booking feature fra MoSCow - must 
 - samt booking bekræftigelse fra should.
 Tilstand/udgangspunkt: programmet kan allerede oprette en booking i databasen, men dette bekræftes ikke i UI'en, ingen bekræftigelse. UI'et kommunikere ikke om den indtastede information producere en gyldig booking eller ej hvilket strider imod kravet om at reducere antal kliks/tid for at udføre en booking.
+
 Opgaver: 
 - Data over tilgængelighed skal opdateres løbende når ny information er indtastet
 	- Undgå at kalde databasen ved hver keystroke med debounce (kort delay)
