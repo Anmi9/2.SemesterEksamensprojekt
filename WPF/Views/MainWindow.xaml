@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Køretøjsbooking" Height="500" Width="850" Background="#F8FAFC">
 
-    <Grid>
+    <Grid x:Name="ParentGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -72,10 +72,13 @@
                IsOpen="True" 
                AllowsTransparency="True" 
                StaysOpen="True" 
-               Placement="Center" 
-               PopupAnimation="Fade">
+               PopupAnimation="Fade"
+               PlacementTarget="{Binding ElementName=ParentGrid}"
+               Placement="Right" 
+               HorizontalOffset="-210" 
+               VerticalOffset="20">             
 
-            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Margin="20">
+            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Width="190">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
                 </Border.Effect>
