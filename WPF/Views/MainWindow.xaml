@@ -35,15 +35,16 @@
 
                     <StackPanel Grid.Row="0">
                         <TextBlock Text="Hurtig-booking" FontSize="22" FontWeight="Bold" Foreground="#1E293B"/>
-                        <TextBlock Text="Skal du afsted med det samme? Book et ledigt køretøj i 2 timer med ét enkelt klik." 
-                                   FontSize="14" Foreground="#64748B" TextWrapping="Wrap" Margin="0,8,0,0" LineHeight="20"/>
+                        <TextBlock FontSize="14" Foreground="#64748B" TextWrapping="Wrap" Margin="0,8,0,0" LineHeight="20">
+                        Skal du afsted med det samme? Book et ledigt køretøj i <Run FontWeight="Bold">2 timer</Run> med ét enkelt klik.
+                        </TextBlock>
                     </StackPanel>
 
                     <UniformGrid Grid.Row="2" Columns="2" Rows="1" Height="60">
-                        <Button x:Name="LynBookingCar" Content="Bil (2 t.)" Command="{Binding BookCarCommand}" 
+                        <Button x:Name="LynBookingCar" Content="{Binding BookCarLabel}" Command="{Binding BookCarCommand}" 
                                 FontSize="16" FontWeight="SemiBold" Background="#10B981" Foreground="White" BorderThickness="0" Margin="0,0,6,0"/>
 
-                        <Button x:Name="LynBookingCykel" Content="Cykel (2 t.)" Command="{Binding BookBikeCommand}" 
+                        <Button x:Name="LynBookingCykel" Content="{Binding BookBikeLabel}" Command="{Binding BookBikeCommand}" 
                                 FontSize="16" FontWeight="SemiBold" Background="#10B981" Foreground="White" BorderThickness="0" Margin="6,0,0,0"/>
                     </UniformGrid>
                 </Grid>
@@ -67,28 +68,28 @@
                             Height="60" FontSize="16" FontWeight="SemiBold" Background="#2563EB" Foreground="White" BorderThickness="0"/>
                 </Grid>
             </Border>
-        </Grid>
-        <Popup x:Name="NotificationBox" 
-               IsOpen="True" 
-               AllowsTransparency="True" 
-               StaysOpen="True" 
-               PopupAnimation="Fade"
-               PlacementTarget="{Binding ElementName=ParentGrid}"
-               Placement="Right" 
-               HorizontalOffset="-210" 
-               VerticalOffset="20">             
+        </Grid> 
+            <Popup x:Name="NotificationBox" 
+                   IsOpen="True" 
+                   AllowsTransparency="True" 
+                   StaysOpen="True" 
+                   PopupAnimation="Fade"
+                   PlacementTarget="{Binding ElementName=ParentGrid}"
+                   Placement="Right" 
+                   HorizontalOffset="-210" 
+                   VerticalOffset="20">
 
-            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Width="190">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
-                </Border.Effect>
+                <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Width="200">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
+                    </Border.Effect>
 
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="{Binding StatusMessage}" Foreground="#94A3B8" FontSize="13" TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="{Binding StatusMessage}" Foreground="#94A3B8" FontSize="13" TextWrapping="Wrap"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-            </Border>
+                </Border>
         </Popup>
     </Grid>
 </Window>

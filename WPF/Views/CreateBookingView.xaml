@@ -81,13 +81,16 @@
             </Border>
         </Grid>
         <Popup x:Name="NotificationBox" 
-               IsOpen="True" 
-               AllowsTransparency="True" 
-               StaysOpen="True" 
-               Placement="Center" 
-               PopupAnimation="Fade">
+                   IsOpen="True" 
+                   AllowsTransparency="True" 
+                   StaysOpen="True" 
+                   PopupAnimation="Fade"
+                   PlacementTarget="{Binding ElementName=ParentGrid}"
+                   Placement="Right" 
+                   HorizontalOffset="-210" 
+                   VerticalOffset="20">
 
-            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Margin="20">
+            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Width="200">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
                 </Border.Effect>
