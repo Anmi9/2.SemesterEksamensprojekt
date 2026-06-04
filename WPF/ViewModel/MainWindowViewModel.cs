@@ -10,10 +10,14 @@ namespace App.ViewModel
         private readonly BookingService _bookingService; //Kommunikation med databsen
         private bool _isCarAvailable; //Fortæller om der er bil/cykel ledig lige nu, opdateres når LoadSync kører
         private bool _isBikeAvailable;
+        private int _availableCarCount;
+        private int _availableBikeCount;
 
         //Properties
         public RelayCommand BookCarCommand { get; } //Objekter som xaml kan bindes til - wpf kalder execute på commanden og canExecute for om den er tilgængelig
         public RelayCommand BookBikeCommand { get; }
+        public string BookCarLabel => $"Bil · {_availableCarCount} ledige";
+        public string BookBikeLabel => $"Cykel · {_availableBikeCount} ledige";
         public RelayCommand OpenCreateBookingCommand { get; }
 
         //Constructors
@@ -80,10 +84,12 @@ namespace App.ViewModel
 
             _isCarAvailable = cars.Count > 0; //tilgængeligheden er true hvis over 0 på listen
             _isBikeAvailable = bikes.Count > 0;
-
+            _availableCarCount = cars.Count; //antal ledige (vist i knappen)
+            _availableBikeCount = bikes.Count;
             BookCarCommand.RaiseCanExecuteChanged(); //fortæller wpf at den skal kalde CanBook igen, for at se om den har ændret sig
             BookBikeCommand.RaiseCanExecuteChanged();
-
+            OnPropertyChanged(nameof(BookCarLabel));
+            OnPropertyChanged(nameof(BookBikeLabel));
         }
     }
 }

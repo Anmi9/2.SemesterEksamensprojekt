@@ -51,19 +51,19 @@ public class RaceConditionTest
 
     private async Task<Booking> SimulateClick1Async()
     {
-        using Context context1 = new Context(); 
+        using (Context context1 = new Context())
         {
             BookingRepository repo1 = new BookingRepository(context1);
             VehicleRepository vehicleRepo1 = new VehicleRepository(context1);
             BookingService service1 = new BookingService(repo1, vehicleRepo1);
 
-            return await service1.TryBookOptimalVehicleAsync(_start, _end, _carType); 
+            return await service1.TryBookOptimalVehicleAsync(_start, _end, _carType);
         }
     }
 
     private async Task<Booking> SimulateClick2Async()
     {
-        using Context context2 = new Context(); // Vi opretter en ny context for at simulere forsøg på dobbeltbooking eller dobbeltklik.
+        using (Context context2 = new Context()) // Vi opretter en ny context for at simulere forsøg på dobbeltbooking eller dobbeltklik.
         {
             BookingRepository repo2 = new BookingRepository(context2);
             VehicleRepository vehicleRepo2 = new VehicleRepository(context2);
