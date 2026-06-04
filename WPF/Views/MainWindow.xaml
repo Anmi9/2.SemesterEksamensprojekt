@@ -67,28 +67,28 @@
                             Height="60" FontSize="16" FontWeight="SemiBold" Background="#2563EB" Foreground="White" BorderThickness="0"/>
                 </Grid>
             </Border>
-        </Grid>
-        <Popup x:Name="NotificationBox" 
-               IsOpen="True" 
-               AllowsTransparency="True" 
-               StaysOpen="True" 
-               PopupAnimation="Fade"
-               PlacementTarget="{Binding ElementName=ParentGrid}"
-               Placement="Right" 
-               HorizontalOffset="-210" 
-               VerticalOffset="20">             
+        </Grid> 
+            <Popup x:Name="NotificationBox" 
+                   IsOpen="True" 
+                   AllowsTransparency="True" 
+                   StaysOpen="True" 
+                   PopupAnimation="Fade"
+                   PlacementTarget="{Binding ElementName=ParentGrid}"
+                   Placement="Right" 
+                   HorizontalOffset="-210" 
+                   VerticalOffset="20">
 
-            <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Width="190">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
-                </Border.Effect>
+                <Border Background="#1E293B" CornerRadius="12" Padding="20,15" Width="200">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Opacity="0.3" ShadowDepth="2"/>
+                    </Border.Effect>
 
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="{Binding StatusMessage}" Foreground="#94A3B8" FontSize="13" TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="{Binding StatusMessage}" Foreground="#94A3B8" FontSize="13" TextWrapping="Wrap"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-            </Border>
+                </Border>
         </Popup>
     </Grid>
 </Window>
