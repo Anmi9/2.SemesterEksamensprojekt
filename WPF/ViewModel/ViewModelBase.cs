@@ -32,11 +32,11 @@ namespace App.ViewModel
         protected (DateTime Start, DateTime End) GetQuickBookingPeriod()
         {
             DateTime now = DateTime.Now;
-            TimeSpan roundedTimeOfDay = RoundUpToNearestTimeSlot(now.TimeOfDay);
-            DateTime start = now.Date + roundedTimeOfDay;
+            int minutes = (now.Minute / TimeSlotIntervalMinutes) * TimeSlotIntervalMinutes; // runder ned til nuværende kvarter
+            DateTime start = new DateTime(now.Year, now.Month, now.Day, now.Hour, minutes, 0);
             DateTime end = start.Add(QuickBookingDuration);
-
             return (start, end);
+
         }
     }
 }
