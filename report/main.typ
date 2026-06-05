@@ -38,7 +38,7 @@
 = Construction (dato-dato)
 #{
   set heading(offset: 1)
-  // Inkluder construction fil
+  include "sections/construction.typ"
 }
 = Reflektion
 

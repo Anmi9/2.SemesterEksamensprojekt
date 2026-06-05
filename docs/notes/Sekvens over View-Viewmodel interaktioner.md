@@ -1,10 +1,12 @@
 ---
 created: 2026-06-04
-section:
+section: construction 1
 exclude: false
 sortKey: 29.3851
 ---
+[[flow diagram]]
 
+---
 ```mermaid
 sequenceDiagram
     autonumber
