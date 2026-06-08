@@ -16,7 +16,7 @@
   include "hvad-er-potentialet.typ"
 }
 
-= Interviewteknik (Et skridt tilbage)
+= Interviewteknik
 #{
   set heading(offset: 3)
   include "interviewteknik.typ"
