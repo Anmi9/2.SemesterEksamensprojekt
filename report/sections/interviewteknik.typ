@@ -4,8 +4,7 @@ Forud for vores første interviewrunde havde vi fokus på at skabe en interviewf
 
 Vi var i stor grad insipireret af The Mom Test, Rob Fitzpatrick. Han taler meget ind i, at sandheden ikke ligger i hvad de tror de vil gøre, men derimod hvad folk tidligere har gjort. Han argumenterer blandt andet for at hvis man spørger direkte ind til folks meninger og intentioner så svarer de det, de tror intervieweren gerne vil høre,
 
-For at holde os til fortiden og ikke tale funktionalitet, havde vi udformet nogle regler som vi tilstræbte at følge under interviewet samt nogle faste 'oneliners' vi altid kunne falde tilbage på hvis nødvendigt.
-Nogle af reglerne var formuleret således:
+For at holde os til fortiden og ikke tale funktionalitet, havde vi udformet nogle regler som vi tilstræbte at følge under interviewet:
 
 "Man spørger ind til fortiden ikke fremtiden"
 
@@ -23,4 +22,4 @@ Når vi derefter blev mere konkrete i vores spørgsmål, handlede det i høj gra
 
 Ved at tage udgangspunkt i konkrete situationer fik vi valide insigter i brugerenes faktiske adfærd. Udbyttet var i sær tydeligt, når vi sammenlignede med de gange vi ved en fejl kom til at dreje samtalen ind på hypotetiske scenarier og fremtidige ønsker til funktionalitet.
 
-Frugten af vores tilgang til samtalerne var især tydelige da vi skulle til kravspecifikation, da vi netop allerede havde stillet skarpt på deres pains og valideret graden af disse.
+Gevinsten af vores tilgang til samtalerne var især tydelige da vi skulle til kravspecifikation, da vi netop allerede havde stillet skarpt på deres pains fået konkrete adfærdsbeskrivelser. Det gjorde det reletivt hurtigt, at validere om det var reele eller blot irritationer.
