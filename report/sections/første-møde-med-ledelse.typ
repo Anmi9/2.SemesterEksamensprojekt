@@ -1,4 +1,14 @@
-sms'er og uformelle samtaler ledte til, at vi oprettede kontakt til ledelsen på Bostøtten. Efter en kort introduktion til projektet via mail fik vi aftalt at mødes til en indledende samtale. Formålet med dette møde var at præsentere os selv og projektet, men også at få en lidt bedre forståelse af bostøtten som virksomhed. Mødet blev ikke optaget, men følgende noter blev taget undervejs:
+Projektet indgang til domænet opstod via en personlig og uformel forbindelse til en ny medarbejder i Bostøtten, Tulipanvej 100 I Silkeborg.
+
+Vi havde i tidligere projekter oplevet en udfordring i, at bygge løsnigner på antagelser om et domæne vi ikke kendte.
+
+Derfor var vi meget motiverede til aktivt at opsøge en ekstern aktør og derved arbejde med et ægte domæne samt reele brugere.
+
+Vi blev via den oprindelige kontakt ledt til Bostøttens ledelse og aftalte der et møde for at afdække rammerne for samarbejdet.
+
+Mødet blev ikke optaget, men flere noter blev taget undervejs, heriblandt de overordnede organisatoriske rammer:
+150 borgere at besøge, 13 pædagoger, 4 biler og 3 cykler til rådighed. En intern tommelfingerregel foreskrev, at medarbejderne skal anvende cykler hvis strækningen er under 4 kilometer. Bostøttens egne biler bookes gennem Outlook, mens puljebiler administreres i et seperat system, som ingen havde brugt før. Derudover fik vi bekræftet at flere af medarbejderne gjorde brug af egne biler.
+
 
 BILAG:
 Kommunens egne biler - besparelse

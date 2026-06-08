@@ -2,7 +2,7 @@
 
 Forud for vores første interviewrunde havde vi fokus på at skabe en interviewform der i højere grad afdækkede arbejdsgange og problematikker i dagligdagen, og helt udelade hypotetisk funktionalitet til vores software.
 
-Vi var i stor grad insipireret af The Mom Test, Rob Fitzpatrick, som taler meget ind i, at sandheden ikke ligger i hvad de tror de vil gøre Men deriomod hvad folk tidligere har gjort. Han argumentere blandt andet for at hvis man spørger direkte ind til folks meninger og intentioner så svarer de det, de tror intervieweren gerne vil høre,
+Vi var i stor grad insipireret af The Mom Test, Rob Fitzpatrick. Han taler meget ind i, at sandheden ikke ligger i hvad de tror de vil gøre, men derimod hvad folk tidligere har gjort. Han argumenterer blandt andet for at hvis man spørger direkte ind til folks meninger og intentioner så svarer de det, de tror intervieweren gerne vil høre,
 
 For at holde os til fortiden og ikke tale funktionalitet, havde vi udformet nogle regler som vi tilstræbte at følge under interviewet samt nogle faste 'oneliners' vi altid kunne falde tilbage på hvis nødvendigt.
 Nogle af reglerne var formuleret således:

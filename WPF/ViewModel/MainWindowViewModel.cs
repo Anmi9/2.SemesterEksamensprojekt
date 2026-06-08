@@ -86,9 +86,9 @@ namespace App.ViewModel
             _isBikeAvailable = bikes.Count > 0;
             _availableCarCount = cars.Count; //antal ledige (vist i knappen)
             _availableBikeCount = bikes.Count;
-            BookCarCommand.RaiseCanExecuteChanged(); //fortæller wpf at den skal kalde CanBook igen, for at se om den har ændret sig
+            BookCarCommand.RaiseCanExecuteChanged(); //fortæller wpf at den skal kalde CanBook igen, for at se om den har ændret sig - fortæller om knappen er grå eller grøn
             BookBikeCommand.RaiseCanExecuteChanged();
-            OnPropertyChanged(nameof(BookCarLabel));
+            OnPropertyChanged(nameof(BookCarLabel)); //ændring af property
             OnPropertyChanged(nameof(BookBikeLabel));
         }
     }
