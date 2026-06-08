@@ -1,0 +1,414 @@
+* 9d38100 docs(mhn): sekvensdiagram over view-Viewmodel
+*   d9e50a3 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   e16a2b1 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| | * 4aae87e wpf(lka): antal ledige køtj vises i knap, lyn booking runder ned til nuværende kvarter
+| * | 3b3d1e9 WPF(mhn): Opdateret popup notification
+* | | 442d1ee src(avm): Opdateret metode TryBook..()
+| |/  
+|/|   
+* | cbdc36b Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| *   1f8a489 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | d80542d WPF(mhn): Flyttet booking bekræftigelse til opper højre hjørne af vinduet
+* | | b6b0612 src(avm): færdiggjort test
+| |/  
+|/|   
+* | c9a8401 src(avm): Rettelse af Startproperty
+* | 3ac4ce3 src(avm): Test skrevet færdig
+* | ac65f7c Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| * 0dc2c6c WPF(mhn): tilføjer bekræftigelses notification
+* | 517026c src(avm): Har oprettet RaceConditionTest
+|/  
+* a5f8a5b src(lka):BookingService rullet tilbage
+*   58661d1 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   31727cc src(avm): Accepterer Lasses ændringer
+| |\  
+| * | a07cf31 src(avm): Slettet gammel tråd, Oprettet ny test: RaceConditionTest
+* | |   bee4b50 mhn(merge): merge commit
+|\ \ \  
+| | |/  
+| |/|   
+| * | f1f7226 src/wpf(lka): Logik til bekræftigelse samt ny migration
+| |/  
+* / 715d143 WPF(mhn): opdateret UI og ryddet op i C# kode (fjernet ubrugte name spaces etc.)
+|/  
+* ddc6c5c docs(mhn): sekvensdiagram over bookingbekræftigelse
+* 2f7b79a src(mhn): gjort createBookingViewModel knapperne minimalt flottere
+*   06a9057 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * e9cb6dc wpf(lka): Simpel lynbooking funktion implementeret
+| *   c67242a Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| | * 6a19a58 src(lka):Knapper ændres efter tilgængelighed
+| | *   2ecd4c2 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| | |\  
+| | * | ddd1f6f src(lka)':Data seeding implementeret
+| * | | f54a7f5 src(avm): Opdateret Algoritme
+| | |/  
+| |/|   
+| * | 513e989 src(avm): Oprettet testklasse
+| |/  
+* / eee9baa docs(mhn): construction 1 planlægning
+|/  
+* 06b5b8b src(lka): Fixed race condition
+* b1d632e WPF(mhn): Rydet op i CreateBookingViewModel, slettet ubrugt SelectedType property og slettet fejl factory kode fra App.xaml.cs
+* 4cc9879 docs/.
+*   a4cd031 merge(mhn): merge commit
+|\  
+| * aad30ef report(lka): E3 forretning
+| * 1403f51 src(avm): Fjernet null-værdi til OptimalVehicle
+| * 518f202 src(avm): rettet null og slettet ekstra scope i relaycommand
+* | 23f6577 src(mhn): kan ikke huske hvad jeg ændrede
+* | 6879a4f docs(mhn): kommentar til projekt workflow
+* | a13b938 WPF(mhn): fortsat implementering af Command pattern
+* | ad6fd78 docs(mhn): reflektioner over vores elaboration til construction proces
+|/  
+*   78770bf Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * ef50400 docs(avm): Tanker om kode
+| * 2452474 src(avm): Kommentar til implementering + ændret listenavn(tilføjet -Types)
+| * efae96c src(avm): Gjort type nullable, så db-kald kan bruges til både UI og bookingflow
+* | 7fc095f WPF(mhn): realiseret ICommand sådan at WPF lytter til når der sker ændringer i dato og tid, og reagere ved at opdatere knapperne. WPF lytter til knapperne og forsøger at starte en booking sekvens via Bookingservice
+|/  
+* 28477d0 docs(mhn): tilføjet kommentar til implementeringen af sprint opgave: Adskille forretningslogik og UI
+* 256430d src(mhn): BookService har en public metode der returnere alle ledige køretøjer til klienten inden for en givet tidsperiode. Dette er for at isolere viewmodel fra application laget sådan at DI root ikke skal kende til viewmodel og injekte et repo objekt ind i det.
+* 1424b68 src(mhn): VehicleRepository GetAvailableVehicles returnere nu IEnumerable<Vehicle> og ikke en List<Vehicle>
+*   f3d52ed WPF(mhn): merge af CreateBookingViewModel metode Book
+|\  
+| * 6e43a97 src(avm): Fjernet defensiv kode i book() indtil videre
+| *   734ef21 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | f7c613b src(avm): viewmodel-objekt lavet om til simple parametre for at skille UI + servicelag
+* | | b8a1774 WPF(mhn): implementeret command pattern (ICommand) til binding af knapper til ViewModel. Mangler at implementere knap logikken i ViewModel
+| |/  
+|/|   
+* | c313a88 WPF(mhn): oprettet DelegateCommand klasse der implementere ICommand til brug i ViewModel til at binde knapperne i View.xaml
+|/  
+*   fefa6b0 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   c4f9f22 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | f9e2947 report(avm): Koderefleksion E3
+* | | 19a8aaf WPF(mhn): Flyttet ViewModel til WPF projekt og oprettet WPF subfolders til View, ViewModels og Commands
+| |/  
+|/|   
+* | 010e90e Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| * 7fc4cef src(avm): Fjernet bookingliste fra parameter. TryBookOptimalVehicle() kalder selv db og henter liste
+* | 9321a6e docs(mhn): construction 1 planlægning
+|/  
+* 0c099e6 src(mhn): createBooking view model
+* b6c4fe8 src(mhn): fjernet 'magic numbers' fra CreateBookingViewModel
+* c1c3ab3 src(mhn): forbedrede navngivning i CreateBookingViewModel og simplificerede udregningen af defaultStart
+* f1c5c4c src(mhn): erstattet backing fields med 'field' keyword
+*   c9754dd Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   cdff621 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | 49d4783 report(avm): Moscowafsnit
+* | | 2dd0835 src(mhn): migreret logik fra CreateBookingVew til ViewModel og ændret UI controllers fra event driven til bindings
+| |/  
+|/|   
+* | a1ced97 docs(mhn): misc. docs ændringer
+|/  
+*   3e66806 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 5784035 docs(avm): Sekvensdiagram over flow fra valgt type til booking oprettet
+| * 67f2304 src(avm): Opdateret asynkronemetoder med Async i navnet
+| * f3661fc src(avm): Gjort CreateBooking-metoderne asynkrone
+| * fd1459e src(avm): Tilføjet async/await til DBCreate-metoden
+| *   ee174ae Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | ff53a3c src(avm): Implementering af Semaphoreslim og metoden TryBookOptimalVehicle()
+* | | 027e632 report(mhn): skrevet E3 kapital outline med stikord
+| |/  
+|/|   
+* | 9a067f0 src(mhn): Opdateret Vehicle enum med flags attributen. Gjort kontrakten til Vehicle klassens properties stramme og robuste
+* | 9b7182a docs(mhn): note til arbejdsflow snak og opdatering af process graf
+|/  
+* ab1513d src(mhn): slettet ikke implementerede metoder som ikke skal bruges
+*   9c14940 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * a13ba59 src(mhn): implementeret tids input i createbookingview
+* | e608ab3 src(avm):Algoritmemetode implementeret
+|/  
+*   ab8b510 Merge pull request #1 from Anmi9/DI-root
+|\  
+| * 86f53c6 src(mhn):tilføjet automatisk migrate ved startup og opdateret ef core snaphot til at inkludere den seneste udgave af vores model klasser
+| * 8112de5 src(lka): di-root, empId, database forbindelse, endtimecombobox
+* | 8fa1b2a Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| * 6c675a7 src(lka):Rettet så der kun åbner 1 vindue ved startup
+| * b02bcf0 docs(lka): E3 - planlægningsdokument
+* | 17bc66e docs(mhn): lavet nyt 'view' af vores klassediagram der passer til use case til algoritme
+|/  
+* b927763 docs(mhn): opdateret process grafen
+* 2cb2bb8 docs(avm): Klassediagram opdateret til v. 3
+* 2138629 docs(avm): Tekniske usecases (algoritme + tråde)
+* 4e8bd5e docs(avm): Startmøde til 3. iteration
+* d01731a report(lka): E2 indledning
+* 04ca340 docs(mhn): tilføjet linje til struktur i fremtidge projekter
+* c5057f4 report(mhn): opdateret template.typ og main.typ til at følge sidste reports opsætning
+*   7c1911b Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * d7c1973 docs(lka): tanker om UP struktur
+* | db227b6 report(mhn): opdateret template.typ med automatisk udregning af normalsider
+|/  
+* bac5b20 report(mhn): kapitel E1 og E2 outline
+* 9a8a4c8 docs(mhn): skrevet problemformulering
+* 6d75879 report(lka): Outline til ele 1
+* aa94b53 WPF(avm): Connection til start-property i createbooking
+* 3802b55 src(mhn): håndtere at brugeren kan slette dato feltet uden at crashe
+* d54796f docs(mhn): gjort klassediagram mere læsbart
+* 13aed02 WPF(mhn): Opdateret front-end
+* 52ec808 src(mhn): Implementeret front-end i CreateBookingViewModel
+* b166d2c WPF(mhn): tilføjet logik til dato og tids bokse
+* 5be90e2 docs(lka): Tanker omkring bookingfunktionen
+*   834cdec Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * e772f41 src(lka): DI-Root oprettet
+* | 2217e99 docs(mhn): reflektion over DI vs Composition for DbContext
+|/  
+* 13f0c90 src(lka): Forslag til DI Root
+* c31af36 src(lka): context til BookingRepo
+* 892c5e0 WPF(mhn): gået i gang med create booking UI
+* 5b6c2cb mhn(WPF): tilføjet UI elementer til CreateBookingView
+* 051e3cb docs(mhn): opdateret process graf
+* 011d921 WPF(avm): Lavet knap til create booking
+*   a490b88 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * f11f21c docs(lka): ændringer til klassediagram v2
+* | 2e66118 WPF(mhn): tilføjet projekt reference til app.csproj
+|/  
+* a04ba0a root(mhn): tilføjet WPF projekt til solution
+* aa29fb3 src(mhn): implementeret signaturene fra klassediagram version 2
+* a1c38b3 docs(mhn): opdateret process graf
+*   64c4b8c Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   09b1b9c Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | 90d5933 src(avm): Oprettelse af klasser
+* | | 397baf6 docs(mhn): indsat noter i grafen
+| |/  
+|/|   
+* | 4d74d79 docs(lka): klassediagram 1
+|/  
+*   f185075 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   6cb352c Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | 2e37dc3 docs(mhn): klassediagram v2
+* | | 9773866 src(avm):Kommentar tilVehicleRepository
+| |/  
+|/|   
+* | f3b6677 src(avm): Kommentar til vehiclerepository
+* | f3945d0 docs(avm): Flow over version 2
+* | 79718d5 docs(avm): flow over første klassediagram
+|/  
+* 7e87a13 docs(lka): ændringer til klassediagram
+* 4e2c6a5 docs(mhn): klassediagram
+*   6430a14 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   bcf84cc Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| | * 7d17a57 docs(lka): Første vejledning refleksioner
+| * | 3d19c34 docs(avm): Klassediagram
+| |/  
+| * aa64a4f docs(avm): Klassediagram vol 1 tilføjet
+* | 2df4f22 docs(mhn): processnote forbindelser
+|/  
+*   3f87177 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 6145651 docs(mhn): skrevet reflektion over hvorfor vores implementering afviger fra sekvensdiagram 1
+* | fc7dda2 src(lka): wpf oprettet
+|/  
+*   ad7bd28 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 466a5ac docs(avm): Refleksion over connection til DB
+| * 01bac41 src(avm): Connection til DB i BookingRepository
+| * 1856baf src(avm): Implementering af sekvensdiagram 1
+* | 092e53e docs(mhn): sekvensdiagram 1
+|/  
+*   97cb4e3 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 53004ed docs(lka): Fokus på identificering af jobs
+* | f59f5f9 docs(mhn): sekvensdiagram 1
+|/  
+*   acd8ffd Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 03b71b6 docs(avm): noget med sortkey
+* | 5d8782f docs(mhn): dokumenteret planlægningen af elaboration 2 og oprettet næste process note til sekvensdiagram 1
+|/  
+*   5d99e10 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 7e33821 src(avm): foldere oprettet
+| * 50d74b2 src(avm): Oprettet folder
+| * 37d69f6 docs(avm): noget med sortKey
+| *   212c308 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | 94dc8d5 docs(avm): slettet en forretningsregel ang server
+* | | ce69ccf docs(mhn): dokumenteret afslutning af E1
+| |/  
+|/|   
+* | c401080 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| * 430d04f src(avm): oprretelse af database
+* | 5ac341e docs(mhn): dokumenteret process i en process note
+|/  
+* 759f6df src, test(mhn): updateret .csproj til .net version 10.0
+* 16d42f2 docs(lka): Interviewteknik
+* fafb70e docs(avm): Små rettleser om brug af Customer segment
+* fb330db docs(avm): Overgang til problemstilling typst
+* b118ad3 docs(avm): gains og pains - typst
+* 8b6836b docs(avm): Brug af Empathy Maps
+* 5066e38 docs(avm): Identificering af jobs
+* 619cb6d docs(avm): Fokus på identificering af jobs
+* 7646803 docs(avm): Næste skridt-afsnit
+* 6e9e6bf docs(avm): rettelser
+* b441dba docs(avm): nedslagsnoter i interview
+* 3111fe5 docs(avm): Første møde med ledelsen i typst
+*   3262736 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * af05d22 docs(mhn): forbundet noter kronologisk
+* | f723330 docs(avm): Afsnit om nedslagsnoter af interview i typst
+|/  
+* 203239b Logisk model med kardinaliteter
+*   fdf32e7 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   1b4248a Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | 28caf8f docs(mhn): slettet tom fil
+| * | a6dc5c0 src(mhn): updated solution til at bruge nullable reference types. Glemte en fil i den tidligere commit
+| * | ac9602a src(mhn): updated solution til at bruge nullable reference types
+* | | 122c070 docs(avm): logisk model i database
+| |/  
+|/|   
+* | 6260133 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| * a12e173 docs(mhn): mere ajourføring af kronologisk process graf
+| *   703796a Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | f555c7a docs(mhn): ajourfør kronologisk process graf
+* | | 878e72b docs(avm): Skrive logiskmodel-note
+| |/  
+|/|   
+* | 22d8591 docs(avm): Noteændring
+* | e2fca66 docs(avm): Opdateret noter
+|/  
+* cfd510c docs(avm): Forretningsregler trukket ud af moscows must
+* 8f58f46 docs(avm): note om formål
+*   0d3f19e Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * a069f3a docs(mhn): opdateret section metadata
+* | 0ab322f docs(avm): Logisk modellering af database
+|/  
+*   b5c58a8 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * c4b7ef5 docs.(avm): Opdatere forretningsanalysenote
+* | e0b45d9 docs(mhn): lavet forløbig plan, lavet en casual use case, arbejdet med krav
+|/  
+*   8ca033b Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+* | 76ae07d docs(avm): Opdateret sections i Obsidian
+| | * 648b3bb WIP on main: 5dd579e Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |/| 
+| | * 2adf6db index on main: 5dd579e Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |/  
+| *   5dd579e Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| |/  
+|/|   
+* | 43b5a59 docs(avm): Tanker om domænemodel
+| * f0382d7 docs(mhn): ændret graph til at være mere kronologisk
+|/  
+* 4d6d080 docs(mhn): udarbejdelse af moscow samt reflektioner over brugen af modellen
+* 7d712dc Moscow
+* 2c2fa7b Moscow
+* c814df8 docs(avm):Pestle-refleksion
+* dbd58a9 docs(avm): Refleksion ang flådestyring og ANT
+* b6e58db docs.(avm): Refleksion ved brug af PESTLE i potentialediskussion
+* 187328b docs(avm): Stikord til Inception i typst
+* 0734e1c docs(avm):Videre arbejde op BMC
+* 77670ba docs(avm): Noter ang BMC
+* 1582275 report(mhn): opdateret inception outline
+* d3e5aaf docs(mhn): forretning analyse værktøj/model oversigt
+*   6535302 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * bbee3f2 docs(avm): forretningsanalyse
+* | 8568dec docs(mhn): forberedelse til interview runde 2
+|/  
+* e4ef345 docs(avm): persona_malene + note forretningsanalyse
+* 0cff5a5 report(mhn): ændret kontrasten mellem tekst og baggrundsfarve
+* f295925 docs(mhn): udarbejdelse af inception afsnits skelet
+* 8f8b696 root(mhn): tilpasset .code-workspace så compileret report fil ikke duplikere .pdf fil endelse
+* 4f67d3f report(mhn): oprettet inception skelet
+* 6cff0e4 docs(mhn): ukendte ændringer
+*   39294d1 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * de65051 docs(mhn): dokumentation
+* | 857d3c8 docs(AVM): Rapportskelet til Inception
+|/  
+* 40bf5d7 docs(LA): Krav
+*   93c7d44 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   2c8b13b Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | dd67c27 docs(LA): Persona A
+* | | 745ddfe docs(mhn): tilføjet noter til inception afsnit
+| |/  
+|/|   
+* | 10fd523 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| *   194ade5 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| | * 10b3ca8 docs(avp):Problemstilling_rettet
+| * | 9ec3ce4 docs(LA: Personaer, reflektion om VPC)
+| |/  
+* / 685a1f0 docs(mhn): Empathy map, krav, behov
+|/  
+* 7c01d2a docs(mhn): skrevet problemformulering
+*   1d86116 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| *   87a8817 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | dcecbf3 LF to CRLF
+* | | a2f88e7 docs(mhn): AI log, problemstilling
+| |/  
+|/|   
+* | cf77da1 docs(mhn): customer segment billede
+* |   218cbf4 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\ \  
+| * | 3de90da docs(LA: Opdateret VPC)
+* | | 50e5042 docs(mhnn): ai forslag til problemstillinger
+|/ /  
+* | 2e0035c Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\| 
+| * cb59c6e Docs(mhn: link fra empathy map til problemstilling
+* | 7d62b59 docs(LA): VPC Customer segment
+|/  
+* 299c1cb Docs(mhn: empathy map brian
+* 3b339cd docs(mhn:empathy mapping)
+* 7db156f docs(mhn: interview og empathy map
+*   228284b docs(mhn: overvejelser over om vi skal bruge user stories)
+|\  
+| *   6df2456 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+| |\  
+| * | 7bc2668 Add_Interview_AV
+* | | 4ad8cc5 Overvejelser om vi skal bruge user stories
+| |/  
+|/|   
+* | 5602374 Stop tracking af obsidian graph
+* | 3b36180 Inception: note arbejde
+|/  
+*   8d32145 Merge branch 'main' of https://github.com/Anmi9/2.SemesterEksamensprojekt
+|\  
+| * 8476975 Daglig note 05-05
+* | fd1df15 Inception: interview noter
+|/  
+* f6f9291 Inception: interview analyse
+* 29c81c8 Tilføjet template indhold
