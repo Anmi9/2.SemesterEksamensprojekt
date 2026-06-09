@@ -1,11 +1,11 @@
 #import "template.typ": project
 
 // --- KONFIGURATION AF FORMALIA ---
-#let anslag = 0 // Ændres manuelt når rapporten er færdig
+#let anslag = 56054   // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
-  title: "Systemudvikling og\nsoftwarearkitektur",
+  title: "2. Semestereksamen",
   authors: ("Lasse Agerskov", "Anna Vognstoft", "Matias Heiberg"),
   date: "Juni 2026",
   toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<body-end>)),
