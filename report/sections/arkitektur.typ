@@ -1,3 +1,11 @@
+
+Delrefleksion over proces ang. domænemodel og konceptuel model - manglende use case.
+
+
+
+
+
+
 DI vs Composition
 
 Valgte DI (proof of ability - så vi kan komme videre)

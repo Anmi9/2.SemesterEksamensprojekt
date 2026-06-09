@@ -32,7 +32,8 @@ Tidsestimering
 Iterations dokument
 	Business Modeling
 		Validering af at vi stadig er i tråd med opgavenformuleringen,
-		Identificering af fit mellem hårde krav - risk (system) - value (usercentric).
+		Identificering af fit mellem hårde krav - risk (system) - value (
+		usercentric).
 Requirements
 	Use Cases, én til hver. (alignment)
 Analysis & Design
