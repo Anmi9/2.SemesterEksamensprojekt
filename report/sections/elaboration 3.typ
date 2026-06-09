@@ -1,3 +1,5 @@
+#import "../template.typ": author
+
 = Forretning
 #{
   set heading(offset: 2)
@@ -28,12 +30,12 @@
   set heading(offset: 2)
   include "E3 kode.typ"
 }
-= Delkonklusion
+= Delkonklusion #author("m")
 #{
   set heading(offset: 2)
   include "e3 konklusion.typ"
 }
-= Delrefleksion
+= Delrefleksion #author("m")
 #{
   set heading(offset: 2)
   include "e3 reflektion.typ"

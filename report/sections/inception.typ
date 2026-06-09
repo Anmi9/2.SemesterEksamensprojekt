@@ -1,3 +1,5 @@
+#import "../template.typ": author
+
 = Projekt afsøgning
 #{
   set heading(offset: 2)

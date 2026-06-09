@@ -1,3 +1,5 @@
+#import "../template.typ": author
+
 = Planlægning
 #{
   set heading(offset: 2)
