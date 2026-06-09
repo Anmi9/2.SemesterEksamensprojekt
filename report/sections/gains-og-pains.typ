@@ -1,4 +1,4 @@
-Ud fra arbejdet med de tanker og følelser, der ligger bag de direkte citater og medarbejdernes selvvalgte samtaleemner under interviewene, blev vi bedre klædt på til at udfylde resten af Customer Segment-delen i VPC-skabelonen.
+Ud fra arbejdet med de tanker og følelser, der ligger bag de direkte citater og medarbejdernes selvvalgte samtaleemner under interviewene, blev vi bedre klædt på til at udfylde resten af Customer Segment-delen i VPC-skabelonen. (INDSÆT Customer segment med gains og pains)
 
 Med det udfyldte Customer Segment-felt fik vi en fælles referenceramme til at formulere en midlertidig problemstilling, som skulle præsenteres for vores klienter i forbindelse med et nyt planlagt møde. Dette møde skulle fungere som en slags validering af vores arbejde med domænet og de krav, vi som resultat heraf kunne identificere. Det var vigtigt for os og vores videre arbejde at forholde os ydmyge i forhold til domænet, så vi ikke fik forudindtagede ideer om, hvad vores klienter havde brug for. Problemstillingen skulle derfor fungere som en slags test og ikke som en endelig løsning, der skulle pege i en bestemt retning.
 
