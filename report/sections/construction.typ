@@ -1,6 +1,6 @@
 #import "../template.typ": author
 
-= Planlægning
+= Planlægning #author("m")
 #{
   set heading(offset: 2)
   include "c1-planlægning.typ"
@@ -29,6 +29,11 @@
 #{
   set heading(offset: 2)
   include "tests.typ"
+}
+= Refaktor
+#{
+  set heading(offset: 2)
+  include "refactor"
 }
 = Brugeroplevelse (UX)
 #{

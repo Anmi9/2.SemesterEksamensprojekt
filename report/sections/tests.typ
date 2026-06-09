@@ -1,7 +1,15 @@
-Refactoring af algoritmen:
-I den forrige iteration havde vi fokus på hurtigst muligt at skabe et succesfuldt flow i koden fra modtagelse af brugerinput til oprettelsen af en booking, der bliver gemt i vores database. Her blev der i mindre grad fokuseret kodenært, da vi ønskede et overblik over, hvordan de forskellige dele af systemet skulle hænge sammen. Et genkig på algoritmen for den mest optimale booking (FindBestOptimalVehicle) resulterede i en revision i denne iteration. Hvad vi har valgt at definere som det mest optimale køretøj for vores brugere, har ikke ændret sig, men vi har valgt at erstatte LINQ-metoderne med eksplicitte foreach-løkker og if-else statements. Denne beslutning blev baseret på både faglige og læringsmæssige overvejelser. Vi ønskede at forbedre forståelsen af algoritmen ved at skrive logikken ud eksplicit i stedet for at skjule den bag LINQ-metoder, hvor det blev svært at følge helt med i, hvad der skete. Refactoringen af algoritmen havde også den afledte effekt, at det blev tydeligt for os, at algoritmen kunne optimeres yderligere. I stedet for at filtrere hele listen af bookinger igennem for hvert køretøj, implementerede vi en løkke, der frasorterer forældede bookinger, inden vi tjekker for overlap. Samtidig med at vi fik en mere sigtbar kode, endte det også med at blive en mere effektiv algortime. Hvor de tidligere LINQ-metoder krævede sortering af hele listen, før vi kunne finde det vi havde brug for med FirstOrDefault(), har vi nu simple if-sætninger, der sammenligner værdierne. Man kan argumentere for, at det, vi sparer i performance, ingen betydning har for hverken det nuværende system eller den fremtidige version, vi ser for os, men det har alligevel reduceret unødvendig sortering, der ikke kommer til at belaste systemet unødigt.
+= Integrationtest
+#{
+  set heading(offset: 3)
+  include "integration-test.typ"
+}
+= Brugertest
+#{
+  set heading(offset: 3)
+  include "user-test.typ"
+}
 
-Test af SemaphoreSlim:
-Med et lokalt system der lige nu kun bruger en instans af vores Context-klasse har vores SemaphoreSlim ikke en funktion, der kan demonstrere, at den fungerer efter hensigten. Vi har ikke mulighed for at teste flere brugeres samtidige adgang. Og fordi vi har valgt at placere låsen efter to databasekald og en algoritme ville EF Core allerede have crashet systemet, inden vi når ned til låsen og kan demonstrere at et dobbeltklik på 'book'-knappen ikke resulterer i en dobbeltbooking på grund af semaphoren. Det er derfor i praksis umuligt at domonstrere låsens forretningsmæssige logik i vores WPF-app, som den er implementeret. For alligevel at kunne demonstrere, hvordan vores SemaphoreSlim ville fungere, hvis vi havde en distribueret arkitektur, har vi lavet et testmiljø, der opretter to context-objekter. På den måde kan vi simulere to samtidige brugere og på sin vis også vise, hvordan et dobbeltklik ville blive håndteret, havde vores system haft flere midlertidige context-instanser, så EF Core ikke crashede. Vores integrationstest beviser, at kun en booking bliver oprettet, når to samtidige kald forsøger at booke samme køretøj på samme tid. Det skyldes, at de to testtråde rammer samme statiske lås, da vores SemaphoreSlim er deklareret som static. Det gør, at den fungerer på tværs af alle instanser. Den simulerer en låsemekanisme, der ville fungere fint til et mindre system med en enkelt webserver, men skal systemet opskaleres til et miljø med flere servere, vil den skulle erstattes af en låsemekanisme på databaseniveau.
+
+
 
 
