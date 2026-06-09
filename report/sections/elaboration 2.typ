@@ -1,3 +1,5 @@
+#import "../template.typ": author
+
 = Iterations planlægning
 #{
   set heading(offset: 2)

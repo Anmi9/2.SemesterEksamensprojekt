@@ -6,6 +6,22 @@
 #let bg-color = rgb("#fdfcf7")
 #let font-size = 11pt
 #let target-width = 30 * font-size
+#let author-map = (
+  "a": "Anna Vognstoft",
+  "l": "Lasse Agerskov",
+  "m": "Matias Heiberg",
+)
+
+#let author(keyword) = {
+  let name = author-map.at(keyword, default: "Ukendt forfatter")
+
+  text(
+    weight: "regular",
+    size: 0.6em, // Skalerer relativt til den aktuelle overskrift (f.eks. mindre end overskriften)
+    style: "italic", // Gør forfatternavnet kursivt for visuel separation
+    fill: rgb("#555555"), // Sætter en dæmpet grå farve, uafhængig af overskriftens farve
+  )[(#name)]
+}
 
 // --- HOVED FUNKTIONEN ---
 #let project(
