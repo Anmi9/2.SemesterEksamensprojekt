@@ -1,5 +1,4 @@
-NOTE: Vi promptede AI med vores empathy mapping og persona - dets udkast hjalp os til at formulere følgende problemstilling.
-
+Vores arbejde indtil dette punkt gav os indsigt til at formulere en problemstilling, der kan lægge til grund for den analyse, vi ønsker at præsentere til vores klienter i forbindelse med den næste aftalte interviewrunde:
 
 Problemstilling
 Arbejdsdagen ved bostøtten på Tulipanvej 100 indeholder mange varierende arbejdsopgaver. Noget arbejde kræver en detaljeret planlægning, mens andet er ad hoc-opgaver. Fleksibiliteten er en nødvendighed for både medarbejdere og borgere, men den udfordrer planlægningen, fordi dagene bliver uforudsigelige. Det resulterer i manglende tillid til det planlagte og en øget byrde i ofte at skulle revurdere planen.

@@ -1,4 +1,4 @@
-I et forsøg på at løse to problemer på en gang - overholde formalia om implementering af algoritme i vores system, samtidig med at vi ønsker at skabe værdi for vores brugere - valgte vi at tilføje en algoritme, der skal udregne det ledige køretøj, som har den mindste tidsforskel (gap) mellem det valgte start- og sluttidspunkt. Ved at lade en bil med den mindste tidforskel være det optimale køretøj risikerer vi ikke en meget 'hullet' bookingkalender, hvor der spildes tid på små ledige intervaller mellem bookinger. Med et aftalt fokus på at skabe skelettet og bookingflowet som et udgangspunkt til refactoring, blev algoritmen i første omgang håndteret med moderne LINQ-sorteringsmetoder, OrderBy og OrderByDescending, der er relativt tunge sorteringer fremfor fx en foreach med if-sætninger. På dette tidspunkt i processen var det en beslutning om at prioritere en kortere, mere læsbar kode, så vi hurtigst muligt kunne se effekten af vores arbejde. Da vores system heller ikke forventes at skulle håndtere så store datamængder, at LINQ-metoderne ville have en negativ påvirkning på bookingsystemets performance, blev det løsningen indtil videre.
+I et forsøg på at løse to problemer på en gang - overholde formalia om implementering af algoritme i vores system, samtidig med at vi ønsker at skabe værdi for vores brugere - valgte vi at tilføje en algoritme, der skal udregne det ledige køretøj, som har den mindste tidsforskel (gap) mellem det valgte start- og sluttidspunkt. Ved at lade en bil med den mindste tidforskel være det optimale køretøj risikerer vi ikke en meget 'hullet' bookingkalender, hvor der spildes tid på små ledige intervaller mellem bookinger. Med et aftalt fokus på at skabe skelettet og bookingflowet som et udgangspunkt til refactoring, blev algoritmen i første omgang håndteret med moderne LINQ-sorteringsmetoder, OrderBy og OrderByDescending, der er relativt tunge sorteringer fremfor løkker med if-sætninger. På dette tidspunkt i processen var det en beslutning om at prioritere en kortere, mere læsbar kode, så vi hurtigst muligt kunne se effekten af vores arbejde. Da vores system heller ikke forventes at skulle håndtere så store datamængder, at LINQ-metoderne ville have en negativ påvirkning på bookingsystemets performance, blev det løsningen indtil videre.
 
 
 Valg af asynkrone databasekald:
@@ -12,8 +12,7 @@ Desuden indeholder vores lås en finally-blok, der sikrer os mod en anden deadlo
 
 
 
-Måske en delrefleksion om test af trådhåndtering?:
-Vores system kører på nuværende tidspunkt lokalt med en lokal database. Selvom det rent teknisk kan lade sig gøre at registrere lynhurtige og samtidige brugerhandlinger ved at taste hurtigt, fordi vi har lavet asynkrone metoder, vil det i praksis være umuligt at fremprovokere manuelt for at demonstrere risikoen. Her overvejer vi at implementere en test i en senere iteration, der kan simulere samtidigheden og demonstrere, at vores SemaphoreSlim fungerer efter hensigten.
+
 
 
 
