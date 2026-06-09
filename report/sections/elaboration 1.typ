@@ -5,7 +5,7 @@
   set heading(offset: 2)
   include "Moscow.typ"
 }
-= Modellering af database
+= Modellering af database #author("a")
 #{
   set heading(offset: 2)
   include "Modellering af database .typ"

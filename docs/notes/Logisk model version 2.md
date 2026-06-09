@@ -30,8 +30,8 @@ erDiagram
     
     VEHICLE  
     EMPLOYEE
-    BOOKING || --o{ EMPLOYEE :" "
-    BOOKING || --o{ VEHICLE :" "
+    EMPLOYEE || --o{ BOOKING :" "
+    VEHICLE || --o{ BOOKING :" "
     
     
     
