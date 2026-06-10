@@ -53,7 +53,7 @@
   include "persona.typ"
 }
 
-= Krav
+= Krav #author("l")
 #{
   set heading(offset: 3)
   include "krav.typ"
