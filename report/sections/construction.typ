@@ -10,7 +10,7 @@
   set heading(offset: 2)
   include "lagdeling-dependency-rule.typ"
 }
-= Migration fra View til View Model (Command pattern)
+= Arkitektur mønstre #author("m")
 #{
   set heading(offset: 2)
   include "migration-view-viewModel.typ"
