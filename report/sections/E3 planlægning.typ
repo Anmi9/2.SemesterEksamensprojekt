@@ -1,3 +1,6 @@
+For denne iteration havde vi fokus på at
+
+
 Valg af goals (overflow: skeleton (DI root), tråde, algoritmer)
 Vi blev beviste om at komme forbi alle de forskellige UP descipliner (hvis muligt)
 - bl.a. unit test, som vi prioriterede sidst på sprint backloggen

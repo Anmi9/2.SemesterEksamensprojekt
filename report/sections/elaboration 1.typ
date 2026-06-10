@@ -17,13 +17,13 @@
   include "Valg af database.typ"
 }
 
-= Delkonklusion
+= Delkonklusion #author("a")
 #{
   set heading(offset: 2)
   include "DelkonklusionE1.typ"
 }
 
-= Delrefleksion
+= Delrefleksion #author("a")
 #{
   set heading(offset: 2)
   include "DelrefleksionE1.typ"
