@@ -47,7 +47,7 @@
   include "problemstilling.typ"
 }
 
-= Persona
+= Persona #author("l")
 #{
   set heading(offset: 3)
   include "persona.typ"
