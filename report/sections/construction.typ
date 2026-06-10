@@ -30,7 +30,7 @@
   set heading(offset: 2)
   include "tests.typ"
 }
-= Refaktor
+= Refaktor #author("a")
 #{
   set heading(offset: 2)
   include "refactor"
@@ -40,7 +40,7 @@
   set heading(offset: 2)
   include "c1 konklusion.typ"
 }
-= Delrefleksion
+= Delrefleksion #author("a")
 #{
   set heading(offset: 2)
   include "c1 reflektion.typ"

@@ -5,19 +5,19 @@
   include "projekttilgang.typ"
 }
 
-= Interview med flådestyring
+= Interview med flådestyring #author("a")
 #{
   set heading(offset: 3)
   include "interview-med-flådestyring.typ"
 }
 
-= Lytter igennem og tager nedslagsnoter
+= Lytter igennem og tager nedslagsnoter #author("a")
 #{
   set heading(offset: 3)
   include "lytter-igennem-og-tager-nedslagsnoter.typ"
 }
 
-= Diskutere hvad det næste skridt skal være
+= Diskutere hvad det næste skridt skal være #author("a")
 #{
   set heading(offset: 3)
   include "diskutere-næste-skridt.typ"
@@ -29,13 +29,13 @@
   include "fokus-på-identificering-af-jobs.typ"
 }
 
-= Brug af Empathy map
+= Brug af Empathy map #author("a")
 #{
   set heading(offset: 3)
   include "brug-af-empathy-map.typ"
 }
 
-= Nu kan vi lave gains og pains
+= Nu kan vi lave gains og pains #author("a")
 #{
   set heading(offset: 3)
   include "gains-og-pains.typ"
@@ -59,13 +59,13 @@
   include "krav.typ"
 }
 
-= Interview runde 2
+= Interview runde 2 #author("a")
 #{
   set heading(offset: 3)
   include "interview2.typ"
 }
 
-= BMC - løbende værktøj
+= BMC - løbende værktøj #author("a")
 #{
   set heading(offset: 3)
   include "bmc.typ"
