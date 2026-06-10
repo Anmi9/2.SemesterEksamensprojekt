@@ -1,4 +1,5 @@
-= Projekttilgang (opgave tagning)
+#import "../template.typ": author
+= Projekttilgang #author("l")
 #{
   set heading(offset: 3)
   include "projekttilgang.typ"
