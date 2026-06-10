@@ -18,11 +18,16 @@ For at lægge den overordnede plan for projektet valgte vi at benytte et Gantt d
 Med udgangspunkt i UP's faser planlagde vi følgende forløb:
 
 Inception: 5 arbejdsdage
+
 Elaboration 1-2: 2 x 4 arbejdsdage
+
 Construction 1: 5 arbejdsdage
+
 Rapport og aflevering: 5 arbejdsdage
 
-(Indsæt Gantt v1)
+Repport skrivning talte ikke som fasedage.
+
+#image("../assets/Gantt v1.png")
 
 Vi var bevidste om, at overflow fra en iteration til den næste var sansynligt og vi aftalte at overflow skulle vurderes ved faseskift for at sikre det stadig var inden for scope. Vi diskuterede ligeledes at benytte burndown charts til arbejdsopgaverne i de enkelte iterationer for at sikre fremdrift og give en form for 'sense-of-urgency' - hvilket hurtigt viste sig ikke at være nødvendigt da den kom helt naturligt.
 
