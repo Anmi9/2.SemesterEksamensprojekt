@@ -14,4 +14,6 @@ Observationerne handlede tæt på allesammen om usikkerhed. Der blev spurgt "Ska
 
 Det mest sigende citat er "Skal jeg gøre mere?". I de tidlige interviews beskrev medarbejderne hvordan de fik andre til at booke for sig, fordi det nuværende system var for langsomt til at bekræfte bookingen. Derudover beskrev de også et workaround hvori de skrev rundt til teamet fordi de ikke kunne danne sig et overblik. Begge disse udspringer fra manglende tillid til systemet. På trods af, at vores sysem har en bekræftelse persisterer problemet stadig. Bekræftelsen skaber ikke den sikkerhed hos brugeren som vi tilstræbte.
 
-Testen e
+Testen pegede dermed på tre konkrete forbedringer til en kommende iteration. Den første er en oversigt over bookinger, som medarbejderne selv efterspurgte, hvilket ligeledes vil åbne for andre krav fra MoSCoW, heriblandt ændring og sletning af en eksisterende booking. Den anden skal minimere usikkerheden ved at gøre det tydeligt i brugergrænsefladen at valget af køretøj bliver taget af systemet. Samtidig skal bekræftelsen efter booking gøres mere eksplicit, så brugeren ikke er i tvivl efterfølgende.
+
+Samtidig er det værd at notere, at ingen af brugerne fejlede i scenarierne, begge gennemførte bookingerne og med langt færre klik. Usikkerheden handlede mere om tillid til systemet fremfor faktisk at kunne benytte det.
