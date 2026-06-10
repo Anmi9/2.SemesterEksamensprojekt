@@ -1,0 +1,1 @@
+I denne iteration formåede vi trods manglende planlægning og uhensigtsmæssige beslutninger at komme i gang med implementeringen efter en grundig prioritering af vores funktionelle og ikke-funktionelle krav. Vi fik strømlinet en logisk databasemodel og konfigureret SQLite-database styret via EF Core.
