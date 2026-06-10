@@ -5,7 +5,7 @@
   set heading(offset: 2)
   include "c1-planlægning.typ"
 }
-= Oprydning af arkitekturen #author("m")
+= Afkobling af præsentation og kernel #author("m")
 #{
   set heading(offset: 2)
   include "lagdeling-dependency-rule.typ"
@@ -14,6 +14,11 @@
 #{
   set heading(offset: 2)
   include "migration-view-viewModel.typ"
+}
+= Lynbooking
+#{
+  set heading(offset: 2)
+  include "Lynbooking.typ"
 }
 = Brugeroplevelse (UX)
 #{

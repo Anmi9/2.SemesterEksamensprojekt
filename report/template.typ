@@ -46,7 +46,7 @@
 
   // 2. TEKST FORMATERING
   set par(justify: true, leading: 0.8em)
-
+  set figure(gap: 1em)
   // Funktion der begrænser bredden og centrerer indholdet (padding på begge sider)
   let limit-width(it) = layout(size => {
     if size.width > target-width {
