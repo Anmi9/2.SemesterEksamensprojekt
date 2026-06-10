@@ -25,7 +25,7 @@
   set heading(offset: 2)
   include "E3 process.typ"
 }
-= kode valg
+= kode valg #author("a")
 #{
   set heading(offset: 2)
   include "E3 kode.typ"

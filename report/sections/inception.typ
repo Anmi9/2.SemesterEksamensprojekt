@@ -12,13 +12,13 @@
   include "inception-start.typ"
 }
 
-= Delkonklusion
+= Delkonklusion #author("a")
 #{
   set heading(offset: 2)
   include "inception-konklusion.typ"
 }
 
-= Delreflektion
+= Delreflektion #author("a")
 #{
   set heading(offset: 2)
   include "inception-reflektion.typ"
