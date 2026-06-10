@@ -1,9 +1,11 @@
+Empathy Maps har været et meget nyttigt værktøj for os i arbejdet med vores onterviews. Vi erkendte, at vi allerede under genlytningen af vores interviews skulle have brugt Empathy Maps som udgangspunkt til at tage nedslagsnoter. På den måde havde vi haft et redskab til at organisere vores rå data på en effektiv måde, der hurtigt kunne sende os videre i processen. Den erkendelse tager vi med os i senere projekter.
 
-Reflektion - vi skulle have brugt Empathy Maps ved lytningen af interviews. Empathy mapping tager udgangspunkt i rå data, det ville være meget nemmere at skrive citater ned løbende med at vi lyttede til vores optagelser.
+Selvom vi ikke fra starten gjorde brug af relevante værktøjer til at organisere vores data hensigtsmæssigt, er vi enige om, at vores interviewteknik har bidraget meget positivt til det materiale, vi har fået indsamlet. Med de åbne spørgsmål og fokus på interviewpersoners egne erfaringer fik vi et kæmpe udbytte ud af vores discoveryarbejde.
 
-Refleksion: Vi kan bruge PESTLE til at identificere de eksterne faktorer, der påvirker vores produkt til, at argumentere for, hvorfor det er en vigtig og nødvendig løsning. EX. Danmark og Europa i det hele taget søger mod at blive teknologisk uafhængige af Microsoft - Outlook.
-(P) politisk: Digital suverænitet - stigende interesse for at udvikle løsninger, der ikke er afhængig af store internationale tech-firmaer.
+Interviewet med flådestyringen var særligt interessant, fordi vi her begyndte at overveje mulige algoritmer i vores system, der kunne være med til at løse de udfordringer, de har med at optimere brugen af bilerne mest muligt, så de står stille så lidt som muligt. Vi noterer os, at det kunne være en mulig vej at gå for at skabe mest mulig værdi - både for det større netværk, men i særdeleshed for vores medarbejdere.
 
-Refleksion: Interviewet med Flådestyringen i Silkeborg Kommune gav os en dybere forståelse af de mange forskellige interesenter, der er i spil i et projekt som dette. Udbyttet af samtalen understregede også, hvordan vi med et projekt på denne størrelse og kompleksitet er nødt til at begrænse vores fokus til den specifikke gruppe af brugere på Bostøtten. Samtidig overvejede vi, hvordan algoritmer i vores system kunne være med til at løse deres udfordringer med at optimere brugen af deres biler mest muligt. Disse tanker og erkendelser tager vi med videre i projektet, men lægger for nu låg på klarlægningen af hele det komplekse netværk, der ligger uden for medarbejderne på Bostøtten.
+Til sidst har vi diskuteret, om vi kan bruge PESTLE til at identificere de eksterne faktorer, der påvirker vores produkt til og på den måde afklare, hvorfor det er en vigtig og nødvendig løsning. I Danmark, men også Europa i det hele taget søger mod at blive teknologisk uafhængige af Microsoft - Outlook. (P) politisk: Digital suverænitet - stigende interesse for at udvikle løsninger, der ikke er afhængig af store internationale tech-firmaer.
+
+
 
 

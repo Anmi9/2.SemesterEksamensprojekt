@@ -11,7 +11,7 @@ Vi indgik en række konkrete after for at sikre kontinuitet, koordinering og fre
 - Fredagsmøde kl. 12 for at vurdere fremdrift i løbet af ugen samt alignment til den kommende uge.
 
 Valg af techstack
-Vi valgte en velkendt techstack: C\# med WPF til brugergrænseflade, Entity Framework Core med SQL (hvilket vi ændrede) til databasen. Dette var en form for risikostyring. Da dette projekt var det første hvor vi havde et reelt problemdomæne og reelebrugere at interviewe, vidste vi udemærket godt, at vi ville bruge mere tid på discovery-arbejde, end hvad vi har gjort i tidligere projekter. Ved ikke at introducere ny teknologi kunne vi koncentrere vores kapacitet om domæneforståelse og kravanalyse.
+Vi valgte en velkendt techstack: C\# med WPF til brugergrænseflade, Entity Framework Core med SQL (hvilket vi ændrede) til databasen. Dette var en form for risikostyring. Da dette projekt var det første hvor vi havde et reelt problemdomæne og reelebrugere at interviewe, vidste vi udemærket godt, at vi ville bruge mere tid på discovery-arbejde, end hvad vi har gjort i tidligere projekter. Vi genbrugte vores projektskabelon i Typst og Obsidian. Ved ikke at introducere ny teknologi kunne vi koncentrere vores kapacitet om domæneforståelse og kravanalyse.
 
 Iterationsplan og Gantt
 For at lægge den overordnede plan for projektet valgte vi at benytte et Gantt diagram. Gantt skulle fungere som et udgangspunkt og ikke som en bindende kontrakt. Tidligere projekter har lært os, at et at lægge en fuldkommen plan på dette tidspunkt i projektet primært vil bygge på antagelser der ikke har hold i virkeligheden. Derfor besluttede vi, at vi for hver iteration ville udfærdige en plan ud fra og kun bruge dette oprindelige Gantt diagram som en oversigt over iterationsplanen.
