@@ -25,7 +25,7 @@
   set heading(offset: 2)
   include "c1-risk-value.typ"
 }
-= Tests
+= Tests #author("a") #author("l")
 #{
   set heading(offset: 2)
   include "tests.typ"

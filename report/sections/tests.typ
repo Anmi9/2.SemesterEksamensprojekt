@@ -1,5 +1,5 @@
 #import "../template.typ": author
-= Integrationtest
+= Integrationtest #author("a")
 #{
   set heading(offset: 3)
   include "integration-test.typ"
