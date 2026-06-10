@@ -1,4 +1,3 @@
-alignment: får formuleret sort på hvidt hvad det vil sige at vælge det optimale køretøj
-Snakker om at vi kunne skabe værdi med at sprede slidtagen ud
+Erfaringen fra vores første iteration i elaboration var, at use case-arbejdet var utrolig værdifuldt for at strømline vores tanker og planlægning. Derfor blev det oplagt i denne fase at fokusere på at få uddybet de resterende must-krav i form af use cases. På den måde får vi formuleret sort på hvidt, hvad det fx vil sige at vælge det optimale køretøj i vores system, eller hvordan systemet skulle håndtere tråde. (INDSÆT use case om tråde og algoritme).
 
-se vores to use cases på algoritmer og tråde
+

@@ -5,12 +5,12 @@
   set heading(offset: 2)
   include "E3 forretning.typ"
 }
-= Planlægning og sprint målsætning
+= Planlægning og sprint målsætning #author("a")
 #{
   set heading(offset: 2)
   include "E3 planlægning.typ"
 }
-= krav
+= krav oversat til use cases #author("a")
 #{
   set heading(offset: 2)
   include "E3 krav.typ"
@@ -20,7 +20,7 @@
   set heading(offset: 2)
   include "E3 OOA-D.typ"
 }
-= arbejdsprocess
+= arbejdsprocess #author("a")
 #{
   set heading(offset: 2)
   include "E3 process.typ"
