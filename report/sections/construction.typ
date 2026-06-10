@@ -5,7 +5,7 @@
   set heading(offset: 2)
   include "c1-planlægning.typ"
 }
-= Oprydning af arkitekturen
+= Oprydning af arkitekturen #author("m")
 #{
   set heading(offset: 2)
   include "lagdeling-dependency-rule.typ"
