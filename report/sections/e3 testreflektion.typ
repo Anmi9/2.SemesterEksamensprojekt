@@ -1,0 +1,3 @@
+Vores system kører på nuværende tidspunkt lokalt med en lokal database og en enkelt delt context-instans. Selvom det rent teknisk kan lade sig gøre at registrere lynhurtige og samtidige brugerhandlinger ved at taste hurtigt, fordi vi har lavet asynkrone metoder, vil det i praksis være umuligt at fremprovokere manuelt for at demonstrere risikoen. Dette skyldes vores bevidste placering af vores lås. EF Core ville crashe vores system, før en race condition opstår. Her overvejer vi at implementere en test i en senere iteration, der kan simulere samtidigheden med to oprettede context-instanser og demonstrere, at vores SemaphoreSlim fungerer efter hensigten, havde der været flere instanser i systemet.
+
+Refleskion over risikoen ved asynkronitet vs. UI-blokering:

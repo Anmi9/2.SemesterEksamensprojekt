@@ -40,3 +40,8 @@
   set heading(offset: 2)
   include "e3 reflektion.typ"
 }
+= Testrefleksion #author("a")
+#{
+  set heading(offset: 2)
+  include "e3 testreflektion.typ"
+}
