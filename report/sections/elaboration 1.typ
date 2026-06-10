@@ -11,6 +11,18 @@
   include "Modellering af database .typ"
 }
 
+= Valg af database #author("a")
+#{
+  set heading(offset: 2)
+  include "Valg af database.typ"
+}
+
+= Entity Framework Core #author("a")
+#{
+  set heading(offset: 2)
+  include "Entity Framework Core.typ"
+}
+
 = Delkonklusion
 #{
   set heading(offset: 2)

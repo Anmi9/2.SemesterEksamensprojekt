@@ -1,4 +1,8 @@
 
+
+
+
+
 Delrefleksion over proces ang. domænemodel og konceptuel model - manglende use case.
 
 
