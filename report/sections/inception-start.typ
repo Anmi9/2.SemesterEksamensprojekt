@@ -58,12 +58,6 @@
   include "krav.typ"
 }
 
-= Feedback på behovsanalyse og krav specifikation
-#{
-  set heading(offset: 3)
-  include "feedback-på-behovsanalyse.typ"
-}
-
 = Interview runde 2
 #{
   set heading(offset: 3)

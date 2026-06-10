@@ -1,4 +1,4 @@
-
+Vi har diskuteret, hvordan Business Model Canvas som værktøj kan hjælpe os med at udvikle vores løsning. For nu har vi kun lavet stikord til de elementer, der kan blive relevante for os, men vi planlægger at bruge de forskellige elementer i BMC'en løbende efter behov. Fordi vi har fokus på at optimere et mindre internt system, har vi naturligt nok arbejdet allermest med kundesegmentet ind til videre gennem interviews, Empathy Maps og personaer.
 
 Kundesegment
 - Gennemgået via Empathy Maps + Persona + Interview
