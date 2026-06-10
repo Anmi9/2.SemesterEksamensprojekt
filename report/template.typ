@@ -17,7 +17,7 @@
 
   text(
     weight: "regular",
-    size: 0.6em, // Skalerer relativt til den aktuelle overskrift (f.eks. mindre end overskriften)
+    size: 8pt, // Skalerer relativt til den aktuelle overskrift (f.eks. mindre end overskriften)
     style: "italic", // Gør forfatternavnet kursivt for visuel separation
     fill: rgb("#555555"), // Sætter en dæmpet grå farve, uafhængig af overskriftens farve
   )[(#name)]
