@@ -18,7 +18,7 @@
 = Brugeroplevelse (UX)
 #{
   set heading(offset: 2)
-  include "bekræftigelse.typ"
+  include "brugeroplevelse.typ"
 }
 = Samtidighed
 #{
