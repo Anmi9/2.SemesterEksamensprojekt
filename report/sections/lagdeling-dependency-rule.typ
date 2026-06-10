@@ -20,3 +20,4 @@ Fordi arkitekturen i vores program var lagdelt og ikke fulgte Martins _Clean Arc
     VehicleTypes Type)
 ```
 
+En anden stor arkitektonisk ændring kom fordi vi lærte at _Model View View-Model (MVVM)_ arkitekturen, som vi brugte i forbindelse med WPF, var implementeret forkert. Vi havde været forvirret over hvilken del af mønsteret der ligger i hhv. presentations og applikations laget. Vi havde fejlagtigt placeret alt interaktions logik i view `CreateBookingView.xaml.cs`. Derfor gik vi igang med at migrerer alt dette over til view-model `CreateBookingViewModel.cs`.

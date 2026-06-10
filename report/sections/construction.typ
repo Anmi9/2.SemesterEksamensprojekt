@@ -20,11 +20,6 @@
   set heading(offset: 2)
   include "bekræftigelse.typ"
 }
-= Samtidighed
-#{
-  set heading(offset: 2)
-  include "concurrency.typ"
-}
 = Risk/value
 #{
   set heading(offset: 2)
