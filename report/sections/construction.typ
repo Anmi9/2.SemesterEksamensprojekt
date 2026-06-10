@@ -15,7 +15,7 @@
   set heading(offset: 2)
   include "migration-view-viewModel.typ"
 }
-= Lynbooking
+= Lynbooking #author("l")
 #{
   set heading(offset: 2)
   include "Lynbooking.typ"
@@ -38,7 +38,7 @@
 = Refaktor #author("a")
 #{
   set heading(offset: 2)
-  include "refactor"
+  include "refactor.typ"
 }
 = Delkonklusion
 #{

@@ -1,6 +1,6 @@
 #import "../template.typ": author
 
-= Forretning
+= Forretning #author("l")
 #{
   set heading(offset: 2)
   include "E3 forretning.typ"
