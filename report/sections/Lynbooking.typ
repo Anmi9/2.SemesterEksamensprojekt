@@ -85,6 +85,6 @@ Genbruget har dog en pris som denne metode viser. `LoadAsync()` skal kun bruge a
 
 Et simpelt overblik flowet for en lynbooking ser således ud:
 
-(Indsæt sekvensdiagram)
+#image("../assets/Sekvensdiagram - lynbooking (blackbox).png")
 
 Samlet set bekræftede implementeringen af lynbooking at iterationens oprydningsarbejde betalte sig. Vi kunne indfri et Must-krav næsten udelukkende ved brug af eksisterende byggeklodser.

@@ -1,6 +1,6 @@
 #import "../template.typ": author
 
-= Projekt afsøgning
+= Projekt afsøgning #author("l")
 #{
   set heading(offset: 2)
   include "afsøgning.typ"
