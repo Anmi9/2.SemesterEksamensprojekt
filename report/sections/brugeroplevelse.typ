@@ -1,8 +1,7 @@
-```
-Skrivepunkter:
-- Tilstand/udgangspunkt: programmet kan allerede oprette en booking i databasen, men dette bekræftes ikke i UI'en, ingen bekræftigelse.
-  - Notification løser det for begge booking typer
-- UI'et kommunikere ikke om den indtastede information producere en gyldig booking eller ej hvilket strider imod kravet om at reducere antal kliks/tid for at udføre en booking. Se #link(<personachristian>)[persona: Christian]
-  - Knapper ændre dynamisk tilstand alt efter om dataen producerer en gyldig booking (gælder også lynbooking)
-  - Lynbooking tager det et skridt videre og viser også hvor mange biler der er ledige før brugeren overhoved har fortaget et enkelt klik
-```
+Vores personaer er begge profiler som er træt af at bostøttens eksisterende bookingløsning fejler i at gøre det tydligt om en booking er succesfuld. For at forløse denne pain har vi implementeret en notifikations funktion der bekræfter køretøjstypen, dens id og tidsperioden den er blevet booket i. Yderligere valgte vi at tilføje antallet af ledige køretøjer til tekst indholdet af hurtig-booking knapperne. Det fungerer som et hurtigt overblik over pædagogens valgmuligheder, men i forbindelse med denne pain giver det også feedback da antallet dekrementeres hvis bookingen går igennem.
+
+#image("../assets/notifikation.png")
+
+En mangel ved vores UI tilstand ved starten af denne iteration, var at det krævede for meget trial and error for at finde en ledig tid. Ved programmets standard booking funktion, "Planlagt reservation", hvor start og slut tidspunkt samt dato skal indtastes, var der ingen feedback på om hver ny data indtastes resulterede i ingen ledige bookinger. Det ændrede vi sådan, at knapperne deaktiveres øjeblikkeligt hvis nu data reducerer mulige bookinger til nul. Derved skal man ikke indtaste start- og sluttid hvis datoen allerede viser ingen ledige bookingmuligheder. Det samme gør sig gældende med hurtig-booking, på trods af at booking detaljerne er baseret på det nuværende tidspunkt, så deaktiveres dens knapper også hvis ingen ledige bookinger eksisterer fra nu og to timer frem.
+
+Dette designvalg, ændrer ikke præmissen om at brugeren skal prøve sig frem, nu er det bare potentielt med færer kliks. For at imødekomme persona Malenes behov om overblik og helt at undgå trial and error, er det en del af vores kravliste at implementere en oversigt over ledige tider. Men den feature ligger længere nede i MoSCoW og blev derfor ikke prioriteret inden for projektets tidsramme.
