@@ -63,6 +63,8 @@
   show enum: limit-width
   show terms: limit-width
   show bibliography: limit-width
+  show quote: limit-width
+
 
   // 3. OVERSKRIFTER
 

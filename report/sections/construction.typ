@@ -5,15 +5,20 @@
   set heading(offset: 2)
   include "c1-planlægning.typ"
 }
-= Dependency inversion (lagdeling)
+= Oprydning af arkitekturen
 #{
   set heading(offset: 2)
-  include "lagdeling-dependency-inversion.typ"
+  include "lagdeling-dependency-rule.typ"
 }
 = Migration fra View til View Model (Command pattern)
 #{
   set heading(offset: 2)
   include "migration-view-viewModel.typ"
+}
+= Brugeroplevelse (UX)
+#{
+  set heading(offset: 2)
+  include "bekræftigelse.typ"
 }
 = Samtidighed
 #{
@@ -34,11 +39,6 @@
 #{
   set heading(offset: 2)
   include "refactor"
-}
-= Brugeroplevelse (UX)
-#{
-  set heading(offset: 2)
-  include "concurrency.typ"
 }
 = Delkonklusion
 #{
