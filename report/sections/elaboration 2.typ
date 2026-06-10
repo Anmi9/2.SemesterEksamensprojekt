@@ -45,11 +45,11 @@
 = Delkonklusion
 #{
   set heading(offset: 2)
-  include "arkitektur.typ"
+  include "DelkonklusionE2.typ"
 }
 
 = Delrefleksion
 #{
   set heading(offset: 2)
-  include "arkitektur.typ"
+  include "delrefleksionE2.typ"
 }
