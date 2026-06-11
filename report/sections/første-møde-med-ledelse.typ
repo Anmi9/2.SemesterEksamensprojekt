@@ -1,4 +1,4 @@
-Projektet indgang til domænet opstod via en personlig og uformel forbindelse til en ny medarbejder i Bostøtten, Tulipanvej 100 I Silkeborg.
+Projektets indgang til domænet opstod via en personlig og uformel forbindelse til en ny medarbejder i Bostøtten, Tulipanvej 100 I Silkeborg.
 
 Vi havde i tidligere projekter oplevet en udfordring i, at bygge løsnigner på antagelser om et domæne vi ikke kendte.
 
@@ -17,32 +17,3 @@ Mødet blev ikke optaget, men flere noter blev taget undervejs, heriblandt de ov
 - Bostøttens egne biler bookes gennem Outlook, mens puljebiler administreres i et seperat system, som ingen havde brugt før.
 
 - Derudover fik vi bekræftet at flere af medarbejderne gjorde brug af egne biler.
-
-
-
-BILAG:
-Kommunens egne biler - besparelse
-
-Ikke egne biler
-
-Flådestyring
-
-Borgerplan lige/ulige uger - fordelt tyndt
-4 uger frem booking
-
-Kamilla (leder)
-
-150 borgere
-
-Alle (pædagoger) har dagvagter
-Dagene er ikke lige booket/travle
-
-Kørselsfradrag, hvis medarbejder kører over 2000km i egen bil
-
-Der er en intern regel om, at man booker cykel, hvis besøget er under 4 km væk
-
-Puljebiler bookes i bestemt tidsperiode
-
-
-
-

@@ -1,4 +1,4 @@
-Potentialet for projektet var stadig ikke helt tydeligt. Den medarbejder der var vores indgang til kontakten, havde dog givet udtryk for, at det nuværende bookingsystem var så besværligt, at hun ofte valgte at bruge sin egen bil. Derved vidste vi, at der var et behov blandt medarbejderne der ikke blev mødt af den nuværende løsning.
+Potentialet for projektet var stadig ikke helt tydeligt. Den medarbejder der var vores indgang til kontakten, havde dog givet udtryk for, at det nuværende bookingsystem var så besværligt, at valgtet oftest blev at bruge sin egen bil. Derved vidste vi, at der var et behov blandt medarbejderne der ikke blev mødt af den nuværende løsning.
 
 Vi vidste derfor, at der var potentiale i spændet mellem to observationer vi havde gjort: arbejdsgangen på bostøtten er uforudsigelig og kræver høj fleksibilitet, og den fleksibilitet stiller tilsvarende høje krav til koordineringsværktøjer.
 

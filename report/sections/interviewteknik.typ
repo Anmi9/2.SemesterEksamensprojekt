@@ -2,19 +2,18 @@
 
 Forud for vores første interviewrunde havde vi fokus på at skabe en interviewform der i højere grad afdækkede arbejdsgange og problematikker i dagligdagen, og helt udelade hypotetisk funktionalitet til vores software.
 
-Vi var i stor grad insipireret af The Mom Test, Rob Fitzpatrick. Han taler meget ind i, at sandheden ikke ligger i hvad de tror de vil gøre, men derimod hvad folk tidligere har gjort. Han argumenterer blandt andet for at hvis man spørger direkte ind til folks meninger og intentioner så svarer de det, de tror intervieweren gerne vil høre,
+Vi var i stor grad insipireret af #cite(<fitzpatrick2023>, form: "prose"). Han taler meget ind i, at sandheden ikke ligger i hvad de tror de vil gøre, men derimod hvad folk tidligere har gjort. Han argumenterer blandt andet for at hvis man spørger direkte ind til folks meninger og intentioner så svarer de det, de tror intervieweren gerne vil høre,
 
 For at holde os til fortiden og ikke tale funktionalitet, havde vi udformet nogle regler som vi tilstræbte at følge under interviewet:
 
-"Man spørger ind til fortiden ikke fremtiden"
-
-"Spørg ind til minder/oplevelser ikke holdninger eller hypoteser"
-
-"Stil åbne og ikke-ledende spørgsmål"
-
-"Kig efter valg og friktion i interviewsvarene"
-
-"Stil opfølgende spørgsmål: hvorfor, hvordan".
+#quote(
+  ["Man spørger ind til fortiden ikke fremtiden" #linebreak()
+    "Spørg ind til minder/oplevelser ikke holdninger eller hypoteser" #linebreak()
+    "Stil åbne og ikke-ledende spørgsmål" #linebreak()
+    "Kig efter valg og friktion i interviewsvarene" #linebreak()
+    "Stil opfølgende spørgsmål: hvorfor, hvordan".],
+  block: true,
+)
 
 Så på trods af, at det var fristende ekesempelvis at spørge "Ville det være godt med et bedre bookingsystem", da det netop var beklagelser over bookingsystemet der havde været vores første kontaktpunkt, prøvede vi i stedet for at stille åbne og ikke-ledende spørgsmål til deres dagligdag, for ikke at udelukke andre potentielle pains eller gains som fokus til vores softwareprodukt. Derfor indledte vi de fleste interviews med at få dem til at fortælle om deres dagligdag og derefter spørge ind når de selv italesatte gnidnigspunkter i arbejdsgangen. Herefter sørgede vi for at spørge ind til disse gnidninger, men igen med fokus på ovenstående regler, eks. "Fortæl om sidste gang du bookede en bil" eller "Fortæl om sidste gang du oplevede problemer med bookingenbiler".
 

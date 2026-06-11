@@ -28,10 +28,10 @@ public class CreateBookingViewModel : ViewModelBase
     get;
     set
     {
-        if (field == value) return;
-        field = value;
-        OnPropertyChanged();
-        ApplyDefaultTime();
+      if (field == value) return;
+      field = value;
+      OnPropertyChanged();
+      ApplyDefaultTime();
     }
   }
 }
@@ -49,13 +49,13 @@ public class RelayCommand : ICommand
 
   public bool CanExecute(object? parameter)
   {
-      return _canExecute?.Invoke(parameter) ?? true;
+    return _canExecute?.Invoke(parameter) ?? true;
   }
 
   public void Execute(object? parameter)
   {
-      if (!CanExecute(parameter)) return;
-      _execute(parameter);
+    if (!CanExecute(parameter)) return;
+    _execute(parameter);
   }
 }
 ```
@@ -68,9 +68,9 @@ public class CreateBookingViewModel : ViewModelBase
   public CreateBookingViewModel(BookingService service)
   {
     RegisterBookingCommand = new RelayCommand(
-        execute: async param =>
-          await ExecuteBookingAsync(param),
-        canExecute: param => CanPlaceBooking(param)
+      execute: async param =>
+        await ExecuteBookingAsync(param),
+      canExecute: param => CanPlaceBooking(param)
     );
   }
 
@@ -94,8 +94,8 @@ public class CreateBookingViewModel : ViewModelBase
     get;
     set
     {
-        field = value;
-        OnPropertyChanged();
+      field = value;
+      OnPropertyChanged();
     }
   }
 
@@ -104,8 +104,8 @@ public class CreateBookingViewModel : ViewModelBase
     get;
     set
     {
-        field = value;
-        OnPropertyChanged();
+      field = value;
+      OnPropertyChanged();
     }
   }
 
@@ -114,8 +114,8 @@ public class CreateBookingViewModel : ViewModelBase
     get;
     set
     {
-        field = value;
-        OnPropertyChanged();
+      field = value;
+      OnPropertyChanged();
     }
   }
   //------------------------------------------------------
