@@ -16,7 +16,7 @@
 #metadata("start") <start-formalia>
 = Introduktion
 
-= Inception (dato-dato) #author("l", "", "a")
+= Inception (dato-dato) #author("l", "a")
 #{
   set heading(offset: 1)
   include "sections/inception.typ"

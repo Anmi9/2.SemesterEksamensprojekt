@@ -158,7 +158,7 @@
 
     // Semester info
     Teknisk Rapport \
-    Datamatiker uddannelsen \
+    Datamatikeruddannelsen \
     #today-da \
     #link("https://github.com/Anmi9/2.SemesterEksamensprojekt", underline[*GitHub*])
 
