@@ -41,7 +41,7 @@
   set heading(offset: 1)
   include "sections/construction.typ"
 }
-= Reflektion
+= Perspektivering
 
 = Litteraturliste
 #bibliography("references.bib", title: none)

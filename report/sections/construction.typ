@@ -25,11 +25,6 @@
   set heading(offset: 2)
   include "brugeroplevelse.typ"
 }
-= Risk/value
-#{
-  set heading(offset: 2)
-  include "c1-risk-value.typ"
-}
 = Tests #author("a") #author("l")
 #{
   set heading(offset: 2)

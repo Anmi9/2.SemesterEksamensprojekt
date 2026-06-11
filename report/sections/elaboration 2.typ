@@ -6,22 +6,10 @@
   include "E2 planlægning.typ"
 }
 
-= Sekvensdiagram
+= Vejledning og designdiagrammer
 #{
   set heading(offset: 2)
-  include "Sekvensdiagram.typ"
-}
-
-= 1. Vejledning
-#{
-  set heading(offset: 2)
-  include "Vejledning1.typ"
-}
-
-= Klassediagram
-#{
-  set heading(offset: 2)
-  include "Klassediagram1-2.typ"
+  include "Vejledning og designdiagrammer.typ"
 }
 
 = Arkitektur
@@ -34,12 +22,6 @@
 #{
   set heading(offset: 2)
   include "ForretningsGenbesøg.typ"
-}
-
-= kode valg
-#{
-  set heading(offset: 2)
-  include "e2 kode.typ"
 }
 
 = Delkonklusion
