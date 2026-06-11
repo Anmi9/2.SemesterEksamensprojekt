@@ -8,7 +8,7 @@ I stedet definerede vi et klart 'iterationsmål', altså hvad iterationen skulle
 
 #quote(
   block: true,
-  [Implementering af Must-have-kravet 'Opret booking' (#link(<uc1>, [se UC1])) i overensstemmelse med de definerede forretningsregler.],
+  [_Implementering af Must-have-kravet 'Opret booking' i overensstemmelse med de definerede forretningsregler_ (#link(<uc1>, [se UC1])).],
 )
 
 Det var en måde at udskifte process kompleksitet med et konkret/håndgribelig, verificerbar, risikobetonet kundecentrisk krav der var sammenfaldende med vores eksamensopgavekrav.
