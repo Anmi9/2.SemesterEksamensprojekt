@@ -1,4 +1,4 @@
-Vi har diskuteret, hvordan Business Model Canvas som et strategisk værktøj til at berettige udviklingen af vores løsning. For nuværende har vi kun lavet stikord til de elementer, der kan blive relevante for os, men vi planlægger at bruge de forskellige elementer i BMC'en løbende efter behov. Fordi vi har fokus på at optimere et mindre internt system, har vi naturligt nok arbejdet allermest med kundesegmentet ind til videre gennem interviews, Empathy Maps og personaer. Kortlægningen indtil nu ser således ud:
+Vi har diskuteret Business Model Canvas som et strategisk værktøj til at berettige udviklingen af vores løsning. For nuværende har vi kun lavet stikord til de elementer, der kan blive relevante for os, men vi planlægger at bruge de forskellige elementer i BMC'en løbende efter behov. Fordi vi har fokus på at optimere et mindre internt system, har vi naturligt nok arbejdet allermest med kundesegmentet indtil videre gennem interviews, Empathy Maps og personaer. Kortlægningen indtil nu ser således ud:
 
 #quote(
   block: true,
@@ -23,7 +23,7 @@ Vi har diskuteret, hvordan Business Model Canvas som et strategisk værktøj til
     *Indtægtsstrømme*
     #quote(
       block: true,
-      [Da systemet er internt, måles værdien udelukkende i socialt afkast og tidsoptimering og altså ikke i økonomisk profit. Ved at minimere tiden, der går med koordinering, bliver der frigivet mere tid til medarbejdernes kerneopgaver - ansigt til ansigt med borgerne (ATA-tid), som vi har fået bekræftet i vores interviews skal ligge på cirka 62%.],
+      [Da systemet er internt, måles værdien udelukkende i socialt afkast og tidsoptimering og altså ikke i økonomisk profit. Ved at minimere tiden, der går med koordinering, bliver der frigivet mere tid til medarbejdernes kerneopgaver - ansigt til ansigt med borgerne (ATA-tid), hvilket vi har fået bekræftet i vores interviews skal ligge på cirka 62%.],
     )
   ],
 )
