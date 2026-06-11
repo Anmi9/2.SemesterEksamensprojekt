@@ -6,7 +6,7 @@
   include "afsøgning.typ"
 }
 
-= Inception start
+= Inception start #author("l")
 #{
   set heading(offset: 2)
   include "inception-start.typ"

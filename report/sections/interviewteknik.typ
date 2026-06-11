@@ -15,7 +15,19 @@ For at holde os til fortiden og ikke tale funktionalitet, havde vi udformet nogl
   block: true,
 )
 
-Så på trods af, at det var fristende ekesempelvis at spørge "Ville det være godt med et bedre bookingsystem", da det netop var beklagelser over bookingsystemet der havde været vores første kontaktpunkt, prøvede vi i stedet for at stille åbne og ikke-ledende spørgsmål til deres dagligdag, for ikke at udelukke andre potentielle pains eller gains som fokus til vores softwareprodukt. Derfor indledte vi de fleste interviews med at få dem til at fortælle om deres dagligdag og derefter spørge ind når de selv italesatte gnidnigspunkter i arbejdsgangen. Herefter sørgede vi for at spørge ind til disse gnidninger, men igen med fokus på ovenstående regler, eks. "Fortæl om sidste gang du bookede en bil" eller "Fortæl om sidste gang du oplevede problemer med bookingenbiler".
+Så på trods af, at det var fristende ekesempelvis at spørge "Ville det være godt med et bedre bookingsystem", da det netop var beklagelser over bookingsystemet der havde været vores første kontaktpunkt, prøvede vi i stedet for at stille åbne og ikke-ledende spørgsmål til deres dagligdag, for ikke at udelukke andre potentielle pains eller gains som fokus til vores softwareprodukt. Derfor indledte vi de fleste interviews med at få dem til at fortælle om deres dagligdag og derefter spørge ind når de selv italesatte gnidnigspunkter i arbejdsgangen. Herefter sørgede vi for at spørge ind til disse gnidninger, men igen med fokus på ovenstående regler, eksempelvis:
+
+#quote(
+  block: true,
+  ["Fortæl om sidste gang du bookede en bil" ],
+)
+
+eller
+
+#quote(
+  block: true,
+  ["Fortæl om sidste gang du oplevede problemer med bookingenbiler".],
+)
 
 Når vi derefter blev mere konkrete i vores spørgsmål, handlede det i høj grad også om at vurdere hvor stort problemet reelt var for dem, altså om det var værd at løse eller om de allerede havde en fungerende "work-around".
 

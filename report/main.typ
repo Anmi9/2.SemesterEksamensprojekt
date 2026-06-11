@@ -1,4 +1,5 @@
 #import "template.typ": project
+#import "template.typ": author
 
 // --- KONFIGURATION AF FORMALIA ---
 
@@ -15,7 +16,7 @@
 #metadata("start") <start-formalia>
 = Introduktion
 
-= Inception (dato-dato)
+= Inception (dato-dato) #author("l") #author("")
 #{
   set heading(offset: 1)
   include "sections/inception.typ"

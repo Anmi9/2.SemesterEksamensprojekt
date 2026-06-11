@@ -224,6 +224,17 @@
     },
   )
 
+  // 8. SEVLTÆNDIGE BILLEDER SIDER
+  let image-page(path, ..args) = {
+    page(
+      width: auto,
+      height: auto,
+      flipped: true,
+      margin: 0pt,
+      image(path, width: 100%, ..args),
+    )
+  }
+
   // Markør for start af brødtekst (til beregning af sideantal)
   [#metadata("Body Start") <body-start>]
 
