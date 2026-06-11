@@ -33,9 +33,5 @@ erDiagram
     
     VEHICLE  
     EMPLOYEE
-    BOOKING 
-    
-    
-    
-    
+    BOOKING  
 ```
