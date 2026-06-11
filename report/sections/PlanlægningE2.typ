@@ -1,5 +1,6 @@
-NOTE fra Obsidian
-Planlægning af E2 d. 18/5
+`Note fra Obsidian
+created: 2026-05-18
+section: elaboration 2`
 
 Vi fravælger at lave et planlægningsartefakt da det er tidskrævende og grundlæggende bygger på vores intuitive evner til at estimere scopets tid. Hvilket vi er dårligt stillet til at kunne gøre.
 
