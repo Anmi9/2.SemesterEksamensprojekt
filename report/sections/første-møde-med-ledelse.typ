@@ -8,12 +8,13 @@ Vi blev via den oprindelige kontakt ledt til Bostøttens ledelse og aftalte der 
 
 Mødet blev ikke optaget, men flere noter blev taget undervejs, heriblandt de overordnede organisatoriske rammer:
 
-- 150 borgere at besøge,
-
-- 13 pædagoger, 4 biler og 3 cykler til rådighed.
-
-- En intern tommelfingerregel foreskrev, at medarbejderne skal anvende cykler hvis strækningen er under 4 kilometer.
-
-- Bostøttens egne biler bookes gennem Outlook, mens puljebiler administreres i et seperat system, som ingen havde brugt før.
-
-- Derudover fik vi bekræftet at flere af medarbejderne gjorde brug af egne biler.
+#quote(
+  block: true,
+  [
+    - 150 borgere at besøge,
+    - 13 pædagoger, 4 biler og 3 cykler til rådighed.
+    - En intern tommelfingerregel foreskrev, at medarbejderne skal anvende cykler hvis strækningen er under 4 kilometer.
+    - Bostøttens egne biler bookes gennem Outlook, mens puljebiler administreres i et seperat system, som ingen havde brugt før.
+    - Derudover fik vi bekræftet at flere af medarbejderne gjorde brug af egne biler.
+  ],
+)

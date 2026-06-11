@@ -28,8 +28,13 @@ Tilsæmmen spænder disse to personaer således over domænets yderpunkter ad-ho
 
 Vi udvidede desuden persona-arbejdet med behov og outcomes for, at skabe en mere direkte overgang til kravspecifikation og tilsikre at vores krav var holdt opimod et konkret behov og samtidig 'målbart' for os om vi rent faktisk indfriede det.
 Fælles outcomes:
-- Mere tid og energi til kerneydelser.
-- Gøre det hurtigere at foretage en booking
-- Øge tillid til sine bookinger.
+#quote(
+  block: true,
+  [
+    - Mere tid og energi til kerneydelser.
+    - Gøre det hurtigere at foretage en booking
+    - Øge tillid til sine bookinger
+  ],
+)
 Behovet blev tilføjet til personaerne og outcomes blev holdt i analyse noterne til senere brug.
 
