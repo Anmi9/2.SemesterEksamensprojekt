@@ -3,7 +3,7 @@
 
 // --- KONFIGURATION AF FORMALIA ---
 
-#let anslag = 78899 // Ændres manuelt når rapporten er færdig
+#let anslag = 90619 // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
@@ -45,12 +45,12 @@
 = Konklusion
 #{
   set heading(offset: 1)
-  include "SlutKonklusion.typ"
+  include "sections/SlutKonklusion.typ"
 }
 = Perspektivering
 #{
   set heading(offset: 1)
-  include "perspektivering.typ"
+  include "sections/perspektivering.typ"
 }
 
 = Litteraturliste
