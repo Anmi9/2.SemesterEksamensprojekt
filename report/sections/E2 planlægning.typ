@@ -11,6 +11,6 @@ I stedet definerede vi et klart 'iterationsmål', altså hvad iterationen skulle
 
 Det var en måde at udskifte process kompleksitet med et konkret og verificerbar krav der var sammenfaldende med vores eksamensopgavekrav og derfor af høj risiko..
 
-Det var endvidere også en pragmatisk beslutning truffet efter erkendelsen af, at alle tasks ville flyde over i næste iteration - da det var en grundsten for både produktet og opgaven. Derfor blev iterationslængden fastsat på 3.5 dage, for at sikre et naturligt reflektionsstop. Derved kan vi sikre, at vi ikke er kommet på sidespor og vores foretningsantagelser stadig holder.
+Det var endvidere en pragmatisk beslutning: Vi forventede ikke at nå målet fuldt ud inden for iterationen. Iterationslængden på 3,5 dage var derfor ikke et estimat for, hvornår "Opret booking" ville stå færdig, men en bevidst timeboksning, der skulle tvinge os til et naturligt refleksionsstop. Ved iterationens udløb kunne vi træde et skridt tilbage og vurdere, om vi stadig var inden for scope, og om vores forretningsantagelser holdt - frem for at arbejde videre i blinde. Fordi "Opret booking" var en grundsten for både produktet og opgaven og under alle omstændigheder skulle færdiggøres, var overflow til næste iteration en forventet og accepteret konsekvens.
 
 Vi besluttede at lave et sekvensdiagram for at "aligne" vores mentale modeller og kom igang med implementeringen.
