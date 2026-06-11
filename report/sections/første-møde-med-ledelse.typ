@@ -1,11 +1,7 @@
 Projektets indgang til domænet opstod via en personlig og uformel forbindelse til en ny medarbejder i Bostøtten, Tulipanvej 100 I Silkeborg.
-
 Vi havde i tidligere projekter oplevet en udfordring i, at bygge løsnigner på antagelser om et domæne vi ikke kendte.
-
 Derfor var vi meget motiverede til aktivt at opsøge en ekstern aktør og derved arbejde med et ægte domæne samt reele brugere.
-
 Vi blev via den oprindelige kontakt ledt til Bostøttens ledelse og aftalte der et møde for at afdække rammerne for samarbejdet.
-
 Mødet blev ikke optaget, men flere noter blev taget undervejs, heriblandt de overordnede organisatoriske rammer:
 
 #quote(
