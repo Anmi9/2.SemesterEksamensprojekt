@@ -1,4 +1,60 @@
-Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse og kravspecifikation blev vi enige om at domænemodellen som værktøj ikke længere ville tilføje ekstra til vores forståelse. Vi vurderede, at vi havde fået os en rigtig god domæneindsigt i vores indledende arbejde, der gjorde det muligt for os at gå direkte i gang med et ER-diagram over vores database - vi prioriterede tid. Med dette diagram ville vi kunne få et overblik over de regler, der gælder for vores systems data, og hvordan de hænger sammen med hinanden. Denne proces blev sværere end forventet, hvorfor vi måtte stoppe op og i stedet skrive en use case for vores mest centrale must-krav: "Opret booking" for at strømline vores tanker om implementeringen. (INDSÆT evt. Use case af Opret Booking her) I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik også til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Selvom use case-arbejdet hjalp os til at forstå, hvordan systemet skulle fungere, manglede vi stadig afklaring for at kunne strukturere dataen optimalt. Derfor formulerede vi en række forretningsregler med udgangspunkt i vores must-krav og foreløbige tanker endtil nu.
+Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse og kravspecifikation blev vi enige om at domænemodellen som værktøj ikke længere ville tilføje ekstra til vores forståelse. Vi vurderede, at vi havde fået os en rigtig god domæneindsigt i vores indledende arbejde, der gjorde det muligt for os at gå direkte i gang med et ER-diagram over vores database - vi prioriterede tid. Med dette diagram ville vi kunne få et overblik over de regler, der gælder for vores systems data, og hvordan de hænger sammen med hinanden. Denne proces blev sværere end forventet, hvorfor vi måtte stoppe op og i stedet skrive en use case for vores mest centrale must-krav: "Opret booking" for at strømline vores tanker om implementeringen.
+
+#align(center)[
+  #quote(
+    block: true,
+    [
+      #align(left)[
+        *Pre-condition:*
+        #quote(
+          block: true,
+          [
+            Medarbejderen er logget ind \
+            På internettet \
+          ],
+        )
+      ]
+
+      #align(left)[
+        *Primær aktør:*
+        #quote(
+          block: true,
+          [
+            Pædagog fra autismeteamet \
+          ],
+        )
+      ]
+
+      #align(left)[
+        *Success kriterie:*
+        #quote(
+          block: true,
+          [
+            Medarbejder har registreret en tidsbestemt booking af et ledigt køretøj af en konkret type \
+          ],
+        )
+      ]
+
+      #align(left)[
+        *Success scenarie:*
+        #quote(
+          block: true,
+          [
+            Ser oversigt \
+            Vælger start tid \
+            Vælger slut tid \
+            Vælger køretøjstype \
+            Systemet skal vælge det optimale transportmiddel [Usecase til algoritme] \
+            Booking bliver persisteret [Usecase til tråde] \
+            Bekræfter om bookingen er gået igennem \
+          ],
+        )
+      ]
+    ],
+  )
+]
+
+I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik også til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Selvom use case-arbejdet hjalp os til at forstå, hvordan systemet skulle fungere, manglede vi stadig afklaring for at kunne strukturere dataen optimalt. Derfor formulerede vi en række forretningsregler med udgangspunkt i vores must-krav og foreløbige tanker endtil nu.
 (INDSÆT evt. forretningsregler her)
 Det endte med at give os den klarhed, vi havde savnet for at kunne modellere vores database hensigtsmæssigt til vores system. Vi tog da en fælles beslutning om at gå direkte videre med at modellere en logisk model ud fra de entiteter, vi havde identificeret i det indledende arbejde.
 
