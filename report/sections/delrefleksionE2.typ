@@ -1,11 +1,7 @@
+Vi valgte i denne iteration at prioritere den bagvedliggende værdiskabelse, der lå i et UI, der opdaterer løbende i takt med brugerens input. Det betyder lynhurtige resultater, få klik og en minimering af støj i form af unødvendig information. Vores UI skulle forkusere på tilgængelighed og ikke på allerede bookede tider. På grund af denne prioritering blev konsekvensen, at vi ikke nåede den mål, vi havde sat os for.
 
 
 
-give løbende feedback på hvilke slags typer der er ledig
-algoritmisk vælger det mest optimale transportmidel der bliver booket
-lynbookning/få klik
-standard værdier er allerede valgt
-Fokusere på at vise dem tilgængelighed, det de kan handle på ikke alt det de ikke kan. Mere signal mindre støj
 
 
 
