@@ -7,20 +7,22 @@ Christian er forholdsvis ny medarbejder på Tulipanvej og navigerer stadig i arb
 Malene er erfaren og principfast. Hun bruger aldrig egen bil efter overgangen til lav takst og planlægger derfor sine bookinger i god tid. Hendes frustation er, at det manglende overblik gør dagligdagen uforudsigelig når man ikke kan regne med sine bookinger. Hun vil hellere aflyse et borgerbesøg fremfor at gå på kompromis med sine principper. For Malene er systemets vigtigste egenskaber derfor overblik og pålidelighed.
 
 #page(
-  image("../assets/persona-christian.pdf"),
-  flipped: true,
   width: auto,
-  height: auto,
+  height: 90em,
+  flipped: true,
   margin: 0pt,
+  image("../assets/persona-christian.pdf"),
 )
 
 #page(
-  image("../assets/persona-malene.pdf"),
-  flipped: true,
   width: auto,
-  height: auto,
+  height: 90em,
+  flipped: true,
   margin: 0pt,
+  image("../assets/persona-malene.pdf"),
 )
+
+
 
 Tilsæmmen spænder disse to personaer således over domænets yderpunkter ad-hoc og planlæggeren. Fælles for dem er overblikket over ledige transportmidler, hurtigere booking process og forsikring om at bookingen er gået igennem. For at indfri begge personaers behov skulle et kommende system således tydeligt vise tilgængelighed og reducere usikkerheden omkring bookingstatus.
 

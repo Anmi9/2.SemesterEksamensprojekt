@@ -32,7 +32,7 @@ Med udgangspunkt i UP's faser planlagde vi følgende forløb:
   image("../assets/Gantt v1.png"),
   flipped: true,
   width: auto,
-  height: auto,
+  height: 90em,
   margin: 0pt,
 )
 
