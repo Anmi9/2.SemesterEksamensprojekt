@@ -1,6 +1,6 @@
 #import "../template.typ": author
 
-= Planlægning og sprint målsætning #author("a")
+= Planlægning og sprint-målsætning #author("a")
 #{
   set heading(offset: 2)
   include "E3 planlægning.typ"
@@ -16,7 +16,7 @@
   set heading(offset: 2)
   include "E3 krav.typ"
 }
-= kode valg #author("a")
+= kodebeslutninger #author("a")
 #{
   set heading(offset: 2)
   include "E3 kode.typ"

@@ -1,4 +1,4 @@
-Vi manglede det store overblik over hele systemet, det medførte at vi kom igennem mange designcyklusser hvor vi igen og igen ændrede om på ting. Efter en procesvejledning blev det klart for os, at vi var nødt til at strømline vores tanker. Derfor arbejdede vi med et indledende sekvensdiagram over vores bookingflow, og et klassediagram, der skulle give os det store overblik.
+Vi manglede det store overblik over hele systemet. Det medførte, at vi kom igennem mange designcyklusser, hvor vi igen og igen ændrede på ting. Efter en procesvejledning blev det klart for os, at vi var nødt til at strømline vores tanker. Derfor arbejdede vi med et indledende sekvensdiagram over vores bookingflow, og et klassediagram, der skulle give os det store overblik.
 
 (INDSÆT sekvensdiagram og klassediagram)
 

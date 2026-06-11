@@ -1,6 +1,6 @@
 #import "../template.typ": author
 
-= Iterations planlægning #author("l")
+= Iterationsplanlægning #author("l")
 #{
   set heading(offset: 2)
   include "E2 planlægning.typ"
