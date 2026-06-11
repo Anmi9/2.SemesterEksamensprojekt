@@ -4,3 +4,4 @@
 Citat: Manage the messy and nonlinear process of value proposition design and reduce risk by systematically applying adequate tools and processes - value proposition design.
 
 - Hvad gør vi fremadrettet?
+
