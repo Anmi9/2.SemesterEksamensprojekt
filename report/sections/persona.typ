@@ -32,7 +32,7 @@ Fælles outcomes:
   block: true,
   [
     - Mere tid og energi til kerneydelser.
-    - Gøre det hurtigere at foretage en booking
+    - Gøre det hurtigere at foretage en booking <link:hurtig-booking>
     - Øge tillid til sine bookinger
   ],
 )

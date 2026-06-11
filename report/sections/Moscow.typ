@@ -19,7 +19,7 @@ På dette tidspunkt i projektet havde vi brug for at få lidt struktur på vores
       ]
 
       #align(left)[
-        *Should:*
+        *Should:* <link:should>
         #quote(
           block: true,
           [
