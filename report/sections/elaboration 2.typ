@@ -24,13 +24,13 @@
   include "ForretningsGenbesøg.typ"
 }
 
-= Delkonklusion #author("")
+= Delkonklusion #author("a")
 #{
   set heading(offset: 2)
   include "DelkonklusionE2.typ"
 }
 
-= Delrefleksion #author("")
+= Delrefleksion #author("a")
 #{
   set heading(offset: 2)
   include "delrefleksionE2.typ"
