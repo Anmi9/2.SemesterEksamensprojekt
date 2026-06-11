@@ -35,7 +35,7 @@
 
   text(
     weight: "regular",
-    size: 8pt,
+    size: 7pt,
     style: "italic",
     fill: rgb("#555555"),
   )[(#name-string)]
