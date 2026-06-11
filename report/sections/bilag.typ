@@ -15,15 +15,16 @@
 = Arbejdet med ER-diagram
 #{
   set heading(offset: 2)
-  include "../IdentificeredeEntiteter.typ"
+  include "../sections/IdentificeredeEntiteter.typ"
 }
 
 #pagebreak()
 = Planlægning af E2
 #{
   set heading(offset: 2)
-  include "../PlanlægningE2.typ"
+  include "../sections/PlanlægningE2.typ"
 }
+
 <bilag-end>
 
 
