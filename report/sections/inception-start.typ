@@ -23,7 +23,7 @@
   include "diskutere-næste-skridt.typ"
 }
 
-= Fokus på identificering af jobs (mapping med VPC - customer segment) #author("l")
+= Fokus på identificering af jobs #author("l")
 #{
   set heading(offset: 3)
   include "fokus-på-identificering-af-jobs.typ"

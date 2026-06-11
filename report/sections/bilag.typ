@@ -19,7 +19,7 @@
 }
 
 #pagebreak()
-= Planlægning af E2
+= Planlægning af E2 <bilag:e2-planlægning>
 #{
   set heading(offset: 2)
   include "../sections/PlanlægningE2.typ"
