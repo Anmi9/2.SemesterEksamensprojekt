@@ -5,3 +5,5 @@ Citat: Manage the messy and nonlinear process of value proposition design and re
 
 - Hvad gør vi fremadrettet?
 
+- Vi ønskede et rigtigt domæne i håb om, at vi hurtigere kunne kortlægge domænet og nemmere kunne omsætte det til et system. I stedet skete det modsatte - vi følte os forpligtede til at være åbne og ydmyge , og det gjorde det svært at komme videre fra discovery/inception-fasen.
+
