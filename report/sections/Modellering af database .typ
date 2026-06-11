@@ -1,6 +1,10 @@
 Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse og kravspecifikation blev vi enige om at domænemodellen som værktøj ikke længere ville tilføje ekstra til vores forståelse. Vi vurderede, at vi havde fået os en rigtig god domæneindsigt i vores indledende arbejde, der gjorde det muligt for os at gå direkte i gang med et ER-diagram over vores database - vi prioriterede tid. Med dette diagram ville vi kunne få et overblik over de regler, der gælder for vores systems data, og hvordan de hænger sammen med hinanden. Denne proces blev sværere end forventet, hvorfor vi måtte stoppe op og i stedet skrive en use case for vores mest centrale must-krav: "Opret booking" for at strømline vores tanker om implementeringen.
 
 #align(center)[
+  #quote(block: true, align(center)[
+    #text(size: 12pt, weight: "bold", fill: rgb("#444444"))[UC1: Opret booking]
+  ])<uc1>
+
   #quote(
     block: true,
     [

@@ -32,7 +32,7 @@
   set heading(offset: 1)
   include "sections/elaboration 2.typ"
 }
-= Elaboration 3 (dato-dato) #author("a", "l", "a", "")<e3>
+= Elaboration 3 (dato-dato) #author("a", "l", "")<e3>
 #{
   set heading(offset: 1)
   include "sections/elaboration 3.typ"

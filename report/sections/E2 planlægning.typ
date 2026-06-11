@@ -6,7 +6,10 @@ Vi fravalgte at udarbejde et klassisk iterationsplan-dokument med opgaveliste, a
 
 I stedet definerede vi et klart 'iterationsmål', altså hvad iterationen skulle resultere i, formuleret som en enkelt sætning: (reflektion til scrum sprint goal (det er præcis det vi har gjort))
 
-"Implementere Must-kravet "Opret Booking" (UC1) som defineret i vores foretningsregler."
+#quote(
+  block: true,
+  [Implementering af Must-have-kravet 'Opret booking' (#link(<uc1>, [se UC1])) i overensstemmelse med de definerede forretningsregler.],
+)
 
 Det var en måde at udskifte process kompleksitet med et konkret/håndgribelig, verificerbar, risikobetonet kundecentrisk krav der var sammenfaldende med vores eksamensopgavekrav.
 
