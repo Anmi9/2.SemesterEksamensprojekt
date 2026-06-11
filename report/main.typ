@@ -16,7 +16,7 @@
 #metadata("start") <start-formalia>
 = Introduktion
 
-= Inception (dato-dato) #author("l") #author("") #author("a")
+= Inception (dato-dato) #author("l", "", "a")
 #{
   set heading(offset: 1)
   include "sections/inception.typ"
@@ -27,17 +27,17 @@
   set heading(offset: 1)
   include "sections/elaboration 1.typ"
 }
-= Elaboration 2 (dato-dato) #author("l") #author("")
+= Elaboration 2 (dato-dato) #author("l", "")
 #{
   set heading(offset: 1)
   include "sections/elaboration 2.typ"
 }
-= Elaboration 3 (dato-dato) <e3>
+= Elaboration 3 (dato-dato) #author("a", "l", "a", "")<e3>
 #{
   set heading(offset: 1)
   include "sections/elaboration 3.typ"
 }
-= Construction (dato-dato)
+= Construction (dato-dato) #author("m", "l", "a")
 #{
   set heading(offset: 1)
   include "sections/construction.typ"

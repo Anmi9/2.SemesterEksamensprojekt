@@ -12,15 +12,33 @@
   "m": "Matias Heiberg",
 )
 
-#let author(keyword) = {
-  let name = author-map.at(keyword, default: "Ukendt forfatter")
+#let author(..args) = {
+  // 1. Udtræk alle positionsbestemte argumenter som et array
+  let initials = args.pos()
+
+  // 2. Map hver initial til et navn. Hvis strengen er tom eller ukendt, bruges en default
+  let names = initials.map(i => {
+    if i == "" {
+      "Ukendt forfatter"
+    } else {
+      author-map.at(i, default: "Ukendt forfatter")
+    }
+  })
+
+  // 3. Hvis der overhovedet ikke er sendt nogen argumenter, returneres ingenting
+  if names.len() == 0 {
+    return none
+  }
+
+  // 4. Saml navnene i en samlet string adskilt af komma
+  let name-string = names.join(", ")
 
   text(
     weight: "regular",
-    size: 8pt, // Skalerer relativt til den aktuelle overskrift (f.eks. mindre end overskriften)
-    style: "italic", // Gør forfatternavnet kursivt for visuel separation
-    fill: rgb("#555555"), // Sætter en dæmpet grå farve, uafhængig af overskriftens farve
-  )[(#name)]
+    size: 8pt,
+    style: "italic",
+    fill: rgb("#555555"),
+  )[(#name-string)]
 }
 
 // --- HOVED FUNKTIONEN ---
