@@ -58,4 +58,14 @@
 
 = Bilag <body-end>
 // Indsæt bilag her
+= Arbejdet med ER-diagram
+#{
+  set heading(offset: 1)
+  include "IdentificeredeEntiteter.typ"
+}
 
+= Planlægning af E2
+#{
+  set heading(offset: 1)
+  include "PlanlægningE2.typ"
+}
