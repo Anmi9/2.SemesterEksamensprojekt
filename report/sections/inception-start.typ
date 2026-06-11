@@ -17,7 +17,7 @@
   include "lytter-igennem-og-tager-nedslagsnoter.typ"
 }
 
-= Diskutere hvad det næste skridt skal være #author("a")
+= Hvad er næste skridt #author("a")
 #{
   set heading(offset: 3)
   include "diskutere-næste-skridt.typ"
