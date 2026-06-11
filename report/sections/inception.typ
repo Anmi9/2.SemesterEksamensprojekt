@@ -18,7 +18,7 @@
   include "inception-konklusion.typ"
 }
 
-= Delreflektion #author("a")
+= Delrefleksion #author("a")
 #{
   set heading(offset: 2)
   include "inception-reflektion.typ"

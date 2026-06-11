@@ -59,7 +59,7 @@
   include "krav.typ"
 }
 
-= Interview runde 2 #author("a")
+= Anden interviewrunde #author("a")
 #{
   set heading(offset: 3)
   include "interview2.typ"
