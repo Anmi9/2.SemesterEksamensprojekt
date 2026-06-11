@@ -41,7 +41,7 @@
   include "gains-og-pains.typ"
 }
 
-= Problemstilling
+= Problemstilling #author("a")
 #{
   set heading(offset: 3)
   include "problemstilling.typ"
