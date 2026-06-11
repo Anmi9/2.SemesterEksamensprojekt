@@ -42,7 +42,16 @@
   set heading(offset: 1)
   include "sections/construction.typ"
 }
-= Reflektion
+= Konklusion
+#{
+  set heading(offset: 1)
+  include "SlutKonklusion.typ"
+}
+= Perspektivering
+#{
+  set heading(offset: 1)
+  include "perspektivering.typ"
+}
 
 = Litteraturliste
 #bibliography("references.bib", title: none)

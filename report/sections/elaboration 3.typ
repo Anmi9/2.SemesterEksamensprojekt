@@ -1,29 +1,20 @@
 #import "../template.typ": author
 
-= Forretning #author("l")
-#{
-  set heading(offset: 2)
-  include "E3 forretning.typ"
-}
 = Planlægning og sprint målsætning #author("a")
 #{
   set heading(offset: 2)
   include "E3 planlægning.typ"
 }
-= krav oversat til use cases #author("a")
+= Forretning #author("l")
+#{
+  set heading(offset: 2)
+  include "E3 forretning.typ"
+}
+
+= Krav oversat til use cases #author("a")
 #{
   set heading(offset: 2)
   include "E3 krav.typ"
-}
-= OO analyse og -design
-#{
-  set heading(offset: 2)
-  include "E3 OOA-D.typ"
-}
-= arbejdsprocess #author("a")
-#{
-  set heading(offset: 2)
-  include "E3 process.typ"
 }
 = kode valg #author("a")
 #{

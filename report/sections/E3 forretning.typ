@@ -2,10 +2,6 @@ I planlægningen af den tidligere Elaboration iteration, besluttede havde vi at 
 
 Formålet er at sikre, at vores tekniske prioriteringer stadig er forankret i reel brugerværdi, og at vi ikke går på kompromi med de behov vi har identificeret hos brugerne. Dertil om vores foretningsanskuelse har ændret sig og om den stadig er ensrettet.
 
-
-= Moscow og forretningsregler
-
-= VP og fit
 Vi prøver at identificere de bedste 'fits' mellem de mest risikobetonede krav(opgavekrave) med de bedste muligheder for konkret værdiskabelse ud fra de identificerede behov  udmålt i de outcomes som vi ønsker vores produkt skal have på medarbejdernes hverdag.
 
 Vores hensigt er, at sikre os, at der er et fit mellem risk og value, hvoraf risk blandt andet omfatter system/opgavekrav heriblandt asynkron kode og trådsikkerhed samt brugen af algoritme som et eksplicit krav fra opgaven .
