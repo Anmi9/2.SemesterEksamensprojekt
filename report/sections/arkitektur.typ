@@ -1,4 +1,4 @@
-DI vs Composition
+For at strukturerer dependencies i vores program landede diskutionen på om vi skulle bruge komposition eller dependency injection via komposition root. Argumenterne gik på at komposition undgik at bruge de samme singleton objekter igennem hele programmet, men skabte en stærk kobling mellem klasserne. DI (root) der i mod reducerede koblingen til en simpel konstruktor kontrakt (dependency)
 
 Valgte DI (proof of ability - så vi kan komme videre)
 
