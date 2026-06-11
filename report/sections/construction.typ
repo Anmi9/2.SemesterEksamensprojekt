@@ -20,7 +20,7 @@
   set heading(offset: 2)
   include "Lynbooking.typ"
 }
-= Brugeroplevelse (UX) #author("m")
+= Brugeroplevelse #author("m")
 #{
   set heading(offset: 2)
   include "brugeroplevelse.typ"

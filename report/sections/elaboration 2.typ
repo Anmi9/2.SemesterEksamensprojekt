@@ -12,7 +12,7 @@
   include "Vejledning og designdiagrammer.typ"
 }
 
-= Arkitektur #author("")
+= Arkitektur #author("m")
 #{
   set heading(offset: 2)
   include "arkitektur.typ"
