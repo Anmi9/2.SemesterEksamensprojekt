@@ -12,10 +12,16 @@
   include "Vejledning og designdiagrammer.typ"
 }
 
-= Arkitektur #author("m")
+= Afhængigheds-arkitektur #author("m")
 #{
   set heading(offset: 2)
-  include "arkitektur.typ"
+  include "afhængigheds-arkitektur.typ"
+}
+
+= Designløsning #author("m")
+#{
+  set heading(offset: 2)
+  include "designløsning.typ"
 }
 
 = Genbesøg af forretningsdomænet #author("")
@@ -24,7 +30,7 @@
   include "ForretningsGenbesøg.typ"
 }
 
-= Delkonklusion #author("a")
+= Delkonklusion #author("a", "m")
 #{
   set heading(offset: 2)
   include "DelkonklusionE2.typ"

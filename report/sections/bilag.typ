@@ -9,60 +9,74 @@
   }
 })
 
-// === C. INDSÆT DINE BILAG HERUNDER ===
 
 #pagebreak()
 #metadata("Appendix numbering start") <appendix-pages-start>
-= Arbejdet med ER-diagram <bilag:er-diagram>
-#{
-  set heading(offset: 2)
-  if not skjul-bilagsord {
+
+#if not skjul-bilagsord [
+  = Arbejdet med ER-diagram <bilag:er-diagram>
+  #{
+    set heading(offset: 2)
     include "../sections/IdentificeredeEntiteter.typ"
   }
-}
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:er-diagram>
+]
 
 #pagebreak()
-= Planlægning af E2 <bilag:e2-planlægning>
-#{
-  set heading(offset: 2)
-  if not skjul-bilagsord {
+#if not skjul-bilagsord [
+  = Planlægning af E2 <bilag:e2-planlægning>
+  #{
+    set heading(offset: 2)
     include "../sections/PlanlægningE2.typ"
   }
-}
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:e2-planlægning>
+]
 
 #pagebreak()
-= Interview pædagog A - nedslagsnoter 1 <bilag:interview-laura-1>
-#{
-  set heading(offset: 2)
-  if not skjul-bilagsord {
+#if not skjul-bilagsord [
+  = Interview pædagog A - nedslagsnoter 1 <bilag:interview-laura-1>
+  #{
+    set heading(offset: 2)
     include "../sections/Laura-interview-1-Matias-noter.typ"
   }
-}
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-laura-1>
+]
 
 #pagebreak()
-= Interview pædagog A - nedslagsnoter 2 <bilag:interview-laura-2>
-#{
-  set heading(offset: 2)
-  if not skjul-bilagsord {
+#if not skjul-bilagsord [
+  = Interview pædagog A - nedslagsnoter 2 <bilag:interview-laura-2>
+  #{
+    set heading(offset: 2)
     include "../sections/Laura-interview-1-Anna-noter.typ"
   }
-}
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-laura-2>
+]
 
 #pagebreak()
-= Interview pædagog B - nedslagsnoter 1 <bilag:interview-brian-1>
-#{
-  set heading(offset: 2)
-  if not skjul-bilagsord {
+#if not skjul-bilagsord [
+  = Interview pædagog B - nedslagsnoter 1 <bilag:interview-brian-1>
+  #{
+    set heading(offset: 2)
     include "../sections/Brian-interview-Annas-noter.typ"
   }
-}
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-brian-1>
+]
 
 #pagebreak()
-= Interview pædagog B - nedslagsnoter 2 <bilag:interview-brian-2>
-#{
-  set heading(offset: 2)
-  if not skjul-bilagsord {
+#if not skjul-bilagsord [
+  = Interview pædagog B - nedslagsnoter 2 <bilag:interview-brian-2>
+  #{
+    set heading(offset: 2)
     include "../sections/Brian-interview-Matias-noter.typ"
   }
-}
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-brian-2>
+]
+
 <bilag-end>
+

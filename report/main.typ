@@ -3,7 +3,7 @@
 
 // --- KONFIGURATION AF FORMALIA ---
 
-#let anslag = 0  // Ændres manuelt når rapporten er færdig
+#let anslag = 92527  // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
@@ -27,7 +27,7 @@
   set heading(offset: 1)
   include "sections/elaboration 1.typ"
 }
-= Elaboration 2 (dato-dato) #author("l", "")
+= Elaboration 2 (dato-dato) #author("l", "", "m")
 #{
   set heading(offset: 1)
   include "sections/elaboration 2.typ"
