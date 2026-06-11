@@ -27,6 +27,3 @@ Vi har diskuteret, hvordan Business Model Canvas som et strategisk værktøj til
     )
   ],
 )
-
-
-
