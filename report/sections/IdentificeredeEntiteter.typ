@@ -1,3 +1,7 @@
+`Note fra Obsidian
+created: 2026-05-12
+section: elaboration 1`
+
 Entiteter:
 
 - Transportmidler

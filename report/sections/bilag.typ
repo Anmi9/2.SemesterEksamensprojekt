@@ -25,6 +25,33 @@
   include "../sections/PlanlægningE2.typ"
 }
 
+#pagebreak()
+= Interview pædagog A - nedslagsnoter 1
+#{
+  set heading(offset: 2)
+  include "../sections/Laura-interview-1-Matias-noter.typ"
+}
+
+#pagebreak()
+= Interview pædagog A - nedslagsnoter 2
+#{
+  set heading(offset: 2)
+  include "../sections/Laura-interview-1-Anna-noter.typ"
+}
+
+#pagebreak()
+= Interview pædagog B - nedslagsnoter 1
+#{
+  set heading(offset: 2)
+  include "../sections/Brian-interview-Annas-noter.typ"
+}
+
+#pagebreak()
+= Interview pædagog B - nedslagsnoter 2
+#{
+  set heading(offset: 2)
+  include "../sections/Brian-interview-Matias-noter.typ"
+}
 <bilag-end>
 
 
