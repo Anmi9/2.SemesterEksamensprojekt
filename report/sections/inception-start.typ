@@ -35,7 +35,7 @@
   include "brug-af-empathy-map.typ"
 }
 
-= Nu kan vi lave gains og pains #author("a")
+= Gains og pains #author("a")
 #{
   set heading(offset: 3)
   include "gains-og-pains.typ"
