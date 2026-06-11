@@ -6,9 +6,14 @@ I modsætning til tidligere projekter hvor vores primære fokus har været læri
 
 // Interne aftaler og arbejdsform
 Vi indgik en række konkrete after for at sikre kontinuitet, koordinering og fremdrift i gruppen:
-- Daily standup som primært koordineringsværktøj med det formål at synkronisere vores fokus.
-- Fredage var dedikeret til rapportskrivning for at sikre en kronologisk korrekt rapport og undgå manglende dokumentation i slutfasen.
-- Fredagsmøde kl. 12 for at vurdere fremdrift i løbet af ugen samt alignment til den kommende uge.
+#quote(
+  block: true,
+  [
+    - Daily standup som primært koordineringsværktøj med det formål at synkronisere vores fokus.
+    - Fredage var dedikeret til rapportskrivning for at sikre en kronologisk korrekt rapport og undgå manglende dokumentation i slutfasen.
+    - Fredagsmøde kl. 12 for at vurdere fremdrift i løbet af ugen samt alignment til den kommende uge.
+  ],
+)
 
 // Valg af techstack
 Vi valgte en velkendt techstack: C\# med WPF til brugergrænseflade, Entity Framework Core med SQL (hvilket vi ændrede) til databasen. Dette var en form for risikostyring. Da dette projekt var det første hvor vi havde et reelt problemdomæne og reelebrugere at interviewe, vidste vi udemærket godt, at vi ville bruge mere tid på discovery-arbejde, end hvad vi har gjort i tidligere projekter. Vi genbrugte vores projektskabelon i Typst og Obsidian. Ved ikke at introducere ny teknologi kunne vi koncentrere vores kapacitet om domæneforståelse og kravanalyse.
