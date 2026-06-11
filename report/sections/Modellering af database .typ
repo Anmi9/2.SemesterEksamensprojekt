@@ -5,7 +5,7 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
     block: true,
     [
       #align(left)[
-        *Pre-condition:*
+        *Pre-condition*
         #quote(
           block: true,
           [
@@ -16,7 +16,7 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
       ]
 
       #align(left)[
-        *Primær aktør:*
+        *Primær aktør*
         #quote(
           block: true,
           [
@@ -26,7 +26,7 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
       ]
 
       #align(left)[
-        *Success kriterie:*
+        *Success kriterie*
         #quote(
           block: true,
           [
@@ -36,7 +36,7 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
       ]
 
       #align(left)[
-        *Success scenarie:*
+        *Success scenarie*
         #quote(
           block: true,
           [
@@ -55,7 +55,31 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
 ]
 
 I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik også til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Selvom use case-arbejdet hjalp os til at forstå, hvordan systemet skulle fungere, manglede vi stadig afklaring for at kunne strukturere dataen optimalt. Derfor formulerede vi en række forretningsregler med udgangspunkt i vores must-krav og foreløbige tanker endtil nu.
-(INDSÆT evt. forretningsregler her)
+
+#align(center)[
+  #quote(
+    block: true,
+    [#align(left)[
+        *Forretningsregler*
+        #quote(
+          block: true,
+          [
+            En medarbejder skal kunne oprette en booking af et transportmiddel \
+            En medarbejder skal kunne vælge en cykel eller bil i forbindelse med en booking \
+            En medarbejder skal kunne reservere et bestemt slags køretøj i en bestemt tidsperiode \
+            En medarbejder skal kunne se ledige tidsperioder for et bestemt slags køretøj \
+            Data skal være persistens i databasen \
+            Systemet skal undgå bookingkonflikter på grund af asynkron afvikling \
+            En medarbejder skal kunne få et ledigt transportmiddel med færrest mulige klik \
+            Systemet skal algoritmisk kunne beslutte det mest hensigtsmæssige transportmiddel til lynbooking \
+          ],
+        )
+      ]
+    ],
+  )
+]
+
+
 Det endte med at give os den klarhed, vi havde savnet for at kunne modellere vores database hensigtsmæssigt til vores system. Vi tog da en fælles beslutning om at gå direkte videre med at modellere en logisk model ud fra de entiteter, vi havde identificeret i det indledende arbejde.
 
 Den logiske model blev udviklet i etaper, hvor vi løbende tog nogle strategiske beslutninger. I første version identificerede vi de mest centrale entiteter og nøgler. (INDSÆT logisk model version 1) Her diskuterede vi blandt andet nødvendigheden af at have en separat tabel for køretøjer, og hvor meget følsom data der skulle gemmes om brugerne. Her blev den endelige logiske model udviklet efter, hvor vi var i processen, og hvad der gav mest mening i forhold til projektets omfang og formål. Det endte med tre tabeller: Employee, Vehicle og Booking. Medarbejdernes interne bookingsystem havde ikke brug for at gemme følsomme data (GDPR) for brugerne, hvorfor vi kun gemte id og initialer. Samtidig valgte vi at oprette en samlet Vehicle-tabel fremfor at splitte den op i særskilte tabeller.
