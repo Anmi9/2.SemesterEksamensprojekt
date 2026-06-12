@@ -41,14 +41,3 @@ Det har fra planlægningsfasen været et bevidst valg at lave en struktur, der s
 ```
 Ideen var at holde vores semaphoreSlim så kort som muligt. Det var en bevidst optimistisk tilgang, da vi bygger til et fremtidigt system, hvor relativt få brugere skal booke køretøjer, hvorfor konflikter sker meget sjældent. Samtidig lægger vi os op ad princippet om at holde låse så korte som muligt. Mest af alt baserer denne beslutning sig på, at vi påtænker en form for retry-mekanisme, der skal tjekke for det næste optimale køretøj på listen, hvis valideringen i låsen afviser første forespørgsel. Havde vi placeret låsen før algoritmen, ville en sådan funktion ikke være mulig.
 Desuden indeholder vores lås en finally-blok, der sikrer os mod en anden deadlock-situation, hvor en tråd blev låst fast. I den kalder vi `Release()`, så næste tråd får lov til at komme ind, uanset hvad der sker i try-blokken.
-
-(Indsæt afsnit om databinding og ingen magiske tal og kontrakt
-
-synkroniserings mekanisme: hvilken har vi valgt? Hvorfor har vi brugt en (domæne krav/værdiskabelse: kræver distribution af database)
-asynkron kode: til IO
-seperation of concerns i view/viewmodel -> medførte brugen af bindings
-business rules: start-/endtime
-ingen magiske tal
-Design by contrant (invarianter i koden/statisk konstruktor til at garantere defaultDuration > minDuration)
-
-

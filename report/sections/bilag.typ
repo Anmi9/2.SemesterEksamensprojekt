@@ -89,10 +89,25 @@
       margin: 0pt,
       image("../assets/klassediagram-v1.svg"),
     )
-    //include "../sections/klassediagram-v1"
   }
 ] else [
-  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-brian-2>
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:klassediagram-v1>
+]
+
+#pagebreak()
+#if not skjul-bilagsord [
+  = Value propersition canvas - customer segment <bilag:vpc-customer-segment>
+  #{
+    page(
+      width: auto,
+      height: 90em,
+      flipped: true,
+      margin: 0pt,
+      image("../assets/value-propertion-canvas.png"),
+    )
+  }
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:vpc-customer-segment>
 ]
 
 <bilag-end>
