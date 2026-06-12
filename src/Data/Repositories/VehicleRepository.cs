@@ -14,7 +14,7 @@ namespace App.Data.Repositories
     {
         private readonly Context _context;
 
-        public VehicleRepository(Context context)   // Dependency injection af context-objektet
+        public VehicleRepository(Context context)   
         {
             _context = context; 
         }   

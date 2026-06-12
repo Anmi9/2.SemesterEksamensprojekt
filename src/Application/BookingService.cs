@@ -3,6 +3,10 @@ using App.Models;
 
 namespace App.Application
 {
+    /// <summary>
+    /// Serviceklasse
+    /// </summary>
+    /// <author>Anna</author>
     public class BookingService
     {
         private readonly BookingRepository _bookingRepo;
