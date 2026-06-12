@@ -1,4 +1,4 @@
-Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse og kravspecifikation blev vi enige om, at domænemodellen som værktøj ikke længere ville tilføje ekstra til vores forståelse. Vi vurderede, at vi havde fået os en rigtig god domæneindsigt i vores indledende arbejde, der gjorde det muligt for os at gå direkte i gang med et ER-diagram over vores database - vi prioriterede tid. Med dette diagram ville vi kunne få et overblik over de regler, der gælder for vores systems data, og hvordan de hænger sammen med hinanden. Denne proces blev sværere end forventet, hvorfor vi måtte stoppe op og i stedet skrive en use case for vores mest centrale must-krav: "Opret booking" for at strømline vores tanker om implementeringen.
+Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse og kravspecifikation blev vi enige om, at domænemodellen som værktøj ikke længere ville tilføje ekstra til vores forståelse. Vi vurderede, at vi havde fået os en rigtig god domæneindsigt i vores indledende arbejde, der gjorde det muligt for os at gå direkte i gang med en konceptuel model over vores database - vi prioriterede tid. Med denne model ville vi kunne få et overblik over de regler, der gælder for vores systems data, og hvordan de hænger sammen med hinanden. Denne proces blev sværere end forventet, hvorfor vi måtte stoppe op og i stedet skrive en use case for vores mest centrale must-krav: "Opret booking" for at strømline vores tanker om implementeringen.
 
 #align(center)[
   #quote(block: true, align(center)[
@@ -58,7 +58,7 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
   )
 ]
 
-I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik os til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Som dokumentation skrev vi vores tanker ned hvilket, retrospektivt, fungerede som vores de facto første problemformulering (se version 2 i afsnit @e2:problemformulering-v2):
+I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik os til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Som dokumentation skrev vi vores tanker ned, hvilket retrospektivt fungerede som vores de facto første problemformulering (se version 2 i afsnit @e2:problemformulering-v2):
 
 _Vi har fokus på at optimere medarbejdernes arbejdsdag med et nytænkt bookingsystem - ikke optimering med fokus på økonomi eller besparelser, men på at minimere medarbejdernes mentale belastning, når det kommer til planlægning og koordinering. Det resulterer i mindre stress og frustrationer hos medarbejderne og skaber mere ansigt til ansigt for borgerne som afledt effekt._ <link:problemformulering-v1>
 
