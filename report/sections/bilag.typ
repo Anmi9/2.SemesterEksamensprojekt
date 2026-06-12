@@ -110,5 +110,27 @@
   #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:vpc-customer-segment>
 ]
 
+#pagebreak()
+#if not skjul-bilagsord [
+  = Empathy map - Laura <bilag:empathy-map-laura>
+  #{
+    set heading(offset: 2)
+    include "../sections/empathy-map-laura.typ"
+  }
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:empathy-map-laura>
+]
+
+#pagebreak()
+#if not skjul-bilagsord [
+  = Empathy map - Laura <bilag:empathy-map-brian>
+  #{
+    set heading(offset: 2)
+    include "../sections/empathy-map-brian.typ"
+  }
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:empathy-map-brian>
+]
+
 <bilag-end>
 
