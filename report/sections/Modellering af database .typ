@@ -91,7 +91,7 @@ Her diskuterede vi blandt andet nødvendigheden af at have en separat tabel for 
 
 #align(center)[#image("../assets/logiskdiagram-v2.svg", width: 65%)]
 
-Vi får endvidere defineret kardinaliteterne mellem tabellerne ud fra domænets forretningsregler. En medarbejder kan have alt fra 0 til mange bookinger i systemet, og det samme er tilfældet for køretøjer. Den enkelte bil eller cykel kan være booket 0 til mange gange. Hver specifik booking, der oprettes, skal indeholde præcis en medarbejder og et køretøj. Derfor er der en mange til en relation mellem både Employee og Booking og mellem Vehicle og Booking. Hver tabel har et unikt id, der fungerer som primærnøgle (PK), samtidig med at booking-tabellen har fremmednøgler (FK) til både Employee og Vehicle.
+Vi får endvidere defineret kardinaliteterne mellem tabellerne ud fra domænets forretningsregler. En medarbejder kan have alt fra 0 til mange bookinger i systemet, og det samme er tilfældet for køretøjer. Den enkelte bil eller cykel kan være booket 0 til mange gange. Hver specifik booking, der oprettes, skal indeholde præcis en medarbejder og et køretøj. Derfor er der en mange til en relation mellem både Employee og Booking og mellem Vehicle og Booking. Hver tabel har et unikt id, der fungerer som primærnøgle `PK`, samtidig med at booking-tabellen har fremmednøgler `FK` til både Employee og Vehicle.
 Vi forsøgte at holde vores model så simpel som muligt på dette stadie - med en mulighed for at udvide den senere, hvis det skulle blive nødvendigt, i takt med at vi blev klogere under implementeringsarbejdet. Det var et bevidst valg om at holde muligheden åben for at skalere op og ikke låse os fast for tidligt.
 
 

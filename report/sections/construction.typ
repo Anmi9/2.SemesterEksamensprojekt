@@ -10,7 +10,7 @@
   set heading(offset: 2)
   include "lagdeling-dependency-rule.typ"
 }
-= Arkitektur mønstre #author("m")
+= Arkitekturmønstre #author("m")
 #{
   set heading(offset: 2)
   include "migration-view-viewModel.typ"

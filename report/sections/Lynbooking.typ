@@ -87,4 +87,4 @@ Et simpelt overblik flowet for en lynbooking ser således ud:
 
 #image("../assets/Sekvensdiagram - lynbooking (blackbox).png")
 
-Samlet set bekræftede implementeringen af lynbooking at iterationens oprydningsarbejde betalte sig. Vi kunne indfri et Must-krav næsten udelukkende ved brug af eksisterende byggeklodser.
+Samlet set bekræftede implementeringen af lynbooking, at iterationens oprydningsarbejde betalte sig. Vi kunne indfri et Must-krav næsten udelukkende ved brug af eksisterende byggeklodser.
