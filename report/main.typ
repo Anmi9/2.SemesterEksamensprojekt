@@ -3,7 +3,7 @@
 
 // --- KONFIGURATION AF FORMALIA ---
 
-#let anslag = 94151  // Ændres manuelt når rapporten er færdig
+#let anslag = 93502  // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(

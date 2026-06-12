@@ -1,5 +1,5 @@
 // false = inkluder bilag | true = ekskluder bilag
-#let skjul-bilagsord = false
+#let skjul-bilagsord = true
 
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {
