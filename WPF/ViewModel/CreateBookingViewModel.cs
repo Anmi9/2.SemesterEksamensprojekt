@@ -5,6 +5,10 @@ using WPF.Commands;
 
 namespace App.ViewModel
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Matias</author>
     public class CreateBookingViewModel : ViewModelBase
     {
         private readonly BookingService _bookingService;

@@ -1,7 +1,10 @@
 ﻿using App;
 
 namespace AppTests;
-
+/// <summary>
+/// 
+/// </summary>
+/// <author>Anna</author>
 public class ProgramTests
 {
     // Her kan du tilføje test-metoder, når du har valgt 

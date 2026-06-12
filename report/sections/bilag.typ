@@ -132,5 +132,27 @@
   #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:empathy-map-brian>
 ]
 
+#pagebreak()
+#if not skjul-bilagsord [
+  = Usecase til tråde <bilag:uc2>
+  #{
+    set heading(offset: 2)
+    include "../sections/use-case-tråde.typ"
+  }
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:uc2>
+]
+
+#pagebreak()
+#if not skjul-bilagsord [
+  = Usecase til algoritme <bilag:uc3>
+  #{
+    set heading(offset: 2)
+    include "../sections/use-case-algoritmer.typ"
+  }
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:uc3>
+]
+
 <bilag-end>
 

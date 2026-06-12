@@ -21,7 +21,8 @@ Det har fra planlægningsfasen været et bevidst valg at lave en struktur, der s
 
      try
      {
-         bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTimeAsync(optimalVehicle.VehicleId, Start, End);
+         bool stillAvailable = await _bookingRepo.DBIsVehicleAvailableAtTimeAsync(
+            optimalVehicle.VehicleId, Start, End);
          if (stillAvailable)
          {
              var booking = await CreateBookingAsync(Start, End, optimalVehicle.VehicleId);

@@ -48,8 +48,8 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
             Vælger start tid \
             Vælger slut tid \
             Vælger køretøjstype \
-            Systemet skal vælge det optimale transportmiddel [Usecase til algoritme] \
-            Booking bliver persisteret [Usecase til tråde] \
+            Systemet skal vælge det optimale transportmiddel (se @bilag:uc3) \
+            Booking bliver persisteret (se @bilag:uc2) \
             Bekræfter om bookingen er gået igennem \
           ],
         )

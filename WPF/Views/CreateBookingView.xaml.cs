@@ -4,6 +4,10 @@ using System.Windows.Controls;
 
 namespace WPF
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Matias</author>
     public partial class CreateBookingView : Window
     {
         public CreateBookingView(CreateBookingViewModel viewModel)

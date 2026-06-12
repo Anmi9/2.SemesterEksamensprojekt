@@ -12,7 +12,10 @@ namespace App.Models
         Car     = 1, // Bit index 0
         Bike    = 2 // Bit index 1
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Matias</author>
     public class Vehicle
     {
         public int VehicleId { get; init; }

@@ -4,6 +4,10 @@ using System.Windows;
 
 namespace WPF
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Lasse</author>
     public partial class MainWindow : Window
     {
         public MainWindow(BookingService bookingservice)
