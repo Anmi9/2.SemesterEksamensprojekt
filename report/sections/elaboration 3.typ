@@ -16,7 +16,7 @@
   set heading(offset: 2)
   include "E3 krav.typ"
 }
-= kodebeslutninger #author("a")
+= Kodebeslutninger #author("a")
 #{
   set heading(offset: 2)
   include "E3 kode.typ"
