@@ -22,7 +22,7 @@ namespace App.Data.Repositories
         {
             _context.Bookings.Add(booking); //Tilføjer den til databasen, men EFcore holder det kun i "hukommelsen"
             await _context.SaveChangesAsync(); //Objektet oversættes til SQL (INSERT INTO Bookings (VehiID, start, end) VALUES (.., ..., ..,) og EFcore lukker selv adgangen
-            // TODO: opret context i root og send dem til repos. (App.xaml.spørgsmålstegn
+           
         }
 
         public async Task<List<Booking>> DBGetAllBookingsAsync()
