@@ -24,10 +24,10 @@
   include "designløsning.typ"
 }
 
-= Genbesøg af forretningsdomænet #author("")
+= Genbesøg af forretningsdomænet #author("a") <e2:problemformulering-v2>
 #{
   set heading(offset: 2)
-  include "ForretningsGenbesøg.typ"
+  include "problemformulering2.typ"
 }
 
 = Delkonklusion #author("a", "m")
