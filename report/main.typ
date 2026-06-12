@@ -16,7 +16,7 @@
 #metadata("start") <start-formalia>
 = Introduktion <indledning>
 
-Dette projekt tager udgangspunkt i et reelt problemdomæne: Bostøtten på Tulipanvej 100 i Silkeborg, hvor pædagoger dagligt besøger borgere og deler en lille flåde af biler og cykler. Den uforudsigelige arbejdsdag kræver fleksibilitet, men det nuværende bookingsystem i Outlook er uoverskueligt. Det skaber en manglende tillid til bookinger og individuelle workarounds. Det ledte os frem til projektet problemformulering:
+Dette projekt tager udgangspunkt i et reelt problemdomæne: Bostøtten på Tulipanvej 100 i Silkeborg, hvor pædagoger dagligt besøger borgere og deler en lille flåde af biler og cykler. Den uforudsigelige arbejdsdag kræver fleksibilitet, men det nuværende bookingsystem i Outlook er uoverskueligt. Det skaber en manglende tillid til bookinger og individuelle workarounds. Det ledte os frem til projektets problemformulering:
 
 #quote(
   block: true,
@@ -24,7 +24,7 @@ Dette projekt tager udgangspunkt i et reelt problemdomæne: Bostøtten på Tulip
 ) <problemformulering2>
 
 
-Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini og ChatGPT som sparringspartner. Vi har benyttet dem til at få feedback og til genere et udkast vi kunne arbejde ud fra. AI er ikke brugt som kilde til rapportens faglige indhold. Vi har forholdt os kritisk til værktøjernes output. @anthropic2026 @google2026 @openai2026
+Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini og ChatGPT som sparringspartner. Vi har benyttet dem til at få feedback og til generere et udkast, vi kunne arbejde ud fra. AI er ikke brugt som kilde til rapportens faglige indhold. Vi har forholdt os kritisk til værktøjernes output. @anthropic2026 @google2026 @openai2026
 = Inception   #author("l", "a")
 #{
   set heading(offset: 1)
