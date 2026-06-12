@@ -58,7 +58,11 @@ Ud fra en fælles oplevelse af at have brugt rigtig meget tid på domæneanalyse
   )
 ]
 
-I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik os til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Selvom use case-arbejdet hjalp os til at forstå, hvordan systemet skulle fungere, manglede vi stadig afklaring for at kunne strukturere dataen optimalt. Derfor formulerede vi en række forretningsregler med udgangspunkt i vores must-krav og foreløbige tanker indtil nu.
+I den proces gik det op for os, at vi trods meget domænearbejde alligevel ikke var helt enige om det videre arbejde. Det fik os til at træde et skridt tilbage og stille spørgsmålet: "Hvad er formålet egentlig?" Som dokumentation skrev vi vores tanker ned hvilket, retrospektivt, fungerede som vores de facto første problemformulering (se version 2 i afsnit @e2:problemformulering-v2):
+
+_Vi har fokus på at optimere medarbejdernes arbejdsdag med et nytænkt bookingsystem - ikke optimering med fokus på økonomi eller besparelser, men på at minimere medarbejdernes mentale belastning, når det kommer til planlægning og koordinering. Det resulterer i mindre stress og frustrationer hos medarbejderne og skaber mere ansigt til ansigt for borgerne som afledt effekt._ <link:problemformulering-v1>
+
+Selvom use case-arbejdet hjalp os til at forstå, hvordan systemet skulle fungere, manglede vi stadig afklaring for at kunne strukturere dataen optimalt. Derfor formulerede vi en række forretningsregler med udgangspunkt i vores must-krav og problemformulering.
 
 #align(center)[
   #quote(
