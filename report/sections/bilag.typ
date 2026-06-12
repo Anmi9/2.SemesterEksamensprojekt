@@ -78,5 +78,22 @@
   #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-brian-2>
 ]
 
+#pagebreak()
+#if not skjul-bilagsord [
+  = Klassediagram version 1 <bilag:klassediagram-v1>
+  #{
+    page(
+      width: auto,
+      height: 90em,
+      flipped: true,
+      margin: 0pt,
+      image("../assets/klassediagram-v1.svg"),
+    )
+    //include "../sections/klassediagram-v1"
+  }
+] else [
+  #heading(level: 1, numbering: (..nums) => [], supplement: [], outlined: false, "") <bilag:interview-brian-2>
+]
+
 <bilag-end>
 

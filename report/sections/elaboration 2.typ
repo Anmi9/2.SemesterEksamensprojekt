@@ -6,7 +6,7 @@
   include "E2 planlægning.typ"
 }
 
-= Vejledning og designdiagrammer #author("")
+= Vejledning og designdiagrammer #author("m")
 #{
   set heading(offset: 2)
   include "Vejledning og designdiagrammer.typ"
