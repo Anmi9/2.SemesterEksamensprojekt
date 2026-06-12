@@ -16,28 +16,28 @@
 #metadata("start") <start-formalia>
 = Introduktion
 Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini og ChatGPT som sparringspartner. Vi har benyttet dem til at få feedback og til genere et udkast vi kunne arbejde ud fra. AI er ikke brugt som kilde til rapportens faglige indhold. Vi har forholdt os kritisk til værktøjernes output.
-= Inception (dato-dato) #author("l", "a")
+= Inception   #author("l", "a")
 #{
   set heading(offset: 1)
   include "sections/inception.typ"
 }
 
-= Elaboration 1 (dato-dato) #author("a")
+= Elaboration 1   #author("a")
 #{
   set heading(offset: 1)
   include "sections/elaboration 1.typ"
 }
-= Elaboration 2 (dato-dato) #author("l", "a", "m")
+= Elaboration 2   #author("l", "a", "m")
 #{
   set heading(offset: 1)
   include "sections/elaboration 2.typ"
 }
-= Elaboration 3 (dato-dato) #author("a", "l")<e3>
+= Elaboration 3   #author("a", "l")<e3>
 #{
   set heading(offset: 1)
   include "sections/elaboration 3.typ"
 }
-= Construction (dato-dato) #author("m", "l", "a")
+= Construction   #author("m", "l", "a")
 #{
   set heading(offset: 1)
   include "sections/construction.typ"
