@@ -35,7 +35,7 @@
   set heading(offset: 2)
   include "refactor.typ"
 }
-= Delkonklusion #author("")
+= Delkonklusion #author("l")
 #{
   set heading(offset: 2)
   include "c1 konklusion.typ"

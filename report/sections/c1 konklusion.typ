@@ -1,5 +1,1 @@
-Pointer fra brugertest 6.6.2
-- Friktionsmålet er nået
-- Stadig manglende tillid til systemet (ligesom outlook "er bookingen gået igennem")
-- Vi løser det funktionelle "job", skelnen mellem funktionelle og emotionelle jobs
-- 3 punkter til næste iteration (oversigt over bookinger(åbner op for CRUD), gøre det tydeligt at systemet vælger køretøj og sikre at bekræftelsen ikker efterlader brugeren usikker.)
+Construction-iterationen indfriede de tre planlagte mål: oprydning af den lagdelte arkitektur, en bekræftelsesfunktion og lynbooking, hvoraf den sidste blev bygget primært med genbrug. Integrationstesten viste, at SemaphoreSlim forhindrer dobbeltbooking ved samtidige kald i et simuleret scenarie. Brugertesten gav en todelt konklusion: friktion fra problemformuleringen blev løst, da begge medarbejdere bookede uden hjælp og med markant færre klik, men den usikkerhed, der har været et gennemgående problem, blev ikke løst. Hastighed skabte altså ikke tillid i sig selv, hvilket peger på forbedringer som bookingoversigt og mere eksplicit bekræftelse i en kommende iteration.
