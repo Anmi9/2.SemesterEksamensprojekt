@@ -5,6 +5,10 @@ using System.Windows.Input;
 
 namespace WPF.Commands
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Matias</author>
     public class RelayCommand : ICommand
     {
         private readonly Action<object?> _execute;

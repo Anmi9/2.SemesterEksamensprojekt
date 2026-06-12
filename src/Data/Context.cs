@@ -5,6 +5,10 @@ using System.Collections.Generic;
 
 namespace App.Data
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Matias</author>
     public class Context : DbContext
     {
         public string DbPath { get; }

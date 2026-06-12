@@ -7,6 +7,10 @@ using System.Windows;
 
 namespace WPF
 {
+    /// <summary>
+    /// DI-root
+    /// </summary>
+    /// <author>Lasse</author>
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)

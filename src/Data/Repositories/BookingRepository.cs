@@ -6,7 +6,10 @@ using SQLitePCL;
 using Microsoft.EntityFrameworkCore;
 
 namespace App.Data.Repositories
-{
+{  /// <summary>
+   /// 
+   /// </summary>
+   /// <author>Anna</author>
     public class BookingRepository
     {
         private readonly Context _context;

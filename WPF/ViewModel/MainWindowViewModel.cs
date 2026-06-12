@@ -4,6 +4,10 @@ using WPF.Commands;
 
 namespace App.ViewModel
 {
+    /// <summary>
+    /// Hovedvindue og lynbooking funktion
+    /// </summary>
+    /// <author>Lasse</author>
     public class MainWindowViewModel : ViewModelBase
     {
         //Fields

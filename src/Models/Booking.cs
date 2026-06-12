@@ -4,6 +4,10 @@ using System.Text;
 
 namespace App.Models
 {
+    /// <summary>
+    /// Booking
+    /// </summary>
+    /// <author>Lasse</author>
     public class Booking
     {
         public int BookingId { get; set; }

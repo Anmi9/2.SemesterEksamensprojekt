@@ -10,6 +10,10 @@ using App.Models;
 
 namespace App.Data.Repositories
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <author>Anna</author>
     public class VehicleRepository // Overvej om denne klasse skal hedde vehiclerepository?
     {
         private readonly Context _context;
