@@ -15,7 +15,7 @@
 )
 #metadata("start") <start-formalia>
 = Introduktion
-
+Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini og ChatGPT som sparringspartner. Vi har benyttet dem til at få feedback og til genere et udkast vi kunne arbejde ud fra. AI er ikke brugt som kilde til rapportens faglige indhold. Vi har forholdt os kritisk til værktøjernes output.
 = Inception (dato-dato) #author("l", "a")
 #{
   set heading(offset: 1)
@@ -54,6 +54,13 @@
 }
 
 = Litteraturliste
+
+ChatGPT 5.0, OpenAI
+
+Opus 4.6, Claude Antrophics
+
+Gemini 3.5 Flash, Google Gemini.
+
 #bibliography("references.bib", title: none)
 
 = Bilag <body-end>
