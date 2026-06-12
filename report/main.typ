@@ -14,7 +14,7 @@
   anslag: anslag,
 )
 #metadata("start") <start-formalia>
-= Introduktion
+= Introduktion <indledning>
 
 Dette projekt tager udgangspunkt i et reelt problemdomæne: Bostøtten på Tulipanvej 100 i Silkeborg, hvor pædagoger dagligt besøger borgere og deler en lille flåde af biler og cykler. Den uforudsigelige arbejdsdag kræver fleksibilitet, men det nuværende bookingsystem i Outlook er uoverskueligt. Det skaber en manglende tillid til bookinger og individuelle workarounds. Det ledte os frem til projektet problemformulering:
 
