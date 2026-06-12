@@ -7,7 +7,10 @@ using System;
 using System.Threading.Tasks;
 
 namespace AppTests;
-
+/// <summary>
+/// 
+/// </summary>
+/// <author>Anna</author>
 [TestClass]
 public class RaceConditionTest
 {

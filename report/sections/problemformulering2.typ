@@ -1,4 +1,4 @@
-Vi har omformuleret vores problemformulering (se #link(<link:problemformulering-v1>, [version 1 her])). I det arbejde diskuterede vi, om overblik var en del af kerneproblemet for medarbejderne. Vi kunne se i vores personaer, at det fyldte hos dem begge af forskellige årsager. Det var meget opklarende at komme ned under semantikken i ordet overblik, og forstå hvad der lå i det. Ny formulering:
+Vi har omformuleret vores problemformulering (se #link(<link:problemformulering-v1>, [version 1 her])). I det arbejde diskuterede vi, om overblik var en del af kerneproblemet for medarbejderne. Vi kunne se i vores personaer, at det fyldte hos dem begge af forskellige grunde. Det var meget opklarende at komme ned under semantikken i ordet overblik, og forstå hvad der lå i det. Ny formulering:
 
 #quote(
   block: true,

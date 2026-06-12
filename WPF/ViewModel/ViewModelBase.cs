@@ -4,6 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace App.ViewModel
 {
+ /// <summary>
+ /// 
+ /// </summary>
+ /// <author>Matias</author>
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
         protected const int TimeSlotIntervalMinutes = 15;
