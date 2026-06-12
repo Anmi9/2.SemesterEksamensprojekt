@@ -20,14 +20,14 @@ public class RaceConditionTest
     {
       //Arrange:
 
-        _start = DateTime.Now.AddDays(25); // Sørger for at være så langt ude i fremtiden, så ingen eksisterende bookinger kommer i vejen.
+        _start = DateTime.Now.AddDays(25); 
         _end = _start.AddHours(2);
 
         //Act: 
 
         Task<Booking> thread1 = Task.Run(SimulateClick1Async); // Første klik
 
-        await Task.Delay(10); // Simulerer dobbeltklik eller to samtidige bookingforsøg.
+        await Task.Delay(10); 
 
         Task<Booking> thread2 = Task.Run(SimulateClick2Async); // Andet klik
 
@@ -63,7 +63,7 @@ public class RaceConditionTest
 
     private async Task<Booking> SimulateClick2Async()
     {
-        using (Context context2 = new Context()) // Vi opretter en ny context for at simulere forsøg på dobbeltbooking eller dobbeltklik.
+        using (Context context2 = new Context()) 
         {
             BookingRepository repo2 = new BookingRepository(context2);
             VehicleRepository vehicleRepo2 = new VehicleRepository(context2);
