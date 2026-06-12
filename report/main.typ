@@ -55,12 +55,6 @@ Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini
 
 = Litteraturliste
 
-ChatGPT 5.0, OpenAI
-
-Opus 4.6, Claude Antrophics
-
-Gemini 3.5 Flash, Google Gemini.
-
 #bibliography("references.bib", title: none)
 
 = Bilag <body-end>
