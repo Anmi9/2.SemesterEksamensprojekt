@@ -24,7 +24,7 @@ Dette projekt tager udgangspunkt i et reelt problemdomæne: Bostøtten på Tulip
 ) <problemformulering2>
 
 
-Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini og ChatGPT som sparringspartner. Vi har benyttet dem til at få feedback og til genere et udkast vi kunne arbejde ud fra. AI er ikke brugt som kilde til rapportens faglige indhold. Vi har forholdt os kritisk til værktøjernes output.
+Vi har i løbet af hele projektet benyttet generative AI-værktøjer eks. Gemini og ChatGPT som sparringspartner. Vi har benyttet dem til at få feedback og til genere et udkast vi kunne arbejde ud fra. AI er ikke brugt som kilde til rapportens faglige indhold. Vi har forholdt os kritisk til værktøjernes output. @anthropic2026 @google2026 @openai2026
 = Inception   #author("l", "a")
 #{
   set heading(offset: 1)
