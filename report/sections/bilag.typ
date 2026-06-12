@@ -1,5 +1,5 @@
 // false = inkluder bilag | true = ekskluder bilag
-#let skjul-bilagsord = true
+#let skjul-bilagsord = false
 
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {
@@ -87,7 +87,7 @@
       height: 90em,
       flipped: true,
       margin: 0pt,
-      image("../assets/klassediagram-v1.svg"),
+      image("../assets/klassediagram-v1.png"),
     )
   }
 ] else [

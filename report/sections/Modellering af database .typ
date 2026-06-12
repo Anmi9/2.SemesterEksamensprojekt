@@ -89,11 +89,11 @@ Det endte med at give os den klarhed, vi havde savnet for at kunne modellere vor
 
 Den logiske model blev udviklet i etaper, hvor vi løbende tog nogle strategiske beslutninger. I første version identificerede vi de mest centrale entiteter og nøgler.
 
-#align(center)[#image("../assets/logiskdiagram-v1.svg", width: 100%)]
+#align(center)[#image("../assets/logiskdiagram-v1.png", width: 100%)]
 
 Her diskuterede vi blandt andet nødvendigheden af at have en separat tabel for køretøjer, og hvor meget følsom data der skulle gemmes om brugerne. Her blev den endelige logiske model designet ud fra, hvor vi var i processen, og hvad der gav mest mening i forhold til projektets omfang og formål. Det endte med tre tabeller: Employee, Vehicle og Booking. Medarbejdernes interne bookingsystem havde ikke brug for at gemme følsomme data (GDPR) for brugerne, hvorfor vi kun gemte id og initialer. Samtidig valgte vi at oprette en samlet Vehicle-tabel fremfor at splitte den op i særskilte tabeller.
 
-#align(center)[#image("../assets/logiskdiagram-v2.svg", width: 65%)]
+#align(center)[#image("../assets/logiskdiagram-v2.png", width: 65%)]
 
 Vi får endvidere defineret kardinaliteterne mellem tabellerne ud fra domænets forretningsregler. En medarbejder kan have alt fra 0 til mange bookinger i systemet, og det samme er tilfældet for køretøjer. Den enkelte bil eller cykel kan være booket 0 til mange gange. Hver specifik booking, der oprettes, skal indeholde præcis en medarbejder og et køretøj. Derfor er der en mange til en relation mellem både Employee og Booking og mellem Vehicle og Booking. Hver tabel har et unikt id, der fungerer som primærnøgle `PK`, samtidig med at booking-tabellen har fremmednøgler `FK` til både Employee og Vehicle.
 Vi forsøgte at holde vores model så simpel som muligt på dette stadie - med en mulighed for at udvide den senere, hvis det skulle blive nødvendigt, i takt med at vi blev klogere under implementeringsarbejdet. Det var et bevidst valg om at holde muligheden åben for at skalere op og ikke låse os fast for tidligt.

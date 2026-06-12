@@ -15,7 +15,7 @@ Ajourførte klassediagram udelukkende for at dokumentere fremgangen og aligne vo
   height: 90em,
   flipped: true,
   margin: 0pt,
-  image("../assets/klassediagram-v3.svg"),
+  image("../assets/klassediagram-v3.png"),
 )
 
 
