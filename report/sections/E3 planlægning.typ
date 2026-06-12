@@ -10,5 +10,12 @@ For at imødekomme vores behov for at fordybe os hver især, så vi kunne være 
 
 Ajourførte klassediagram udelukkende for at dokumentere fremgangen og aligne vores mentale modeller af systemet.
 
-#figure([#align(center)[#image("../assets/sekvensdiagram.svg", width: 100%)]], caption: [Klassediagram version 3])
+#page(
+  width: auto,
+  height: 90em,
+  flipped: true,
+  margin: 0pt,
+  image("../assets/klassediagram-v3.svg"),
+)
+
 
