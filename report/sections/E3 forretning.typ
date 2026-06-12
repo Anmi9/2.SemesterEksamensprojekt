@@ -2,7 +2,7 @@ Vi indledte iterationen med at vende tilbage til vores forretningsdel. Hvor plan
 
 Foruden implementering af bookingfunktionen indeholdt iterationen to tekniske hovedpunkter, asynkron kode med trådhåndtering samt en algoritme til valg af køretøj. Begge disse var eksplicitte krav fra opgaveformuleringen og dermed af høj risiko for systemet og opgaven. Derfor var det vigtigt for os at identificere et fit mellem opgavekravene (risk), og det behov/outcome vi havde formuleret i vores arbejde med personaer.
 
-Den asynkrone kode og bekræftelsen fungerer som pain reliever, da de afhjælper medarbejdernes usikkerhed om, hvorvidt en booking rent faktisk er gået igennem. De svarer begge på det outcome, der omhandlede reduceringen af usikkerhed om bookingstatus.
+Bekræftelsen fungerer som pain reliever, da de afhjælper medarbejdernes usikkerhed om, hvorvidt en booking rent faktisk er gået igennem. De svarer begge på det outcome, der omhandlede reduceringen af usikkerhed om bookingstatus.
 
 Algoritmen derimod fungerer som en gain creator: Ved at placere bookinger på det køretøj, der efterlader mindst spild, friholder den flest mulige tidsrum til andre bookinger. Det kan holdes op imod det outcome, der skulle maksimere tilgængeligheden af køretøjer.
 
