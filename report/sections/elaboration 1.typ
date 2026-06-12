@@ -1,6 +1,6 @@
 #import "../template.typ": author
 
-= Moscow #author("a")
+= MoSCoW #author("a")
 #{
   set heading(offset: 2)
   include "Moscow.typ"

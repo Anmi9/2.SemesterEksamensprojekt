@@ -1,6 +1,6 @@
-Den oprindelige interaktionslogik var event-driven og skrevet i code-behind. Vi havde brugt den standard event handler kode som oprettes når man dobbeltklikker på et UI control-element i WPF Designer. Så da vi ville flytte logikken over til vores view-model C\# klasse mødte vi en begrænsning ved WPF. Nemlig at de autogenerede event handlers kun fungerede fordi de var placeret i code-behind. Vi lærte at for at forbinde view med en view-model, skal vi bruge WPFs implementeringer af _Observer_ og _Command_ mønstrene. Konkret via _Bindings_ abstraktionen og `ICommand` interfacet.
+Den oprindelige interaktionslogik var event-driven og skrevet i code-behind. Vi havde brugt den standard eventhandler kode, som oprettes, når man dobbeltklikker på et UI control-element i WPF Designer. Så da vi ville flytte logikken over til vores view-model C\#-klasse mødte vi en begrænsning ved WPF. Nemlig at de autogenererede eventhandlers kun fungerede, fordi de var placeret i code-behind. Vi lærte, at for at forbinde view med en view-model, skal vi bruge WPFs implementeringer af _Observer_ og _Command_ mønstrene. Konkret via _Bindings_ abstraktionen og `ICommand` interfacet.
 
-Bindings skaber en tovejs forbindelse mellem en UI controller og en data property, hvilket sikre at tilstandsændringer propagere mellem view og view-model. Det implementeres via xaml binding syntaksen `{Binding Path=PropertyName}` i view og ved at realisere `INotifyPropertyChanged` interfacet i view-model. Vi implementerede interfacet i alle vores view-models med nedarvning fra superklassen `ViewModelBase`:
+Bindings skaber en tovejsforbindelse mellem en UI controller og en data property, hvilket sikrer at tilstandsændringer propagerer mellem view og view-model. Det implementeres via xaml binding syntaksen `{Binding Path=PropertyName}` i view og ved at realisere `INotifyPropertyChanged` interfacet i view-model. Vi implementerede interfacet i alle vores view-models med nedarvning fra superklassen `ViewModelBase`:
 
 ```cs
 public abstract class ViewModelBase
@@ -37,9 +37,9 @@ public class CreateBookingViewModel : ViewModelBase
 }
 ```
 
-Resultatet blev at når en bruger ændrer dato eller tid i brugergrænsefladen kaldes property `set` metoden og opdatere tilstanden i view-model. Når vores hjælpe metoder (eks. `ApplyDefaultTime()`) kalder `set` metoderne og sikre at `StartTime` og `EndTime` ikke er tomme, så bliver værdierne synlige i brugergrænsefladen.
+Resultatet blev, at når en bruger ændrer dato eller tid i brugergrænsefladen, kaldes property `set`-metoden og opdaterer tilstanden i view-model. Når vores hjælpemetoder (eks. `ApplyDefaultTime()`) kalder `set`-metoderne og sikrer, at `StartTime` og `EndTime` ikke er tomme, så bliver værdierne synlige i brugergrænsefladen.
 
-Til vores overraskelse er bindings ikke nok til at implementere knappers funktionalitet. WPF forventer et `ICommand` objekt, med metoderne `Execute()` og `CanExecute()`. I stedet for at implementere interfacet direte i vores view-model klasser, brugte vi et lag af _indirection_ til at adskille realiseringen og funktionaliteten. Fordelen i vores program var at vi slap for at flere klasser skulle realisere interfacet ved i stedet kun at implementere det i klassen `RelayCommand`.
+Til vores overraskelse er bindings ikke nok til at implementere knappers funktionalitet. WPF forventer et `ICommand`-objekt med metoderne `Execute()` og `CanExecute()`. I stedet for at implementere interfacet direkte i vores viewmodel-klasser, brugte vi et lag af _indirection_ til at adskille realiseringen og funktionaliteten. Fordelen i vores program var, at vi slap for at flere klasser skulle realisere interfacet ved i stedet kun at implementere det i klassen `RelayCommand`.
 
 ```cs
 public class RelayCommand : ICommand
@@ -60,7 +60,7 @@ public class RelayCommand : ICommand
 }
 ```
 
-Klassen er en tom skal der ikke gør andet end at gemme hver view-models knap funktionalitet i en delegate. For at koble hver instans til en bestemt view-model brugte vi komposition. Relay instansen instantieres i constructoren og får injektet den konkrete view-models execute og canExecute metoder ind i sine private variabler.
+Klassen er en tom skal, der ikke gør andet end at gemme hver viewmodels knapfunktionalitet i en delegate. For at koble hver instans til en bestemt viewmodel brugte vi komposition. Relay instansen instantieres i constructoren og får injektet den konkrete viewmodels execute og canExecute-metoder ind i sine private variabler.
 
 ```cs
 public class CreateBookingViewModel : ViewModelBase
@@ -79,9 +79,9 @@ public class CreateBookingViewModel : ViewModelBase
 
 ```
 
-Binding spiller stadig en rolle, fordi knapperne i view binder til de properties der peger på `RelayCommand` objektet med samme xaml syntaks `Command="{Binding RegisterBookingCommand}"`. Internt ved WPF at binding skal leverer et `ICommand` objekt til `Command` attributten for at den kan kalde interfacets metoder. Command mønstret kommer til sin ret, fordi det tillod os at oprette forskellige kommandoer i forskellige view-models uden at have en direkte kobling mellem et bestemt view og view-model.
+Binding spiller stadig en rolle, fordi knapperne i view binder til de properties, der peger på `RelayCommand` objektet med samme xaml-syntaks `Command="{Binding RegisterBookingCommand}"`. Internt ved WPF, at binding skal levere et `ICommand`-objekt til `Command`-attributten, før den kan kalde interfacets metoder. Command-mønstret kommer til sin ret, fordi det tillod os at oprette forskellige kommandoer i forskellige viewmodels uden at have en direkte kobling mellem et bestemt view og viewmodel.
 
-Med disse to mønstre, kunne vi flytte interaktionslogikken væk fra view-code-behind, hvor den var direkte koblet til brugergrænsefladen og over til vores view-model. Resultatet blev at view-model kunne fungerer som en adapter mellem brugergrænsefladen og vores forretnings- og domænekerne. Dette eksemplificeres bedst med hvordan kontrakten til præsentations- og applikations laget er forskellige trods at dataen er den samme.
+Med disse to mønstre, kunne vi flytte interaktionslogikken væk fra view-code-behind, hvor den var direkte koblet til brugergrænsefladen og over til vores viewmodel. Resultatet blev at viewmodel kunne fungerer som en adapter mellem brugergrænsefladen og vores forretnings- og domænekerne. Dette eksemplificeres bedst med, hvordan kontrakten til præsentations- og applikationslaget er forskellige, selvom dataen er den samme.
 
 ```cs
 public class CreateBookingViewModel : ViewModelBase
