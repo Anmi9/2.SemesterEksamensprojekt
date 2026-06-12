@@ -8,6 +8,7 @@ I denne iteration var planen at komme på tværs af UP-disciplinerne ved kortvar
 )
 For at imødekomme vores behov for at fordybe os hver især, så vi kunne være mere produktive, valgte vi at strukturere vores tid mere konsekvent. Ad hoc-afbrydelser var forstyrrende for vores individuelle koncentration, men vi anerkendte samtidig, at løbende sparring og fælles beslutninger og refleksioner var afgørende for projektets fremdrift og kvalitet. For at finde en balance blev vi enige om at fortsætte vores morgenmøder og som tilæg indføre faste fælles pauser, hvor hovedet kunne få en pause, og vi kunne snakke mere uformelt. Pauserne skulle fungere som et mentalt pusterum, hvor tanker kan luftes, og der kan diskuteres både faglige og ikke-faglige emner. Med denne arbejdsstruktur ville vi sikre en god balance mellem fordybelse og samarbejde.
 
+Ajourførte klassediagram udelukkende for at dokumentere fremgangen og aligne vores mentale modeller af systemet.
 
-- (Indsat klassediagram afsnit her
-Ajourførte klassediagram udelukkende for at dokumentere fremgangen og aligne vores mentale modeller af systemet)
+#figure([#align(center)[#image("../assets/sekvensdiagram.svg", width: 100%)]], caption: [Klassediagram version 3])
+
